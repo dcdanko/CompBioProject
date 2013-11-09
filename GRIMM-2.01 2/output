@@ -1,0 +1,41 @@
+Running:                      	./grimm
+Input:                        	/Users/DC/grimm_test
+Genome:                       	Multichromosomal
+Signs:                        	Signed
+Number of Genomes:            	2
+Number of Genes:              	10 + 4 caps
+Number of Chromosomes:        	2
+Multichromosomal Distance:    	6
+
+======================================================================
+
+Optimal capping:
+>Alpha
+11 1 2 3 4 5 12 13 6 7 8 9 -10 14 
+>Beta 
+11 -1 -2 -3 -4 -5 12 13 6 7 8 9 10 14 
+
+======================================================================
+
+An optimal sequence of rearrangements:
+Step 0: (Source)
+  1   2   3   4   5   $
+  6   7   8   9 -10   $
+Step 1: Chrom. 1, gene 1 [1] through chrom. 1, gene 1 [1]: Reversal
+ -1   2   3   4   5   $
+  6   7   8   9 -10   $
+Step 2: Chrom. 1, gene 2 [2] through chrom. 1, gene 2 [2]: Reversal
+ -1  -2   3   4   5   $
+  6   7   8   9 -10   $
+Step 3: Chrom. 1, gene 3 [3] through chrom. 1, gene 3 [3]: Reversal
+ -1  -2  -3   4   5   $
+  6   7   8   9 -10   $
+Step 4: Chrom. 1, gene 4 [4] through chrom. 1, gene 4 [4]: Reversal
+ -1  -2  -3  -4   5   $
+  6   7   8   9 -10   $
+Step 5: Chrom. 1, gene 5 [5] through chrom. 1, gene 5 [5]: Reversal
+ -1  -2  -3  -4  -5   $
+  6   7   8   9 -10   $
+Step 6: Chrom. 2, gene 5 [-10] through chrom. 2, gene 5 [-10]: Reversal (Destination)
+ -1  -2  -3  -4  -5   $
+  6   7   8   9  10   $

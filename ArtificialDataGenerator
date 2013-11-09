@@ -1,0 +1,68 @@
+import random as rn
+
+class Phylogeny( object ):
+
+
+	def __init__( self, size):
+		self.root = range(size)
+		self.tails = [self.root,]
+		self.layers = [[self.root,],]
+		self.layerMods = [[(0,"ROOT"),],]
+
+	def produceDescendant(self, ancestor ):
+		mod = rn.choice(["DELETION", "DUPLICATION", "MOVEMENT","NONE"])
+		descendant = [a for a in ancestor]
+
+		if mod == "DELETION":
+			descendant.pop( rn.randint(0,len(descendant)-1))
+
+		elif mod == "DUPLICATION":
+			dup = rn.choice( descendant )
+			descendant.insert( rn.randint(0,len(descendant)-1), dup)
+
+		elif mod == "MOVEMENT":
+			dup = rn.choice( descendant )
+			descendant.remove( dup )
+			descendant.insert( rn.randint(0,len(descendant)-1), dup)
+
+		elif mod == "NONE":
+			pass
+
+		return (mod, descendant)
+
+
+	def produceNewPhyloLayer(self):
+		size= 2 * len( self.tails )
+
+		newLayer = []
+		newLayerMods = []
+		for i, ancestor in enumerate(self.tails):
+			for arbitrary in range(2):
+				d = self.produceDescendant( ancestor )
+				newLayerMods.append( (i,d[0]) )
+				newLayer.append( d[1] )
+
+		self.layers.append(newLayer)
+		self.layerMods.append( newLayerMods )
+		self.tails = newLayer
+
+
+def  main():
+
+	phylo = Phylogeny(4)
+
+	for arb in range(4):
+		phylo.produceNewPhyloLayer()
+
+	for i, layer in enumerate(phylo.layers):
+		print(phylo.layerMods[i])
+		print(layer)
+		print()
+
+if __name__ == "__main__":
+	main()
+
+
+
+
+
