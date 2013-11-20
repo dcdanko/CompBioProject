@@ -1,4 +1,4 @@
-import RuntimeException
+
 
 
 class Genome( object ):
@@ -33,5 +33,4 @@ class Genome( object ):
 			if ">" not in header:
 				header = "> " + header
 			self.grimmString = header + self.grimmString
-		else:
-			raise RuntimeException("Genome already has header") 
+ 
