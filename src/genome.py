@@ -3,7 +3,7 @@
 
 class Genome( object ):
 
-	def __init__( self, grimmString=None):
+	def __init__( self, grimmString=""):
 		self.grimmString = grimmString
 
 	def getChromosoneArray( self ):
