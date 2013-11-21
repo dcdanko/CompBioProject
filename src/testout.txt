@@ -1,0 +1,15 @@
+Running:                      	grimm
+Input:                        	data/test.txt
+Genome:                       	Multichromosomal
+Signs:                        	Signed
+Number of Genomes:            	3
+Number of Genes:              	10 + 6 caps
+Number of Chromosomes:        	3
+
+Distance Matrix:
+
+   3
+G1                  	0 7 3 
+G2                  	7 0 7 
+G3                  	3 7 0 
+
