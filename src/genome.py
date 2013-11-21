@@ -33,4 +33,7 @@ class Genome( object ):
 			if ">" not in header:
 				header = "> " + header
 			self.grimmString = header + self.grimmString
+
+	def name():
+		return self.grimmString.split("\n")[0]
  

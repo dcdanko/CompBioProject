@@ -1,13 +1,22 @@
 import random as rn
+from genome import Genome
+from tree import Tree
 
 class Phylogeny( object ):
 
 
-	def __init__( self, size):
-		self.root = range(size)
-		self.tails = [self.root,]
-		self.layers = [[self.root,],]
-		self.layerMods = [[(0,"ROOT"),],]
+	def __init__( self, size=5, numChromosones=3):
+		self.original = Genome()
+		for c in range( numChromosones ):
+			for pos in range(size):
+				chromosone = ""
+				for val in range( c*size, (c+1)*size ):
+					chromosone += str(val)
+					chromosone += " "
+				self.original.addChromosone(chromosone)
+
+		self.tree = Tree( self.original )
+
 
 	def produceDescendant(self, ancestor ):
 		mod = rn.choice(["DELETION", "DUPLICATION", "MOVEMENT","NONE"])
@@ -29,6 +38,26 @@ class Phylogeny( object ):
 			pass
 
 		return (mod, descendant)
+
+	def mutate(self, ancestor):
+		return ancestor
+
+	def evolve(self, evolutionRate=0.5):
+		tips = []
+		self.tree.populateTips(tips)
+		for (genome, leaf) in tips:
+			if rn.random() < evolutionRate:
+				newGenome = Genome( str(genome))
+				mutate( newGenome )
+
+				if rn.random() < evolutionRate:
+					mutate( genome )
+
+				leaf.addConnection( genome)
+				leaf.addConnection( newGenome)
+
+
+
 
 
 	def produceNewPhyloLayer(self):
