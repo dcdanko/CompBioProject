@@ -48,7 +48,7 @@ class ArtificialPhylogeny( object ):
 			tempChromosone = chromosone[:]
 
 			for i, val in enumerate(tempChromosone):
-				if i >= start and i =< end:
+				if i >= start and i <= end:
 					chromosone[i] = tempChromosone[end - i + 1]
 
 		elif mod == "TRANSLOCATION":

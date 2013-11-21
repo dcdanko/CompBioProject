@@ -3,37 +3,57 @@
 
 class Genome( object ):
 
-	def __init__( self, grimmString=""):
-		self.grimmString = grimmString
+	def __init__( self, genome=None, grimmString="", name="", chromosoneList=[]):
 
-	def getChromosoneArray( self ):
-		g = []
-		for line in self.grimmString.split("\n"):
-			g += line.split("$")
+		if genome is not None:
+			self.chromosoneList = otherGenome.chromosoneList[:]
+			self.name = otherGenome.name + "_clone"
+		else:
+			self.chromosoneList = chromosoneList
+			self.name = name
 
-		if ">" in g[0]:
-			g = g[1:]
+			if grimmString != "":
+				if name == "":
+					g = grimmString.split("\n")[0]
+					if ">" in g:
+						self.name = g
 
-		return g
+				if chromosoneList == []:
+					g = self.grimmString.split("\n")
+					for line in g:
+						if ">" in line or "#" in line:
+							pass
+						else:
+							self.chromosoneList.append([int(val) for val in line if val != "$"])
+
 
 	def __iter__( self ):
-		return iter( self.getChromosoneArray())
+		return iter( self.chromosoneList)
 
 	def __str__( self ):
-		return self.grimmString
+		grimmString = "> "+self.name+" \n"
+		for chromosone in chromosoneList:
+			for val in chromosone:
+				grimmString += val + " "
+			grimmString += "$ \n"
+		return grimmString
+
+		
 
 	def addChromosone( self, chromosone ):
-		if "$" not in chromosone:
-			chromosone += " $"
+		if type(chromosone) is str:
+			self.chromosoneList.append([int(val) for val in chromosone if val != "$"])
 
-		self.grimmString += "\n" + chromosone
+		elif type(chromosone) is list:
+			self.chromosoneList.append(chromosone)
 
-	def addHeader( self, header ):
-		if ">" not in self.getChromosoneArray()[0]:
-			if ">" not in header:
-				header = "> " + header
-			self.grimmString = header + self.grimmString
+		else:
+			raise Exception("Unexpected input to add chromosone")
 
-	def name():
-		return self.grimmString.split("\n")[0]
+	def name(name=""):
+		if name == "":
+			return self.name
+		else:
+			self.name = name
+			return self.name()
  

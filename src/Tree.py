@@ -1,7 +1,7 @@
 
 
 
-class Tree( Node ):
+class Tree( object ):
 
 	def __init__(self, genome, connections=[]): 
 		self.genome = genome
