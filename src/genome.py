@@ -6,8 +6,8 @@ class Genome( object ):
 	def __init__( self, genome=None, grimmString="", name="", chromosoneList=[]):
 
 		if genome is not None:
-			self.chromosoneList = otherGenome.chromosoneList[:]
-			self.name = otherGenome.name + "_clone"
+			self.chromosoneList = ogenome.chromosoneList[:]
+			self.name = genome.name + "_clone"
 		else:
 			self.chromosoneList = chromosoneList
 			self.name = name
@@ -32,9 +32,9 @@ class Genome( object ):
 
 	def __str__( self ):
 		grimmString = "> "+self.name+" \n"
-		for chromosone in chromosoneList:
+		for chromosone in self.chromosoneList:
 			for val in chromosone:
-				grimmString += val + " "
+				grimmString += str(val) + " "
 			grimmString += "$ \n"
 		return grimmString
 

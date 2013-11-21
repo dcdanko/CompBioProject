@@ -1,4 +1,4 @@
-
+from genome import Genome
 
 
 class Tree( object ):
@@ -40,5 +40,23 @@ class Tree( object ):
 			tips.append( (self.genome, self))
 		else:
 			self.populateTips( tips )
+
+def test():
+	a = Genome(name="a")
+	b = Genome(name="b")
+	c = Genome(name="c")
+	d = Genome(name="d")
+	e = Genome(name="e")
+	f = Genome(name="f")
+
+	print(a)
+	t = Tree( a )
+	print(t.isLeaf())
+	print(t)
+	t.addConnection( Tree(b))
+	print(t)
+
+if __name__ == "__main__":
+	test()
 
 	

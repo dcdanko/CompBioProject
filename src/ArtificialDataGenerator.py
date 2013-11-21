@@ -1,6 +1,6 @@
 import random as rn
 from genome import Genome
-from tree import Tree
+from Tree import Tree
 
 class ArtificialPhylogeny( object ):
 
@@ -8,12 +8,8 @@ class ArtificialPhylogeny( object ):
 	def __init__( self, size=5, numChromosones=3):
 		self.original = Genome()
 		for c in range( numChromosones ):
-			for pos in range(size):
-				chromosone = ""
-				for val in range( c*size, (c+1)*size ):
-					chromosone += str(val)
-					chromosone += " "
-				self.original.addChromosone(chromosone)
+			self.original.addChromosone(range( c*size, (c+1)*size ))
+		print(self.original)
 
 		self.tree = Tree( self.original )
 
