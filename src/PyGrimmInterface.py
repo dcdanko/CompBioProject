@@ -47,16 +47,52 @@ class PyGrimmInterface( object ):
 
 
 
-
+        #input: a list of Genomes
+	#output: the distance matrix obtained by running the genomes through GRIMM
 	def getDistMatrix( self, genomes):
-		pass
+		gFile = self.genomeFile(genomes)
+
+                command = "./../GRIMM/grimm -f {}".format(gFile.name)
+		comman = shlex.split(command)
+		grimm =  Popen(command, stdout=PIPE, shell=True )
+		try:
+			grimmOut = grimm.communicate()[0].decode("utf-8")
+		except Exception as e:
+			grimm.kill()
+			print(e)
+			raise Exception("Communication with Grimm failed.")
+
+		gFile.close()
+		print grimmOut
+
+
+        #input: the file outputted by running GRIMM on more then 2 genomes
+	#output: (genomes, distArray)
+	#       genomes: a 1 dimensional array with the names of the genomes
+	#       distArray: a 2 dimensional array rpresenting the genomes
+        def parseDistMatrix(grimmfile):
+
+                f = open(grimmfile, 'r')
+                output = f.read()
+                distMatrix = output.partition('Distance Matrix:')[2]
+                distMatrix = distMatrix.strip()
+                splitStr = distMatrix.split("\n")
+
+                numGenomes = int(splitStr[0])
+                genomes = [0 for x in xrange(numGenomes)] 
+                distArray = [ [0 for x in xrange(numGenomes)] for x in xrange(numGenomes)]
+                for x in xrange(1, len(splitStr)):
+                        splitMatrix = splitStr[x].split()
+                        genomes[x-1] = splitMatrix[0]
+                        for y in xrange(1, len(splitMatrix)):
+                                distArray[x-1][y-1] = float(splitMatrix[y]) 
+
+                return (genomes, distArray)
 
 
 
 
-
-
-if __name__ == "__main__":
+def main():
 	gA = '''
 	> alpha
 	1 2 3 4 $
@@ -71,5 +107,7 @@ if __name__ == "__main__":
 	
 	grimm = PyGrimmInterface()
 
-	k = grimm.getTransformations(Genome(gA),Genome(gB))
-	print(k)
+	grimm.getDistMatrix([Genome(gA), Genome(gB)])
+
+##	k = grimm.getTransformations(Genome(gA),Genome(gB))
+##	print(k)
