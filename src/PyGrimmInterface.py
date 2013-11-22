@@ -3,6 +3,7 @@ from genome import Genome
 from subprocess import Popen, PIPE
 import shlex
 import upgma
+import random
 
 class PyGrimmInterface( object ):
 
@@ -70,10 +71,25 @@ class PyGrimmInterface( object ):
 		genomeNames = [genome.name for genome in genomes]
 	
 		upgmatree = self.getUPGMA(distArray, genomeNames)
+
+		genometree = self.genomeTree(upgmatree, genomes)
 		
 		#iterate through pairs in upgmatree	
-	#	upgmaIterate(	
-		
+		rootGenome = self.upgmaIterate(genometree)
+		print rootGenome.name
+		print rootGenome.chromosomeList
+			
+	def genomeTree(self, upgma, genomes):
+		if(upgma.size == 1):
+			for genome in genomes:
+				if(genome.name == upgma.data):
+					return genome
+			#exception?
+		else:
+			left = self.genomeTree(upgma.data[0], genomes)
+			right = self.genomeTree(upgma.data[1], genomes)
+			return (left, right)
+			
 
 
         #input: the string outputted by running GRIMM on more then 2 genomes
@@ -107,8 +123,20 @@ class PyGrimmInterface( object ):
 
 		return tree
 
-			
-
+	def upgmaIterate(self, gtree):
+		#if we have reached a 'leaf'
+		if(type(gtree) != tuple):
+			return gtree	
+		else:
+			left = self.upgmaIterate(gtree[0])
+			print "left: "+str(left)
+			right = self.upgmaIterate(gtree[1])
+			print "right: "+str(right)
+			trans = self.getTransformations(left, right)
+			midIdx = len(trans)/2 #+ random.getrandbits(1)
+			midGenome = trans[midIdx][1]
+			midGenome.name = "("+str(left.name)+","+str(right.name)+")"
+			return midGenome
 
 
 
@@ -136,7 +164,7 @@ if __name__ == "__main__":
 	gnmb = Genome(grimmString=gB)
 	gnmc = Genome(grimmString=gC)
 
-#	grimm.getDistMatrix([gnma,gnmb,gnmc])
+	grimm.getDistMatrix([gnma,gnmb,gnmc])
 
 	#k = grimm.getTransformations(gnma, gnmb)
 	#print(k)
