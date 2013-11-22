@@ -43,7 +43,7 @@ class PyGrimmInterface( object ):
 			elif "Step" in line:
 				transformations.append( (line.split(":")[-1], Genome()) ) 
 			elif line[-1] == "$":
-				transformations[-1][1].addChromosone( line )
+				transformations[-1][1].addChromosome( line )
 		return transformations
 
 
@@ -70,6 +70,9 @@ class PyGrimmInterface( object ):
 		genomeNames = [genome.name for genome in genomes]
 	
 		upgmatree = self.getUPGMA(distArray, genomeNames)
+		
+		#iterate through pairs in upgmatree	
+	#	upgmaIterate(	
 		
 
 
@@ -133,7 +136,7 @@ if __name__ == "__main__":
 	gnmb = Genome(grimmString=gB)
 	gnmc = Genome(grimmString=gC)
 
-	grimm.getDistMatrix([gnma,gnmb,gnmc])
+#	grimm.getDistMatrix([gnma,gnmb,gnmc])
 
-##	k = grimm.getTransformations(Genome(gA),Genome(gB))
-##	print(k)
+	#k = grimm.getTransformations(gnma, gnmb)
+	#print(k)

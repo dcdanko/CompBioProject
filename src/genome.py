@@ -1,56 +1,56 @@
 
-
-
 class Genome( object ):
 
-	def __init__( self, genome=None, grimmString="", name="", chromosoneList=[]):
+	def __init__( self, genome=None, grimmString=None, name=None, chromosomeList=None):
 
 		if genome is not None:
-			self.chromosoneList = genome.chromosoneList[:]
+			self.chromosomeList = genome.chromosomeList[:]
 			self.name = genome.name + "_clone"
 		else:
-			self.chromosoneList = chromosoneList
+			self.chromosomeList = []
 			self.name = name
 
-			if grimmString != "":
-				if name == "":
+			if grimmString != None:
+				if name == None:
 					grimmString = grimmString.strip()
 					g = grimmString.split("\n")[0]
 					if ">" in g:
-						self.name = g
+						splitg = g.split()
+						self.name = splitg[1]
 
-				if chromosoneList == []:
+				if chromosomeList == None:
 					g = grimmString.split("\n")
 					for line in g:
 						if ">" in line or "#" in line:
 							pass
 						else:
 							splitline = line.split()
-							self.chromosoneList.append([int(val) for val in splitline if val != "$"])
+							self.chromosomeList.append([int(val) for val in splitline if val != "$"])
 
 
 	def __iter__( self ):
-		return iter( self.chromosoneList)
+		return iter( self.chromosomeList)
 
 	def __str__( self ):
 		grimmString = "> "+self.name+" \n"
-		for chromosone in self.chromosoneList:
-			for val in chromosone:
+		for chromosome in self.chromosomeList:
+			for val in chromosome:
 				grimmString += str(val) + " "
 			grimmString += "$ \n"
 		return grimmString
 
 		
 
-	def addChromosone( self, chromosone ):
-		if type(chromosone) is str:
-			self.chromosoneList.append([int(val) for val in chromosone if val != "$"])
+	def addChromosome( self, chromosome ):
+		if type(chromosome) is unicode:
+			splitchrom = chromosome.split()
+			self.chromosomeList.append([int(val) for val in splitchrom if val != "$"])
 
-		elif type(chromosone) is list:
-			self.chromosoneList.append(chromosone)
+		elif type(chromosome) is list:
+			self.chromosomeList.append(chromosome)
 
 		else:
-			raise Exception("Unexpected input to add chromosone")
+			raise Exception("Unexpected input to add chromosome")
 
 	def getName(self,name=""):
 		if name == "":
