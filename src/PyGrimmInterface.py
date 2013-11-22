@@ -2,6 +2,7 @@ from tempfile import NamedTemporaryFile
 from genome import Genome
 from subprocess import Popen, PIPE
 import shlex
+import upgma
 
 class PyGrimmInterface( object ):
 
@@ -47,11 +48,63 @@ class PyGrimmInterface( object ):
 
 
 
-
+        #input: a list of Genomes
+	#output: the distance matrix obtained by running the genomes through GRIMM
 	def getDistMatrix( self, genomes):
-		pass
+		gFile = self.genomeFile(genomes)
+		print gFile.read()
+
+                command = "./../GRIMM/grimm -f {}".format(gFile.name)
+		comman = shlex.split(command)
+		grimm =  Popen(command, stdout=PIPE, shell=True )
+		try:
+			grimmOut = grimm.communicate()[0].decode("utf-8")
+		except Exception as e:
+			grimm.kill()
+			print(e)
+			raise Exception("Communication with Grimm failed.")
+
+		gFile.close()
+
+		distArray = self.parseDistMatrix(grimmOut)
+		genomeNames = [genome.name for genome in genomes]
+	
+		upgmatree = self.getUPGMA(distArray, genomeNames)
+		
 
 
+        #input: the string outputted by running GRIMM on more then 2 genomes
+	#output: (genomes, distArray)
+	#       genomes: a 1 dimensional array with the names of the genomes
+	#       distArray: a 2 dimensional array rpresenting the genomes
+        def parseDistMatrix(self, grimmout):
+
+#                f = open(grimmfile, 'r')
+#                output = f.read()
+                distMatrix = grimmout.partition('Distance Matrix:')[2]
+                distMatrix = distMatrix.strip()
+                splitStr = distMatrix.split("\n")
+
+                numGenomes = int(splitStr[0])
+                #genomes = [0 for x in xrange(numGenomes)] 
+                distArray = [ [0 for x in xrange(numGenomes)] for x in xrange(numGenomes)]
+                for x in xrange(1, len(splitStr)):
+                        splitMatrix = splitStr[x].split()
+                        #genomes[x-1] = splitMatrix[0]
+                        for y in xrange(1, len(splitMatrix)):
+                                distArray[x-1][y-1] = float(splitMatrix[y]) 
+
+#                return (genomes, distArray)
+                return distArray
+
+	def getUPGMA(self, distMatrix, genomeNames): 
+		clu = upgma.make_clusters(genomeNames)
+		tree = upgma.regroup(clu, distMatrix)
+#		upgma.pprint(tree, tree.height)
+
+		return tree
+
+			
 
 
 
@@ -68,8 +121,19 @@ if __name__ == "__main__":
 	1 6 3 8 $
 	5 2 7 4 $
 	'''
-	
-	grimm = PyGrimmInterface()
 
-	k = grimm.getTransformations(Genome(gA),Genome(gB))
-	print(k)
+	gC = '''
+	> gamma
+	1 2 4 3 $
+	5 6 7 8 $
+	'''
+
+	grimm = PyGrimmInterface()
+	gnma = Genome(grimmString=gA)
+	gnmb = Genome(grimmString=gB)
+	gnmc = Genome(grimmString=gC)
+
+	grimm.getDistMatrix([gnma,gnmb,gnmc])
+
+##	k = grimm.getTransformations(Genome(gA),Genome(gB))
+##	print(k)
