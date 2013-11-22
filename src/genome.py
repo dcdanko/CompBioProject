@@ -6,7 +6,7 @@ class Genome( object ):
 	def __init__( self, genome=None, grimmString="", name="", chromosoneList=[]):
 
 		if genome is not None:
-			self.chromosoneList = ogenome.chromosoneList[:]
+			self.chromosoneList = genome.chromosoneList[:]
 			self.name = genome.name + "_clone"
 		else:
 			self.chromosoneList = chromosoneList
@@ -19,12 +19,13 @@ class Genome( object ):
 						self.name = g
 
 				if chromosoneList == []:
-					g = self.grimmString.split("\n")
+					g = grimmString.split("\n")
 					for line in g:
 						if ">" in line or "#" in line:
 							pass
 						else:
-							self.chromosoneList.append([int(val) for val in line if val != "$"])
+							splitline = line.split()
+							self.chromosoneList.append([int(val) for val in splitline if val != "$"])
 
 
 	def __iter__( self ):
