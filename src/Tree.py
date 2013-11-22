@@ -1,30 +1,30 @@
 from genome import Genome
 
+class Node( object ):
+
+	def __init__( self, val=None):
 
 class Tree( object ):
 
-	def __init__(self, genome, connections=[]): 
+	def __init__(self, genome, connections=None): 
 		self.genome = genome
-		self.connections = connections
+		if connections is not None:
+			self.connections = connections
+		else:
+			self.connections = []
 
 	def __iter__(self):
 		return iter(self.connections)
 
-	def addConnection(self, node ):
-		self.connections.append(node)
-		node.addConnection(self)
+	def addConnection(self, otherTree ):
+		self.connections.append(otherTree)
+		otherTree.connections.append(self)
 
 	def isLeaf(self):
-		return len(self.connections) == 1
+		return len(self.connections) in [0,1]
 
-	def __str__(self):
-		if self.isLeaf():
-			return self.genome.name()
-		else:
-			out = "("
-			for subtree in self:
-				out += str(subtree) + ","
-			out += ")"
+
+
 
 	def size(self):
 		if self.isLeaf():
@@ -41,20 +41,28 @@ class Tree( object ):
 		else:
 			self.populateTips( tips )
 
+	# Factory Method
+	def parseTuple( tup ):
+		for el in tup:
+
+
 def test():
 	a = Genome(name="a")
+	aT = Tree( a )
 	b = Genome(name="b")
+	bT = Tree(b )
 	c = Genome(name="c")
+	cT = Tree(c)
 	d = Genome(name="d")
 	e = Genome(name="e")
 	f = Genome(name="f")
 
-	print(a)
-	t = Tree( a )
-	print(t.isLeaf())
-	print(t)
-	t.addConnection( Tree(b))
-	print(t)
+	print(aT)
+	print(bT)
+	aT.addConnection( bT)
+	print(aT)
+	aT.addConnection( cT)
+	print(aT)
 
 if __name__ == "__main__":
 	test()

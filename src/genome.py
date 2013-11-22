@@ -50,10 +50,10 @@ class Genome( object ):
 		else:
 			raise Exception("Unexpected input to add chromosone")
 
-	def name(name=""):
+	def getName(self,name=""):
 		if name == "":
 			return self.name
 		else:
 			self.name = name
-			return self.name()
+			return self.name
  
