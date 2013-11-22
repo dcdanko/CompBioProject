@@ -1,4 +1,5 @@
 from ArtificialDataGenerator import ArtificialPhylogeny
+from PyGrimmInterface import GrimmInterface
 
 def fastRobinsonFouldsDistance(a,b):
 
@@ -38,5 +39,25 @@ def testOne():
 	for arb in range(5):
 		a.evolve()
 
-	fastRobinsonFouldsDistance(a.tree,)
+#	fastRobinsonFouldsDistance(a.tree,)
+
+def grimmTest():
+	a = ArtificialPhylogeny()
+	genomes = []
+	while(len(a.tree.getTips()) < 10):
+		a.evolve()	
+	for tip in  a.tree.getTips():
+		genomes.append(tip.genome)	
+
+	grimm = GrimmInterface()
+	estimatedroot = grimm.findRootViaUPGMA(genomes)
+	original = a.original
+
+	transformations = grimm.getTransformations(estimatedroot, original)
+	distance = len(transformations)-1
+	print "estimate: "+str(estimatedroot)
+	print distance
+
+
+grimmTest()
 

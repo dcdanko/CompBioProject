@@ -8,8 +8,7 @@ class ArtificialPhylogeny( object ):
 	def __init__( self, size=5, numChromosomes=3):
 		self.original = Genome(name="origin")
 		for c in range( numChromosomes ):
-			self.original.addChromosome(range( c*size, (c+1)*size ))
-		print(self.original)
+			self.original.addChromosome(range( c*size+1, (c+1)*size+1 ))
 
 		self.tree = Tree( self.original )
 
@@ -65,10 +64,12 @@ class ArtificialPhylogeny( object ):
 			transA= [a for i, a in enumerate(chrA) if i >= stA and i <=enA]
 			if rn.random() < 0.5:
 				transA = transA[::-1]
+				transA = [-val for val in transA]
 
 			transB= [b for i, b in enumerate(chrB) if i >= stB and i <=enB]
 			if rn.random() < 0.5:
 				transB = transB[::-1]
+				transB = [-val for val in transB]
 
 			frontA, backA, frontB, backB = chrA[:stA], chrA[enA+1:], chrB[:stB], chrB[enB+1:]
 			tempA, tempB = frontA+transB+backA, frontB+transA+backB

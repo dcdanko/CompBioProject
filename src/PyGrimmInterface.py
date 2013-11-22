@@ -5,7 +5,7 @@ import shlex
 import upgma
 import random
 
-class PyGrimmInterface( object ):
+class GrimmInterface( object ):
 
 	def genomeFile(self, genomes):
 		gFile = NamedTemporaryFile(mode='w+')
@@ -49,6 +49,18 @@ class PyGrimmInterface( object ):
 
 
 
+	def findRootViaUPGMA(self, genomes):
+		distArray = self.getDistMatrix(genomes)
+
+		genomeNames = [genome.name for genome in genomes]
+		upgmatree = self.getUPGMA(distArray, genomeNames)
+		genometree = self.genomeTree(upgmatree, genomes)
+		
+		#iterate through pairs in upgmatree	
+		rootGenome = self.upgmaIterate(genometree)
+		return rootGenome
+			
+
         #input: a list of Genomes
 	#output: the distance matrix obtained by running the genomes through GRIMM
 	def getDistMatrix( self, genomes):
@@ -67,18 +79,11 @@ class PyGrimmInterface( object ):
 
 		gFile.close()
 
+		print grimmOut
 		distArray = self.parseDistMatrix(grimmOut)
-		genomeNames = [genome.name for genome in genomes]
-	
-		upgmatree = self.getUPGMA(distArray, genomeNames)
+		return distArray
 
-		genometree = self.genomeTree(upgmatree, genomes)
-		
-		#iterate through pairs in upgmatree	
-		rootGenome = self.upgmaIterate(genometree)
-		print rootGenome.name
-		print rootGenome.chromosomeList
-			
+
 	def genomeTree(self, upgma, genomes):
 		if(upgma.size == 1):
 			for genome in genomes:
@@ -129,9 +134,7 @@ class PyGrimmInterface( object ):
 			return gtree	
 		else:
 			left = self.upgmaIterate(gtree[0])
-			print "left: "+str(left)
 			right = self.upgmaIterate(gtree[1])
-			print "right: "+str(right)
 			trans = self.getTransformations(left, right)
 			midIdx = len(trans)/2 #+ random.getrandbits(1)
 			midGenome = trans[midIdx][1]
@@ -159,12 +162,13 @@ if __name__ == "__main__":
 	5 6 7 8 $
 	'''
 
-	grimm = PyGrimmInterface()
+	grimm = GrimmInterface()
 	gnma = Genome(grimmString=gA)
 	gnmb = Genome(grimmString=gB)
 	gnmc = Genome(grimmString=gC)
 
-	grimm.getDistMatrix([gnma,gnmb,gnmc])
+	#rootGenome = grimm.findRootViaUPGMA([gnma,gnmb,gnmc])
 
-	#k = grimm.getTransformations(gnma, gnmb)
-	#print(k)
+	k = grimm.getTransformations(gnma, gnmb)
+	print len(k)
+	print(k)
