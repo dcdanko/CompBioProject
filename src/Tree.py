@@ -1,23 +1,5 @@
 from genome import Genome
 
-# class Node( object ):
-
-# 	def __init__( self, genome):
-# 		self.genome = genome
-# 		self.connections = []
-
-# 	def __iter__(self):
-# 		return iter(self.connections)
-
-# 	def addConnection(self, other):
-# 		assert type(other) is Tree
-# 		self.connections.append( other )
-
-# 	def isLeaf(self):
-# 		return len(self.connections) in [0,1]
-
-# 	def __str__( self ):
-# 		return self.genome.getName()
 
 class Tree( object ):
 
@@ -44,12 +26,13 @@ class Tree( object ):
 	def getTips(self):
 		tips = []
 
-		def rTipFinder( t, tips ):
+		def rTipFinder( t, tips, caller=None ):
 			if t.isLeaf():
 				tips.append( t )
 			else:
 				for sub in t:
-					rTipFinder( sub , tips)
+					if sub is not caller:
+						rTipFinder( sub , tips, t)
 
 		rTipFinder(self , tips)
 		return tips

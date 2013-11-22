@@ -5,10 +5,10 @@ from Tree import Tree
 class ArtificialPhylogeny( object ):
 
 
-	def __init__( self, size=5, numChromosones=3):
-		self.original = Genome()
-		for c in range( numChromosones ):
-			self.original.addChromosone(range( c*size, (c+1)*size ))
+	def __init__( self, size=5, numChromosomes=3):
+		self.original = Genome(name="origin")
+		for c in range( numChromosomes ):
+			self.original.addChromosome(range( c*size, (c+1)*size ))
 		print(self.original)
 
 		self.tree = Tree( self.original )
@@ -37,20 +37,30 @@ class ArtificialPhylogeny( object ):
 
 	def mutate(self, ancestor):
 		mod = rn.choice( ["REVERSAL", "TRANSLOCATION"] )
-		if mod == "REVERSAL":
-			chromosone = rn.choice(ancestor)
-			start = rn.randrange(len(chromosone))
-			end = rn.randrange( start, len(chromosone))
-			tempChromosone = chromosone[:]
 
-			for i, val in enumerate(tempChromosone):
-				if i >= start and i <= end:
-					chromosone[i] = tempChromosone[end - i + 1]
-
-		elif mod == "TRANSLOCATION":
-			(chrA, chrB) = rn.sample(anestor,2)
-			stA,stB = rn.choice(len(chrA)) ,rn.choice(len(chrB))
-			enA,enB = rn.choice(stA,len(chrA)) ,rn.choice(stB,len(chrB))
+		def reversal( ancestor ):
+			n = ancestor.getName()
+			ancestor.getName(name=n+"_Rev")
+			chromosome = rn.choice(ancestor.chromosomeList)
+			if len(chromosome) == 0:
+				print(ancestor)
+				assert False
+			start = rn.randrange(len(chromosome))
+			end = rn.randrange( start, len(chromosome))
+			a,b,c = chromosome[:start], chromosome[start:end:], chromosome[end:]
+			b = [-1*val for val in b]
+			b = b[::-1]
+			revChromosome = a + b + c
+			assert len(revChromosome) == len(chromosome)
+			ind = ancestor.chromosomeList.index(chromosome)
+			ancestor.chromosomeList[ind] = revChromosome
+	
+		def translocate( ancestor ):
+			n = ancestor.getName()
+			ancestor.getName(name=n+"_Trans")
+			(chrA, chrB) = rn.sample(ancestor.chromosomeList,2)
+			stA,stB = rn.randint(0, len(chrA)), rn.randint(0, len(chrB))
+			enA,enB = rn.randint(stA,len(chrA)), rn.randint(stB,len(chrB))
 
 			transA= [a for i, a in enumerate(chrA) if i >= stA and i <=enA]
 			if rn.random() < 0.5:
@@ -63,27 +73,53 @@ class ArtificialPhylogeny( object ):
 			frontA, backA, frontB, backB = chrA[:stA], chrA[enA+1:], chrB[:stB], chrB[enB+1:]
 			tempA, tempB = frontA+transB+backA, frontB+transA+backB
 
-			for i,val in enumerate(tempA):
-				chrA[i] = val
-			for i,val in enumerate(tempB):
-				chrB[i] = val
+			aInd = ancestor.chromosomeList.index(chrA)
+			if len(tempA) > 0:
+				ancestor.chromosomeList[aInd] = tempA
+			else:
+				ancestor.chromosomeList.pop(aInd)
+
+			bInd = ancestor.chromosomeList.index(chrB)
+			if len(tempB) > 0:
+				ancestor.chromosomeList[bInd] = tempB
+			else:
+				ancestor.chromosomeList.pop(bInd)
+
+		def split( ancestor):
+			n = ancestor.getName()
+			ancestor.getName(name=n+"_Split")
+			chromosome = rn.choice(ancestor.chromosomeList)
+			i = rn.randrange(1,len(chromosome))
+			a,b = chromosome[:i], chromosome[i:]
+			k = ancestor.chromosomeList.index( chromosome)
+			ancestor.chromosomeList[k] = a
+			ancestor.chromosomeList.append(b)
+
+
+		if mod == "REVERSAL":
+			reversal( ancestor )
+
+
+		elif mod == "TRANSLOCATION":
+			if len(ancestor.chromosomeList) > 1 and rn.random > 0.1:
+				translocate( ancestor )
+			else:
+				split( ancestor )
 					
 
 		return ancestor
 
 	def evolve(self, evolutionRate=0.5):
-		tips = []
-		self.tree.populateTips(tips)
-		for (genome, leaf) in tips:
+		for tip in  self.tree.getTips():
 			if rn.random() < evolutionRate:
-				newGenome = Genome( genome=genome )
-				mutate( newGenome )
+				newGenome = Genome( genome=tip.genome )
+				self.mutate( newGenome )
 
 				if rn.random() < evolutionRate:
-					mutate( genome )
+					self.mutate( tip.genome )
 
-				leaf.addConnection( genome)
-				leaf.addConnection( newGenome)
+				tip.addConnection( tip.genome)
+				tip.addConnection( newGenome)
 
 
 
@@ -92,7 +128,7 @@ class ArtificialPhylogeny( object ):
 
 def  test():
 	a = ArtificialPhylogeny()
-	for arb in range(5):
+	for arb in range(10):
 		a.evolve()
 		print(a.tree)
 

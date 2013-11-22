@@ -27,6 +27,8 @@ class Genome( object ):
 							splitline = line.split()
 							self.chromosomeList.append([int(val) for val in splitline if val != "$"])
 
+	def __len__( self):
+		return len(self.chromosomeList)
 
 	def __iter__( self ):
 		return iter( self.chromosomeList)
