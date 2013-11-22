@@ -1,49 +1,104 @@
 from genome import Genome
 
-class Node( object ):
+# class Node( object ):
 
-	def __init__( self, val=None):
+# 	def __init__( self, genome):
+# 		self.genome = genome
+# 		self.connections = []
+
+# 	def __iter__(self):
+# 		return iter(self.connections)
+
+# 	def addConnection(self, other):
+# 		assert type(other) is Tree
+# 		self.connections.append( other )
+
+# 	def isLeaf(self):
+# 		return len(self.connections) in [0,1]
+
+# 	def __str__( self ):
+# 		return self.genome.getName()
 
 class Tree( object ):
 
-	def __init__(self, genome, connections=None): 
+	def __init__(self, genome ): 
+		self.subs = []
 		self.genome = genome
-		if connections is not None:
-			self.connections = connections
-		else:
-			self.connections = []
 
-	def __iter__(self):
-		return iter(self.connections)
-
-	def addConnection(self, otherTree ):
-		self.connections.append(otherTree)
-		otherTree.connections.append(self)
+	def __iter__( self ):
+		return iter( self.subs )
 
 	def isLeaf(self):
-		return len(self.connections) in [0,1]
+		return len(self.subs) in (0,1)
 
-
-
-
-	def size(self):
-		if self.isLeaf():
-			return 1
+	def addConnection(self, other ):
+		if type(other) is Tree:
+			self.subs.append( other )
+			other.subs.append( self)
+		elif type(other) is Genome:
+			t = Tree( other )
+			self.addConnection( t )
 		else:
-			size = 0
-			for subtree in self:
-				size += subtree.size()
-			return size
+			raise Exception("Tried to add an invalid connection to a tree.")
 
-	def populateTips(self, tips):
-		if self.isLeaf():
-			tips.append( (self.genome, self))
-		else:
-			self.populateTips( tips )
+	def getTips(self):
+		tips = []
 
-	# Factory Method
-	def parseTuple( tup ):
-		for el in tup:
+		def rTipFinder( t, tips ):
+			if t.isLeaf():
+				tips.append( t )
+			else:
+				for sub in t:
+					rTipFinder( sub , tips)
+
+		rTipFinder(self , tips)
+		return tips
+
+	def __len__( self ):
+		size = 0
+		def rSizeFinder( t, size ):
+			size += 1
+			for sub in t:
+				rSizeFinder( sub, size )
+		rSizeFinder(self ,size)
+		return size
+
+	def toTuple( self ):
+
+		def rTupFinder( t, caller= None):
+			if t.isLeaf():
+				return t
+			else:
+				l = []
+				for sub in t:
+					if sub is not caller:
+						l.append( rTupFinder(sub,t))
+				return tuple(l)
+
+		return rTupFinder( self )
+
+	def __str__( self ):
+
+		def rStringFinder( t, caller=None):
+			if t.isLeaf():
+				return t.genome.getName() 
+			else:
+
+				s = "("
+				for sub in t:
+					if sub is not caller:
+					 	s += rStringFinder( sub, t )
+					 	s += ", "
+				s = s[:-2]
+
+				s += ")"
+				return s
+
+	
+		return "Tree: " + rStringFinder(self )
+
+
+
 
 
 def test():
@@ -58,11 +113,23 @@ def test():
 	f = Genome(name="f")
 
 	print(aT)
-	print(bT)
 	aT.addConnection( bT)
-	print(aT)
 	aT.addConnection( cT)
 	print(aT)
+	tips = aT.getTips()
+	for tip in tips:
+		print( tip )
+	print( tips )
+	print(tips[0].isLeaf())
+	tips[0].addConnection(d)
+	tips[0].addConnection(f)
+	print(tips[0].isLeaf())
+	print(str(tips[0]))
+	print(aT)
+	aT.addConnection( e)
+	print(aT)
+	print(bT)
+	print(aT.toTuple())
 
 if __name__ == "__main__":
 	test()
