@@ -32,5 +32,5 @@ def main():
   tree = testupgma.regroup(clu, distArray)
   testupgma.pprint(tree, tree.height)
 
-
-main()
+if __name__ == "__main__":
+  main()

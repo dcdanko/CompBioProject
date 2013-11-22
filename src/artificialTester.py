@@ -58,6 +58,7 @@ def grimmTest():
 	print "estimate: "+str(estimatedroot)
 	print distance
 
-
-grimmTest()
+# grimmTest()
+if __name__ == "__main__":
+	grimmTest()
 
