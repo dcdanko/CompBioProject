@@ -14,6 +14,7 @@ class Genome( object ):
 
 			if grimmString != "":
 				if name == "":
+					grimmString = grimmString.strip()
 					g = grimmString.split("\n")[0]
 					if ">" in g:
 						self.name = g
