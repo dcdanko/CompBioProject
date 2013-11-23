@@ -13,39 +13,18 @@ class ArtificialPhylogeny( object ):
 		self.tree = Tree( self.original )
 
 
-	def produceDescendant(self, ancestor ):
-		mod = rn.choice(["DELETION", "DUPLICATION", "MOVEMENT","NONE"])
-		descendant = [a for a in ancestor]
-
-		if mod == "DELETION":
-			descendant.pop( rn.randint(0,len(descendant)-1))
-
-		elif mod == "DUPLICATION":
-			dup = rn.choice( descendant )
-			descendant.insert( rn.randint(0,len(descendant)-1), dup)
-
-		elif mod == "MOVEMENT":
-			dup = rn.choice( descendant )
-			descendant.remove( dup )
-			descendant.insert( rn.randint(0,len(descendant)-1), dup)
-
-		elif mod == "NONE":
-			pass
-
-		return (mod, descendant)
 
 	def mutate(self, ancestor):
 		mod = rn.choice( ["REVERSAL", "TRANSLOCATION"] )
 
 		def reversal( ancestor ):
 			n = ancestor.getName()
-			ancestor.getName(name=n+"_Rev")
 			chromosome = rn.choice(ancestor.chromosomeList)
 			if len(chromosome) == 0:
 				print(ancestor)
 				assert False
 			start = rn.randrange(len(chromosome))
-			end = rn.randrange( start, len(chromosome))
+			end = rn.randrange( start, min(len(chromosome), 1 + start + len(chromosome)/10) )
 			a,b,c = chromosome[:start], chromosome[start:end:], chromosome[end:]
 			b = [-1*val for val in b]
 			b = b[::-1]
@@ -56,11 +35,10 @@ class ArtificialPhylogeny( object ):
 	
 		def translocate( ancestor ):
 			n = ancestor.getName()
-			ancestor.getName(name=n+"_Trans")
 			(chrA, chrB) = rn.sample(ancestor.chromosomeList,2)
 			stA,stB = rn.randint(0, len(chrA)), rn.randint(0, len(chrB))
-			enA,enB = rn.randint(stA,len(chrA)), rn.randint(stB,len(chrB))
-
+			enA = rn.randint(stA,  min(len(chrA), 1 + stA + len(chrA)/10))
+			enB = rn.randint(stB,  min(len(chrB), 1 + stB + len(chrB)/10))
 			transA= [a for i, a in enumerate(chrA) if i >= stA and i <=enA]
 			if rn.random() < 0.5:
 				transA = transA[::-1]
@@ -88,7 +66,6 @@ class ArtificialPhylogeny( object ):
 
 		def split( ancestor):
 			n = ancestor.getName()
-			ancestor.getName(name=n+"_Split")
 			chromosome = rn.choice(ancestor.chromosomeList)
 			i = rn.randrange(1,len(chromosome))
 			a,b = chromosome[:i], chromosome[i:]
@@ -113,11 +90,12 @@ class ArtificialPhylogeny( object ):
 	def evolve(self, evolutionRate=0.5):
 		for tip in  self.tree.getTips():
 			if rn.random() < evolutionRate:
-				newGenome = Genome( genome=tip.genome )
+				newGenome = Genome( genome=tip.genome, name=str(rn.randint(0,2**64)) )
 				self.mutate( newGenome )
 
 				if rn.random() < evolutionRate:
 					self.mutate( tip.genome )
+					tip.genome.getName( str(rn.randint(0,2**64)))
 
 				tip.addConnection( tip.genome)
 				tip.addConnection( newGenome)

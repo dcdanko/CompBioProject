@@ -5,7 +5,10 @@ class Genome( object ):
 
 		if genome is not None:
 			self.chromosomeList = genome.chromosomeList[:]
-			self.name = genome.name + "_clone"
+			if name == None:
+				self.name = genome.name + "_clone"
+			else:
+				self.name = name
 		else:
 			self.chromosomeList = []
 			self.name = name
@@ -26,6 +29,8 @@ class Genome( object ):
 						else:
 							splitline = line.split()
 							self.chromosomeList.append([int(val) for val in splitline if val != "$"])
+		if self.name is None:
+			assert False
 
 	def __len__( self):
 		return len(self.chromosomeList)

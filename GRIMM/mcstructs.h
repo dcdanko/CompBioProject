@@ -44,7 +44,7 @@
 #define TRUE            1
 #define FALSE           0
 
-#define MAX_STR_LEN     1024
+#define MAX_STR_LEN     4096
 
 
 /* for unsigned.c */

@@ -3,9 +3,18 @@ from genome import Genome
 from subprocess import Popen, PIPE
 import shlex
 import upgma
-import random
+import random as rn
+import numpy as np
 
 class GrimmInterface( object ):
+
+	def midGenome(self, gA, gB):
+		trans = self.getTransformations(gA,gB)
+		if len(trans) % 2 == 0 and len(trans) != 2:
+			ind = len(trans)/2 + rn.randint(0,1)
+		else:
+			ind = len(trans)/2
+		return trans[ind][1]
 
 	def genomeFile(self, genomes):
 		gFile = NamedTemporaryFile(mode='w+')
@@ -42,104 +51,80 @@ class GrimmInterface( object ):
 			elif line == "An optimal sequence of rearrangements:":
 				pass
 			elif "Step" in line:
-				transformations.append( (line.split(":")[-1], Genome()) ) 
+				transformations.append( (line.split(":")[-1], Genome(name=str(rn.randint(0,2**64)))) ) 
 			elif line[-1] == "$":
 				transformations[-1][1].addChromosome( line )
 		return transformations
 
-
-
-	def findRootViaUPGMA(self, genomes):
-		distArray = self.getDistMatrix(genomes)
-
-		genomeNames = [genome.name for genome in genomes]
-		upgmatree = self.getUPGMA(distArray, genomeNames)
-		genometree = self.genomeTree(upgmatree, genomes)
-		
-		#iterate through pairs in upgmatree	
-		rootGenome = self.upgmaIterate(genometree)
-		return rootGenome
 			
 
-        #input: a list of Genomes
+		#input: a list of Genomes
 	#output: the distance matrix obtained by running the genomes through GRIMM
 	def getDistMatrix( self, genomes):
 		gFile = self.genomeFile(genomes)
-		print gFile.read()
+		assert type( genomes[0] ) == Genome
+		# print gFile.read()
 
-                command = "./../GRIMM/grimm -f {}".format(gFile.name)
-		comman = shlex.split(command)
+		command = "./../GRIMM/grimm -f {}".format(gFile.name)
 		grimm =  Popen(command, stdout=PIPE, shell=True )
 		try:
 			grimmOut = grimm.communicate()[0].decode("utf-8")
 		except Exception as e:
 			grimm.kill()
-			print(e)
 			raise Exception("Communication with Grimm failed.")
 
 		gFile.close()
 
-		print grimmOut
-		distArray = self.parseDistMatrix(grimmOut)
-		return distArray
+		return self.parseDistMatrixIntoNP(grimmOut)
 
+	def parseDistMatrixIntoNP( self, grimmOut ):
+		grimmOut = grimmOut.partition('Distance Matrix:')[2]
+		grimmOut = grimmOut.strip()
+		grimmOut = grimmOut.split("\n")
 
-	def genomeTree(self, upgma, genomes):
-		if(upgma.size == 1):
-			for genome in genomes:
-				if(genome.name == upgma.data):
-					return genome
-			#exception?
-		else:
-			left = self.genomeTree(upgma.data[0], genomes)
-			right = self.genomeTree(upgma.data[1], genomes)
-			return (left, right)
-			
+		grimmOut = [line.split()[1:] for line in grimmOut][1:]
 
+		matrix = np.empty( (len(grimmOut) , len(grimmOut)))
+		for i, line in enumerate(grimmOut):
+			for j, val in enumerate( line ):
+				matrix[i,j] = val
 
-        #input: the string outputted by running GRIMM on more then 2 genomes
-	#output: (genomes, distArray)
-	#       genomes: a 1 dimensional array with the names of the genomes
-	#       distArray: a 2 dimensional array rpresenting the genomes
-        def parseDistMatrix(self, grimmout):
+		return matrix
 
-#                f = open(grimmfile, 'r')
-#                output = f.read()
-                distMatrix = grimmout.partition('Distance Matrix:')[2]
-                distMatrix = distMatrix.strip()
-                splitStr = distMatrix.split("\n")
+	def getUpdatedDistMatrix( self, genomes, oldMatrix, (i,j)):
+		dist = []
+		for ind, g in enumerate(genomes):
+			if ind != i:
+				dist.append( len(self.getTransformations(g, genomes[i])))
 
-                numGenomes = int(splitStr[0])
-                #genomes = [0 for x in xrange(numGenomes)] 
-                distArray = [ [0 for x in xrange(numGenomes)] for x in xrange(numGenomes)]
-                for x in xrange(1, len(splitStr)):
-                        splitMatrix = splitStr[x].split()
-                        #genomes[x-1] = splitMatrix[0]
-                        for y in xrange(1, len(splitMatrix)):
-                                distArray[x-1][y-1] = float(splitMatrix[y]) 
+		newMatrix = np.empty( (len(genomes), len(genomes)) )
+		(width, height) = oldMatrix.shape
 
-#                return (genomes, distArray)
-                return distArray
+		for x in range(width):
+			for y in range(height):
+				if x == i:
+					if y < j:
+						newMatrix[x,y] = dist[y]
+					elif y > j:
+						newMatrix[x,y-1] = dist[y-1]
+				elif y == i:
+					if x < j:
+						newMatrix[x,y] = dist[x]
+					elif x > j:
+						newMatrix[x-1,y] = dist[x-1]
+				elif x < j and y < j:
+					newMatrix[x,y] = oldMatrix[x,y]
+				elif x < j and y > j:
+					newMatrix[x, y-1] = oldMatrix[x, y]
+				elif x > j and y < j:
+					newMatrix[x-1,y] = oldMatrix[x,y]
+				elif x > j and y > j:
+					newMatrix[x-1,y-1] = oldMatrix[x,y]
+				else:
+					pass
 
-	def getUPGMA(self, distMatrix, genomeNames): 
-		clu = upgma.make_clusters(genomeNames)
-		tree = upgma.regroup(clu, distMatrix)
-#		upgma.pprint(tree, tree.height)
+		return newMatrix
 
-		return tree
-
-	def upgmaIterate(self, gtree):
-		#if we have reached a 'leaf'
-		if(type(gtree) != tuple):
-			return gtree	
-		else:
-			left = self.upgmaIterate(gtree[0])
-			right = self.upgmaIterate(gtree[1])
-			trans = self.getTransformations(left, right)
-			midIdx = len(trans)/2 #+ random.getrandbits(1)
-			midGenome = trans[midIdx][1]
-			midGenome.name = "("+str(left.name)+","+str(right.name)+")"
-			return midGenome
 
 
 

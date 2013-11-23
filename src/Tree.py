@@ -39,10 +39,11 @@ class Tree( object ):
 
 	def __len__( self ):
 		size = 0
-		def rSizeFinder( t, size ):
+		def rSizeFinder( t, size, caller=None ):
 			size += 1
 			for sub in t:
-				rSizeFinder( sub, size )
+				if sub is not caller:
+					rSizeFinder( sub, size,  t)
 		rSizeFinder(self ,size)
 		return size
 

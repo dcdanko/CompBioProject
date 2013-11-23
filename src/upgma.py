@@ -1,6 +1,4 @@
 
-class cluster:
-    pass
 
 def make_clusters(species):
     clusters = {}
