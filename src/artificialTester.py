@@ -19,7 +19,6 @@ def fastRobinsonFouldsDistance(a,b):
 				labels[val] = rn.randint(0,2**64)
 				return recursive_labeling(val,parts)
 		else:
-
 			assert len(val) == 2
 			newPartition = recursive_labeling(val[0], parts) ^ recursive_labeling(val[1], parts)
 			if(type(parts)  == dict):
@@ -39,19 +38,51 @@ def fastRobinsonFouldsDistance(a,b):
 	
 	return distance
 
+
+
 def testOne():
-	a = ArtificialPhylogeny()
+	a = ArtificialPhylogeny(size=100,numChromosomes=10)
 	for arb in range(5):
 		a.evolve()
 
 	u = UPGMA( [t.genome for t in a.tree.getTips()])
 	u.calculate()
-	
-	print(u.tree)
-	print(a.tree)
-	rf = fastRobinsonFouldsDistance(a.tree,u.tree)
-	print( "Robinson Foulds Distance: {}".format(rf))
 
+	rf = fastRobinsonFouldsDistance(a.tree.toTuple(), u.tree.toTuple())
+	return (rf, len( u.tree ) - 3)
+
+def testTwo():
+	a = ArtificialPhylogeny(size=1000,numChromosomes=10)
+	for arb in range(5):
+		a.evolve()
+
+	u = UPGMA( [t.genome for t in a.tree.getTips()])
+	u.calculate()
+
+	rf = fastRobinsonFouldsDistance(a.tree.toTuple(), u.tree.toTuple())
+	return (rf, len( u.tree ) - 3)
+
+def testThree():
+	a = ArtificialPhylogeny(size=100,numChromosomes=10)
+	for arb in range(10):
+		a.evolve()
+
+	u = UPGMA( [t.genome for t in a.tree.getTips()])
+	u.calculate()
+
+	rf = fastRobinsonFouldsDistance(a.tree.toTuple(), u.tree.toTuple())
+	return (rf, len( u.tree ) - 3)
+
+def testFour():
+	a = ArtificialPhylogeny(size=1000,numChromosomes=10)
+	for arb in range(10):
+		a.evolve()
+
+	u = UPGMA( [t.genome for t in a.tree.getTips()])
+	u.calculate()
+
+	rf = fastRobinsonFouldsDistance(a.tree.toTuple(), u.tree.toTuple())
+	return (rf, len( u.tree ) - 3)
 def grimmTest():
 	a = ArtificialPhylogeny(size=2*1000,numChromosomes=10)
 	genomes = []
@@ -71,5 +102,48 @@ def grimmTest():
 
 # grimmTest()
 if __name__ == "__main__":
-	testOne()
+	val = 0.0
+	maxSize = 0.0
+	k = 20
+	for arb in range(k):
+		try:
+			(a,b) = testOne()
+			val += a
+			maxSize += b
+		except: 
+			pass
+	print ( val/k, maxSize/k)
+	val = 0.0
+	maxSize = 0.0
+	k = 20
+	for arb in range(k):
+		try:
+			(a,b) = testTwo()
+			val += a
+			maxSize += b
+		except:
+			pass
+	print ( val/k, maxSize/k)
+	val = 0.0
+	maxSize = 0.0
+	k = 20
+	for arb in range(k):
+		try:
+			(a,b) = testThree()
+			val += a
+			maxSize += b
+		except:
+			pass
+	print ( val/k, maxSize/k)
+	val = 0.0
+	maxSize = 0.0
+	k = 20
+	for arb in range(k):
+		try:
+			(a,b) = testFour()
+			val += a
+			maxSize += b
+		except:
+			pass
+	print ( val/k, maxSize/k)
 

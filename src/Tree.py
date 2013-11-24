@@ -38,14 +38,14 @@ class Tree( object ):
 		return tips
 
 	def __len__( self ):
-		size = 0
+		size = [0,]
 		def rSizeFinder( t, size, caller=None ):
-			size += 1
+			size[0] += 1
 			for sub in t:
 				if sub is not caller:
 					rSizeFinder( sub, size,  t)
 		rSizeFinder(self ,size)
-		return size
+		return size[0]
 
 	def toTuple( self ):
 

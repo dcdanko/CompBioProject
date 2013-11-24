@@ -10,6 +10,7 @@ def getMatrixMin(matrix):
 			if minimum == -1 or matrix[i,j] < minimum:
 				minimum = matrix[i,j]
 				x, y= i, j
+	assert x != y
 	return (x,y)
 
 class UPGMA( object ):
@@ -41,5 +42,11 @@ class UPGMA( object ):
 			# self.distances = self.grimm.getUpdatedDistMatrix( self.genomes, self.distances, (i,j) )
 			self.distances = self.grimm.getDistMatrix( self.genomes )
 
-		self.tree = self.trees[0]
-		self.tree.addConnection( self.trees[1] )
+		if len( self.genomes) == 2:
+			self.tree = Tree( self.grimm.midGenome(self.genomes[0], self.genomes[1]) )
+			self.tree.addConnection( self.trees[0] )
+			self.tree.addConnection( self.trees[1] )
+		else:
+			self.tree = self.trees[0]
+
+
