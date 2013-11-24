@@ -1,27 +1,54 @@
 from genome import Genome
+from PyGrimmInterface import GrimmInterface as Grimm
 
 
 class Tree( object ):
 
-	def __init__(self, genome ): 
-		self.subs = []
-		self.genome = genome
+	def __init__(self, genome): 
+		if type(genome) is Genome:
+			self.subs = []
+			self.genome = genome
+			self.scored = False
 
 	def __iter__( self ):
 		return iter( self.subs )
+
+	def __getitem__( self, key):
+		return self.subs[key]
 
 	def isLeaf(self):
 		return len(self.subs) in (0,1)
 
 	def addConnection(self, other ):
+		self.scored = False
 		if type(other) is Tree:
 			self.subs.append( other )
-			other.subs.append( self)
+			other.addConnection( self)
 		elif type(other) is Genome:
 			t = Tree( other )
 			self.addConnection( t )
 		else:
 			raise Exception("Tried to add an invalid connection to a tree.")
+
+	def breakConnection(self, other):
+		self.scored = False
+		self.subs.remove( other )
+		other.breakConnection( self )
+
+	def getScore(self, caller=None):
+		if self.scored:
+			return self.score
+		else:
+			grimm = Grimm()
+			score = 0
+			for sub in self:
+				if sub is not caller:
+					score += sub.getScore( self )
+					score += grimm.getDistance( self.genome, sub.genome) 
+			self.score = score
+			self.scored = True
+			return score
+
 
 	def getTips(self):
 		tips = []
