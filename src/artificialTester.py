@@ -5,6 +5,9 @@ from genome import Genome
 from Tree import Tree
 import random as rn
 from nni import doNNI
+import matplotlib.pyplot as plt
+from pylab import savefig
+
 
 def fastRobinsonFouldsDistance(a,b):
 
@@ -45,7 +48,7 @@ def fastRobinsonFouldsDistance(a,b):
 
 def testUPGMA(cSize,depth):
 	a = ArtificialPhylogeny(size=cSize,numChromosomes=10)
-	for arb in range(depth):
+	while len(a.tree.getTips()) < depth:
 		a.evolve()
 
 	u = UPGMA( [t.genome for t in a.tree.getTips()])
@@ -111,15 +114,20 @@ if __name__ == "__main__":
 	# 	maxSize += b
 	# print ( val/k, maxSize/k)
 	
-	nVal, uVal = 0.0, 0.0
-	maxSize = 0.0
-	k = 20
-	for arb in range(k):
-		(a,b,c,d,e) = testNNI(100,12)
-		print (a,b,c,d,e)
-		nVal += a
-		uVal += b
-		maxSize += c
-	print ( nVal/k, uVal/k, maxSize/k)
+	rf, maxRF = 0,0
+	rfs, maxRFs = [], []
+	k = 25
+	for depth in range(5,51,5):
+		for arb in range(k):
+			(a,b) = testUPGMA(100,depth)
+			rf += a
+			maxRF += b
+		rfs.append( rf/k)
+		maxRFs.append(maxRF/k)
+
+	plt.figure("Robinson Foulds Scores of UPGMA trees as a function of the number of tips")
+	plt.plot(range(5,51,5),rfs)
+	plt.plot(range(5,51,5),maxRFs)
+	savefig("RF_Artificial_UOGMA.png")
 
 
