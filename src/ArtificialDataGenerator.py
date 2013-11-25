@@ -9,7 +9,7 @@ class ArtificialPhylogeny( object ):
 		self.original = Genome(name="origin")
 		for c in range( numChromosomes ):
 			self.original.addChromosome(range( c*size+1, (c+1)*size+1 ))
-
+		self.firstRound = True
 		self.tree = Tree( self.original )
 
 
@@ -88,6 +88,8 @@ class ArtificialPhylogeny( object ):
 		return ancestor
 
 	def evolve(self, evolutionRate=0.5):
+		assert self.tree.isBinary()
+
 		for tip in  self.tree.getTips():
 			if rn.random() < evolutionRate:
 				newGenome = Genome( genome=tip.genome, name=str(rn.randint(0,2**64)) )
@@ -95,10 +97,21 @@ class ArtificialPhylogeny( object ):
 
 				if rn.random() < evolutionRate:
 					self.mutate( tip.genome )
-					tip.genome.getName( str(rn.randint(0,2**64)))
-
+					tip.genome.getName( name=str(rn.randint(0,2**64)))
 				tip.addConnection( tip.genome)
 				tip.addConnection( newGenome)
+
+		if self.firstRound and len(self.tree.subs) == 2:
+			self.firstRound = False
+			(a,b) = self.tree.subs
+			a.addConnection(b)
+			a.breakConnection( self.tree )
+			b.breakConnection( self.tree)
+			self.tree = a
+			assert len( self.tree.getTips() ) == 2
+			assert self.tree.isBinary()
+
+		assert self.tree.isBinary()
 
 
 

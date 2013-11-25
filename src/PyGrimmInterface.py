@@ -26,7 +26,7 @@ class GrimmInterface( object ):
 		return gFile
 
 	def getDistance( self, gA, gB):
-		return len( self.getTransformations(gA,gB))
+		return len( self.getTransformations(gA,gB)) - 2 
 
 	def getTransformations( self, gA, gB):
 		gFile = self.genomeFile( [gA,gB] )

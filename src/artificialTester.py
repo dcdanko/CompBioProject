@@ -4,6 +4,7 @@ from upgma_tree import UPGMA
 from genome import Genome
 from Tree import Tree
 import random as rn
+from nni import doNNI
 
 def fastRobinsonFouldsDistance(a,b):
 
@@ -19,7 +20,9 @@ def fastRobinsonFouldsDistance(a,b):
 				labels[val] = rn.randint(0,2**64)
 				return recursive_labeling(val,parts)
 		else:
-			assert len(val) == 2
+			if len(val) != 2:
+				print( val)
+				raise Exception("Val is wrong length")
 			newPartition = recursive_labeling(val[0], parts) ^ recursive_labeling(val[1], parts)
 			if(type(parts)  == dict):
 				parts[ newPartition ] = True
@@ -40,9 +43,9 @@ def fastRobinsonFouldsDistance(a,b):
 
 
 
-def testOne():
-	a = ArtificialPhylogeny(size=100,numChromosomes=10)
-	for arb in range(5):
+def testUPGMA(cSize,depth):
+	a = ArtificialPhylogeny(size=cSize,numChromosomes=10)
+	for arb in range(depth):
 		a.evolve()
 
 	u = UPGMA( [t.genome for t in a.tree.getTips()])
@@ -51,38 +54,35 @@ def testOne():
 	rf = fastRobinsonFouldsDistance(a.tree.toTuple(), u.tree.toTuple())
 	return (rf, len( u.tree ) - 3)
 
-def testTwo():
-	a = ArtificialPhylogeny(size=1000,numChromosomes=10)
-	for arb in range(5):
+
+def testNNI(cSize,depth):
+	a = ArtificialPhylogeny(size=cSize,numChromosomes=10)
+	while len( a.tree.getTips() ) < depth:
 		a.evolve()
+
+	if not a.tree.isBinary():
+		print len(a.tree)
+		print [ t.genome.getName() for t in a.tree.getTips()]
+		print a.tree.allNodes()
+		print a.tree
+		raise Exception("Artificial Phylogeny is not binary")
+
 
 	u = UPGMA( [t.genome for t in a.tree.getTips()])
 	u.calculate()
 
-	rf = fastRobinsonFouldsDistance(a.tree.toTuple(), u.tree.toTuple())
-	return (rf, len( u.tree ) - 3)
+	tree = u.tree 
+	assert tree.isBinary()
 
-def testThree():
-	a = ArtificialPhylogeny(size=100,numChromosomes=10)
-	for arb in range(10):
-		a.evolve()
+	uRF = fastRobinsonFouldsDistance(a.tree.toTuple(), tree.toTuple())
+	uScore = tree.getScore()
+	doNNI( tree )
+	nScore = tree.getScore()
+	nRF = fastRobinsonFouldsDistance(a.tree.toTuple(), tree.toTuple())
 
-	u = UPGMA( [t.genome for t in a.tree.getTips()])
-	u.calculate()
+	return (nRF, uRF, len(tree) - 3, uScore, nScore)
 
-	rf = fastRobinsonFouldsDistance(a.tree.toTuple(), u.tree.toTuple())
-	return (rf, len( u.tree ) - 3)
 
-def testFour():
-	a = ArtificialPhylogeny(size=1000,numChromosomes=10)
-	for arb in range(10):
-		a.evolve()
-
-	u = UPGMA( [t.genome for t in a.tree.getTips()])
-	u.calculate()
-
-	rf = fastRobinsonFouldsDistance(a.tree.toTuple(), u.tree.toTuple())
-	return (rf, len( u.tree ) - 3)
 def grimmTest():
 	a = ArtificialPhylogeny(size=2*1000,numChromosomes=10)
 	genomes = []
@@ -102,48 +102,24 @@ def grimmTest():
 
 # grimmTest()
 if __name__ == "__main__":
-	val = 0.0
+	# val = 0.0
+	# maxSize = 0.0
+	# k = 20
+	# for arb in range(k):
+	# 	(a,b) = testUPGMA(100,5)
+	# 	val += a
+	# 	maxSize += b
+	# print ( val/k, maxSize/k)
+	
+	nVal, uVal = 0.0, 0.0
 	maxSize = 0.0
 	k = 20
 	for arb in range(k):
-		try:
-			(a,b) = testOne()
-			val += a
-			maxSize += b
-		except: 
-			pass
-	print ( val/k, maxSize/k)
-	val = 0.0
-	maxSize = 0.0
-	k = 20
-	for arb in range(k):
-		try:
-			(a,b) = testTwo()
-			val += a
-			maxSize += b
-		except:
-			pass
-	print ( val/k, maxSize/k)
-	val = 0.0
-	maxSize = 0.0
-	k = 20
-	for arb in range(k):
-		try:
-			(a,b) = testThree()
-			val += a
-			maxSize += b
-		except:
-			pass
-	print ( val/k, maxSize/k)
-	val = 0.0
-	maxSize = 0.0
-	k = 20
-	for arb in range(k):
-		try:
-			(a,b) = testFour()
-			val += a
-			maxSize += b
-		except:
-			pass
-	print ( val/k, maxSize/k)
+		(a,b,c,d,e) = testNNI(100,12)
+		print (a,b,c,d,e)
+		nVal += a
+		uVal += b
+		maxSize += c
+	print ( nVal/k, uVal/k, maxSize/k)
+
 
