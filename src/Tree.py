@@ -9,6 +9,7 @@ class Tree( object ):
 			self.subs = []
 			self.genome = genome
 			self.scored = False
+			self.scores = {}
 
 	def __iter__( self ):
 		return iter( self.subs )
@@ -18,6 +19,7 @@ class Tree( object ):
 
 	def setGenome(self, g):
 		self.scored = False
+		self.scores = {} 
 		self.genome = g
 
 	def isBinary( self, caller=None):
@@ -57,6 +59,8 @@ class Tree( object ):
 
 	def addConnection(self, other, caller=None ):
 		self.scored = False
+		self.scores = {}
+
 		if type(other) is Tree:
 			self.subs.append( other )
 			if other is not caller:
@@ -69,29 +73,34 @@ class Tree( object ):
 
 	def breakConnection(self, other, caller=None):
 		self.scored = False
+		self.scores = {}
+
 		self.subs.remove( other )
 		if other is not caller:
 			other.breakConnection( self, self )
 
-	def getScore(self, caller=None):
-		if self.scored :
-			return self.score
+
+	def getScore( self, caller=None):
+		if self.scored and caller in self.scores:
+			return self.scores[caller]
+
 		else:
-			
 			if self.isLeaf() and caller is not None:
 				return 0
+
 			elif self.isLeaf() and caller is None:
 				return self.subs[0].getScore()
 
-			grimm = Grimm()
-			score = 0
-			for sub in self:
-				if sub is not caller:
-					score += sub.getScore( self )
-					score += grimm.getDistance( self.genome, sub.genome) 
-			self.score = score
-			self.scored = True
-			return score
+			else:
+				grimm = Grimm()
+				s = 0
+				for sub in self:
+					if sub is not caller:
+						s += sub.getScore( self )
+						s += grimm.getDistance( self.genome, sub.genome)
+				self.scores[caller] = s
+				self.scored = True
+				return s
 
 
 	def getTips(self):
@@ -100,12 +109,13 @@ class Tree( object ):
 		def rTipFinder( t, tips, caller=None ):
 			if t.isLeaf() and caller is not None:
 				tips.append( t )
-			elif t.isLeaf() and caller is None:
-				tips.append( t )
-				for sub in t:
-					rTipFinder( sub, tips, t)
-			else:
 
+			elif t.isLeaf() and caller is None:
+				tips.append(t)
+				if not len(t.subs) == 0:
+					rTipFinder( t.subs[0],tips, t)
+
+			else:
 				for sub in t:
 					if sub is not caller:
 						rTipFinder( sub , tips, t)
@@ -123,38 +133,36 @@ class Tree( object ):
 		rSizeFinder(self ,size)
 		return size[0]
 
-	def toTuple( self ):
 
-		def rTupFinder( t, caller= None):
-			if t.isLeaf() and caller is not None:
-				return t
-			elif t.isLeaf() and caller is None:
-				l = [t,]
-				for sub in t:
-					if sub is not caller:
-						l.append( rTupFinder(sub,t))
-				return tuple(l)
-			elif caller is None:
-				return (rTupFinder(t.subs[0],t),(rTupFinder(t.subs[1],t),rTupFinder(t.subs[2],t) ) )
-			else:
-				l = []
-				for sub in t:
-					if sub is not caller:
-						l.append( rTupFinder(sub,t))
-				return tuple(l)
+	def toTuple( self, caller=None):
+		if self.isLeaf() and caller is not None:
+			return self
 
-		return rTupFinder( self )
+		elif self.isLeaf() and caller is None:
+			return self.subs[0].toTuple()
+
+		elif caller is None:
+			return ( self.subs[0].toTuple(self), self.toTuple( self.subs[0] ))
+
+		else:
+			return tuple([sub.toTuple(self) for sub in self if sub is not caller])
+
 
 	def __str__( self ):
 
 		def rStringFinder( t, caller=None):
 			if t.isLeaf() and caller is not None:
-				return t.genome.getName() 
+				return t.genome.getName()
+
+			elif t.isLeaf() and caller is None:
+				return rStringFinder( t.subs[0])
+
+			elif caller is None:
+				return "(" + rStringFinder(self.subs[0], self) + ", " + rStringFinder(self, self.subs[0]) + ")"
+
 			else:
 
 				s = "("
-				if t.isLeaf():
-					s += t.genome.getName() +", "
 				for sub in t:
 					if sub is not caller:
 					 	s += rStringFinder( sub, t )

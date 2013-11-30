@@ -46,6 +46,9 @@ class Genome( object ):
 			grimmString += "$ \n"
 		return grimmString
 
+	def __hash__(self):
+		k = sorted( self.chromosomeList)
+		return hash(str(k))
 		
 
 	def addChromosome( self, chromosome ):

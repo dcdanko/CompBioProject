@@ -8,12 +8,12 @@ import numpy as np
 
 class GrimmInterface( object ):
 
+	def __init__(self):
+		self.matchedGenomes = {}
+
 	def midGenome(self, gA, gB):
 		trans = self.getTransformations(gA,gB)
-		if len(trans) % 2 == 0 and len(trans) != 2:
-			ind = len(trans)/2 + rn.randint(0,1)
-		else:
-			ind = len(trans)/2
+		ind = len(trans)/2 
 		return trans[ind][1]
 
 	def genomeFile(self, genomes):
@@ -26,9 +26,22 @@ class GrimmInterface( object ):
 		return gFile
 
 	def getDistance( self, gA, gB):
-		return len( self.getTransformations(gA,gB)) - 2 
+		tLen = len( self.getTransformations(gA,gB))
+		if tLen == 1:
+			return 0
+		else:
+			return tLen -2
 
 	def getTransformations( self, gA, gB):
+
+		if gA in self.matchedGenomes:
+			if gB in self.matchedGenomes[gA]:
+				return self.matchedGenomes[gA][gB]
+				
+		if gB in self.matchedGenomes:
+			if gA in self.matchedGenomes[gB]:
+				return self.matchedGenomes[gB][gA]
+
 		gFile = self.genomeFile( [gA,gB] )
 
 		command = "./../GRIMM/grimm -f {}".format(gFile.name)
@@ -56,6 +69,16 @@ class GrimmInterface( object ):
 				transformations.append( (line.split(":")[-1], Genome(name=str(rn.randint(0,2**64)))) ) 
 			elif line[-1] == "$":
 				transformations[-1][1].addChromosome( line )
+
+		if gA in self.matchedGenomes:
+			self.matchedGenomes[gA][gB] = transformations
+		else:
+			self.matchedGenomes[gA] = {gB:transformations}
+		if gB in self.matchedGenomes:
+			self.matchedGenomes[gB][gA] = transformations
+		else:
+			self.matchedGenomes[gB] = {gA:transformations}
+
 		return transformations
 
 			

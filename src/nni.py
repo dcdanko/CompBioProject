@@ -42,12 +42,12 @@ def doNNI( target, caller=None ):
 		target.addConnection(C)
 		target.addConnection(D)
 
-		caller.setGenome( grimm.midGenome(A.genome,B.genome) )
-		target.setGenome( grimm.midGenome(C.genome,D.genome) )
-
 		# for sub in target:
 		# 	if sub is not caller:
 		# 		doNNI(sub, target)
+		# for sub in caller:
+		# 	if sub is not target:
+		# 		doNNI(sub,caller)
 
 		scores = [ caller.getScore(), ]
 
@@ -61,11 +61,12 @@ def doNNI( target, caller=None ):
 		target.addConnection(B)
 		target.addConnection(D)
 
-		caller.setGenome( grimm.midGenome(A.genome,C.genome) )
-		target.setGenome( grimm.midGenome(B.genome,D.genome) )
 		# for sub in target:
 		# 	if sub is not caller:
 		# 		doNNI(sub, target)
+		# for sub in caller:
+		# 	if sub is not target:
+		# 		doNNI(sub,caller)
 
 		scores.append( caller.getScore() )
 
@@ -79,12 +80,12 @@ def doNNI( target, caller=None ):
 		target.addConnection(B)
 		target.addConnection(C)
 
-		caller.setGenome( grimm.midGenome(A.genome,D.genome) )
-		target.setGenome( grimm.midGenome(C.genome,B.genome) )
-
 		# for sub in target:
 		# 	if sub is not caller:
 		# 		doNNI(sub, target)
+		# for sub in caller:
+		# 	if sub is not target:
+		# 		doNNI(sub,caller)
 
 		scores.append( caller.getScore() )
 
@@ -101,8 +102,8 @@ def doNNI( target, caller=None ):
 			target.addConnection(C)
 			target.addConnection(D)
 
-			caller.setGenome( grimm.midGenome(A.genome,B.genome) )
-			target.setGenome( grimm.midGenome(C.genome,D.genome) )
+			# caller.setGenome( grimm.midGenome(A.genome,B.genome) )
+			# target.setGenome( grimm.midGenome(C.genome,D.genome) )
 
 			trace = "zero"
 
@@ -112,8 +113,10 @@ def doNNI( target, caller=None ):
 			target.addConnection(B)
 			target.addConnection(D)
 
-			caller.setGenome( grimm.midGenome(A.genome,C.genome) )
-			target.setGenome( grimm.midGenome(B.genome,D.genome) )
+			print("changing topology (one)")
+
+			# caller.setGenome( grimm.midGenome(A.genome,C.genome) )
+			# target.setGenome( grimm.midGenome(B.genome,D.genome) )
 
 			trace = "one"
 
@@ -123,19 +126,27 @@ def doNNI( target, caller=None ):
 			target.addConnection(B)
 			target.addConnection(C)
 
-			caller.setGenome( grimm.midGenome(A.genome,D.genome) )
-			target.setGenome( grimm.midGenome(C.genome,B.genome) )
+			# caller.setGenome( grimm.midGenome(A.genome,D.genome) )
+			# target.setGenome( grimm.midGenome(C.genome,B.genome) )
+
+			print("changing topology (two)")
 
 			trace = "two"
 
-		if target.getScore() - min(scores) > 1:
+		if  target.getScore() > min(scores):
 			print scores
-			print( target.getScore() )
-			print caller.getScore()
-			print trace
-			print target 
-			# raise Exception("Tree is not minimum cost.")
-			print "Tree is not minimum cost"
+			print( "Target Score: {}".format(target.getScore() ) )
+			print( "Caller Score: {}".format(caller.getScore() ) )
+			assert caller in target.subs
+			assert target in caller.subs 
+			raise Exception("Tree is not minimum cost.")
+
+		if target.getScore() != caller.getScore():
+			print( "Target Score: {}".format(target.getScore() ) )
+			print( "Caller Score: {}".format(caller.getScore() ) )
+			assert caller in target.subs
+			assert target in caller.subs 
+			raise Exception("Scores in the same tree are not equal.")
 
 	for sub in target:
 		if sub is not caller:

@@ -87,7 +87,7 @@ class ArtificialPhylogeny( object ):
 
 		return ancestor
 
-	def evolve(self, evolutionRate=0.5):
+	def evolve(self, evolutionRate=0.2):
 		assert self.tree.isBinary()
 
 		for tip in  self.tree.getTips():
