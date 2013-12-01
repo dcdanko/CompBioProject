@@ -92,12 +92,12 @@ class ArtificialPhylogeny( object ):
 
 		for tip in  self.tree.getTips():
 			if rn.random() < evolutionRate:
-				newGenome = Genome( genome=tip.genome, name=str(rn.randint(0,2**64)) )
+				newGenome = Genome( genome=tip.genome, name=str(rn.randint(0,2**10)) )
 				self.mutate( newGenome )
 
 				if rn.random() < evolutionRate:
 					self.mutate( tip.genome )
-					tip.genome.getName( name=str(rn.randint(0,2**64)))
+					tip.genome.getName( name=str(rn.randint(0,2**10)))
 				tip.addConnection( tip.genome)
 				tip.addConnection( newGenome)
 

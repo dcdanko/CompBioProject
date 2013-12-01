@@ -5,6 +5,7 @@ import shlex
 import upgma
 import random as rn
 import numpy as np
+from time import sleep
 
 class GrimmInterface( object ):
 
@@ -14,7 +15,12 @@ class GrimmInterface( object ):
 	def midGenome(self, gA, gB):
 		trans = self.getTransformations(gA,gB)
 		ind = len(trans)/2 
-		return trans[ind][1]
+		try:
+			k = trans[ind][1]
+		except IndexError as e:
+			print( "Transformations: {}".format( trans ) )
+			raise e
+		return k
 
 	def genomeFile(self, genomes):
 		gFile = NamedTemporaryFile(mode='w+')
@@ -45,8 +51,9 @@ class GrimmInterface( object ):
 		gFile = self.genomeFile( [gA,gB] )
 
 		command = "./../GRIMM/grimm -f {}".format(gFile.name)
-		comman = shlex.split(command)
+
 		grimm =  Popen(command, stdout=PIPE, shell=True )
+
 		try:
 			grimmOut = grimm.communicate()[0].decode("utf-8")
 		except Exception as e:
@@ -54,8 +61,8 @@ class GrimmInterface( object ):
 			print(e)
 			raise Exception("Communication with Grimm failed.")
 
-		gFile.close()
 
+		savedOut = grimmOut[:]
 
 		grimmOut = grimmOut.split("======================================================================")
 		grimmOut = grimmOut[-1]
@@ -66,7 +73,7 @@ class GrimmInterface( object ):
 			elif line == "An optimal sequence of rearrangements:":
 				pass
 			elif "Step" in line:
-				transformations.append( (line.split(":")[-1], Genome(name=str(rn.randint(0,2**64)))) ) 
+				transformations.append( (line.split(":")[-1], Genome(name=str(rn.randint(0,2**10)))) ) 
 			elif line[-1] == "$":
 				transformations[-1][1].addChromosome( line )
 
@@ -74,10 +81,26 @@ class GrimmInterface( object ):
 			self.matchedGenomes[gA][gB] = transformations
 		else:
 			self.matchedGenomes[gA] = {gB:transformations}
+
 		if gB in self.matchedGenomes:
 			self.matchedGenomes[gB][gA] = transformations
 		else:
 			self.matchedGenomes[gB] = {gA:transformations}
+
+		if len(transformations) == 0:
+			print("Transformations: {}".format(transformations))
+			print("Raw output from grimm: \n {}".format(savedOut))
+			print("Genome A: \n {}".format(gA) )
+			print("Genome B: \n {}".format(gB) )
+
+			gFile.seek(0)
+			for line in gFile:
+				print(line)
+
+			raise Exception("Empty transformation set.")
+
+
+		gFile.close()
 
 		return transformations
 
@@ -91,7 +114,8 @@ class GrimmInterface( object ):
 		# print gFile.read()
 
 		command = "./../GRIMM/grimm -f {}".format(gFile.name)
-		grimm =  Popen(command, stdout=PIPE, shell=True )
+		command = shlex.split(command)
+		grimm =  Popen(command, stdout=PIPE, shell=False )
 		try:
 			grimmOut = grimm.communicate()[0].decode("utf-8")
 		except Exception as e:

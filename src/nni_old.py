@@ -1,50 +1,38 @@
 from Tree import Tree
 from PyGrimmInterface import GrimmInterface as Grimm
-from time import time
-from copy import deepcopy
-from sys import getrecursionlimit
 
 class NNI( object ):
 
 	def __init__(self, initialTree):
-		self.tree = initialTree
+		self.iTree = initialTree
 		self.score = initialTree.getScore()
-		self.grimm = Grimm()
 
-	def calculate( self, timeout=300 ):
-		self.timeout = timeout
-		self.startTime = time()
-		self.hits = {}
-		self.doNNI( self.tree)
+	def calculate( self ):
+		
 
 
 
-	def doNNI(self, target, caller=None, depth=0 ):
+	def doNNI( target, caller=None ):
 		# if caller is None:
 		# 	print("Starting")
 
-		# print( "Calling self.doNNI")
+		# print( "Calling doNNI")
 
 		if caller is None and target.isLeaf():
 			# print("Started on leaf. Restarting.")
-			self.doNNI(target.subs[0])
+			doNNI(target.subs[0])
 
 		elif caller is None and not target.isLeaf():
 			# print("Started on internal node {}".format(target.genome.getName()))
 			assert target.isBinary()
-			self.doNNI(target, caller=target.subs[0], depth=depth+1)
-			self.doNNI(target.subs[0], caller=target, depth=depth+1)
+			doNNI(target, target.subs[0])
+			doNNI(target.subs[0], target)
 
 		elif caller is not None and target.isLeaf():
 			# print("Hit leaf {} from {}".format(target.genome.getName(), caller.genome.getName()))
 			pass
 
 		elif caller is not None and not caller.isLeaf() and not target.isLeaf():
-			if target in self.hits:
-				return
-			else:
-				self.hits[target] = True
-				
 			# print("Hit internal node {} from {}".format(target.genome.getName(), caller.genome.getName()))
 			# print("{} has connections to {}".format(target.genome.getName(), [s.genome.getName() for s in target]))
 			grimm = Grimm()
@@ -73,14 +61,8 @@ class NNI( object ):
 				C,D = target[0], target[1]
 			else:
 				raise Exception("Caller and target not connected")
-			
-			# if A in self.hits or B in self.hits or C in self.hits or D in self.hits:
-			# 	return
-			# else:
-			# 	self.hits[A] = True
-			# 	self.hits[B] = True
-			# 	self.hits[C] = True
-			# 	self.hits[D] = True
+			# print(target)
+			# print(target.genome.getName())
 			
 			gAB = grimm.midGenome(A.genome, B.genome)
 			gAC = grimm.midGenome(A.genome, C.genome)
@@ -133,17 +115,14 @@ class NNI( object ):
 			assert caller.isBinary()
 			assert target.isBinary()
 
-			if time() - self.startTime < self.timeout and depth + 25 < getrecursionlimit():
-				# for sub in target:
-				# 	if sub is not caller:
-				# 		for supersub in sub:
-				# 			# print("Going to {} from {}".format(supersub.genome.getName(), sub.genome.getName()))
-				# 			if supersub is not target:
-				# 				self.doNNI(supersub,sub, depth + 1)
-				# 			
-				for sub in target:
-					if sub is not caller:
-						self.doNNI(sub, caller=target, depth=depth+1)
-			elif depth < 5:
-				print( "Timed Out, depth: {}".format(depth))
+			for sub in target:
+				if sub is not caller:
+					for supersub in sub:
+						# print("Going to {} from {}".format(supersub.genome.getName(), sub.genome.getName()))
+						if supersub is not target:
+							doNNI(supersub,sub)
+
+
+
+
 

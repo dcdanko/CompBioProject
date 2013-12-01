@@ -4,9 +4,10 @@ from upgma_tree import UPGMA
 from genome import Genome
 from Tree import Tree
 import random as rn
-from nni import doNNI
+from nni import NNI
 import matplotlib.pyplot as plt
 from pylab import savefig
+from copy import deepcopy
 
 
 def fastRobinsonFouldsDistance(a,b):
@@ -17,10 +18,10 @@ def fastRobinsonFouldsDistance(a,b):
 
 	def recursive_labeling(val, parts):
 		if(type(val) is Tree):
-			if(val in labels):
-				return labels[val]
+			if(val.genome in labels):
+				return labels[val.genome]
 			else:
-				labels[val] = rn.randint(0,2**64)
+				labels[val.genome] = rn.randint(0,2**64)
 				return recursive_labeling(val,parts)
 		else:
 			if len(val) != 2:
@@ -45,6 +46,7 @@ def fastRobinsonFouldsDistance(a,b):
 	return distance
 
 
+
 def testTrees():
 	a = ArtificialPhylogeny(size=20,numChromosomes=5)
 	while len(a.tree.getTips()) < 6:
@@ -55,8 +57,15 @@ def testTrees():
 	for score in tipScores:
 		assert score == 0
 
+	copyTree = deepcopy(a.tree)
+
 	sub = a.tree.subs[0]
 	a.tree.breakConnection( sub )
+
+	if len(copyTree.subs) not in (1,3):
+		print( len(copyTree.subs))
+		assert False
+
 	a.tree.addConnection( sub)
 
 	tipScores = [tip.getScore() for tip in a.tree.getTips()]
@@ -69,6 +78,8 @@ def testTrees():
 	subTips = a.tree.subs[0].getTips()
 	for tip in aTips:
 		assert tip in subTips
+
+	assert 2*len(copyTree.getTips()) - 2 == len(copyTree)
 
 	print("All tree tests passed.")
 
@@ -137,31 +148,37 @@ def nniHarness(cSize,depth):
 	u.calculate()
 
 	tree = u.tree 
+	upgmaTree = deepcopy(tree)
 	assert tree.isBinary()
 
 	uRF = fastRobinsonFouldsDistance(a.tree.toTuple(), tree.toTuple())
 	uScore = tree.getScore()
-	doNNI( tree )
+	
+	n = NNI( tree )
+	n.calculate()
+	tree = n.tree
+
 	nScore = tree.getScore()
 	nRF = fastRobinsonFouldsDistance(a.tree.toTuple(), tree.toTuple())
-
-	return (nRF, uRF, len(tree) - 3, uScore, nScore, a.tree.getScore())
+	intraTreeRF = fastRobinsonFouldsDistance(tree.toTuple(), upgmaTree.toTuple())
+	return (nRF, uRF, len(tree) - 3, uScore, nScore, a.tree.getScore(), intraTreeRF)
 
 def testNNI():
 	print("Testing NNI trees.")
-	nrf, urf, maxRF, uScore, nScore, aScore = 0,0,0,0,0,0
-	nrfs, urfs, maxRFs, uScores, nScores, aScores = [], [], [], [], [], []
-	k = 1
-	for depth in range(4,10,2):
-		for arb in range(k):
-			(a,b,c,d,e,f) = nniHarness(100,depth)
+	nrf, urf, maxRF, uScore, nScore, aScore, itRF = 0,0,0,0,0,0,0
+	nrfs, urfs, maxRFs, uScores, nScores, aScores, itRFs = [], [], [], [], [], [], []
+	k = 2.0
+	for depth in range(100,500,25):
+		for arb in range(int(k)):
+			(a,b,c,d,e,f,g) = nniHarness(20,depth)
 			nrf += a
 			urf += b
 			maxRF += c
 			uScore += d
 			nScore += e
 			aScore += f
-			print( "Just finished a tree with {} tips".format(depth) )
+			itRF += g
+			# print( "Just finished a tree with {} tips".format(depth) )
 
 		nrfs.append( nrf/k)
 		urfs.append( urf/k)
@@ -169,22 +186,46 @@ def testNNI():
 		uScores.append(uScore/k)
 		nScores.append(nScore/k)
 		aScores.append(aScore/k)
+		itRFs.append(itRF/k)
 
-		print("R.F. Distance with NNI:   {}".format(nrfs))
-		print("R.F. Distance with UPGMA: {}".format(urfs))
-		print("Max R.F. Distance:        {}".format(maxRFs))
+		print("Working with depths of {}".format(range(100,500,25)))
+		print("R.F. Distance with NNI:   					{}".format(nrfs))
+		print("R.F. Distance with UPGMA: 					{}".format(urfs))
+		print("Max R.F. Distance:        					{}".format(maxRFs))
+		print("R.F. Distance between UPGMA and NNI:			{}".format(itRFs))
 		print("Tree scores with NNI:   {}".format(nScores))
 		print("Tree scores with UPGMA: {}".format(uScores))
 		print("Actual Tree scores:     {}".format(aScores))
+
+def fileNNI():
+	nrf, urf, maxRF, uScore, nScore, aScore, itRF = 0,0,0,0,0,0,0
+	nrfs, urfs, maxRFs, uScores, nScores, aScores, itRFs = [], [], [], [], [], [], []
+	reps = 25.0
+	print("depth NRF URF maxRF uScore nScore aScore itRF")
+	for depth in range(100,501,50):
+		for arb in range(int(reps)):
+			(a,b,c,d,e,f,g) = nniHarness(20,depth)
+			nrf += a
+			urf += b
+			maxRF += c
+			uScore += d
+			nScore += e
+			aScore += f
+			itRF += g
+
+		print("{} {} {} {} {} {} {} {}".format(depth,nrf/reps,urf/reps,maxRF/reps,uScore/reps,nScore/reps,aScore/reps,itRF/reps))
+
 
 
 
 
 if __name__ == "__main__":
-	testTrees()
+	# testTrees()
 
-	testUPGMA()
+	# testUPGMA()
 
-	testNNI()
+	# testNNI()
+	# 
+	fileNNI()
 
 

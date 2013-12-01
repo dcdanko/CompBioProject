@@ -23,24 +23,7 @@ class Tree( object ):
 		self.genome = g
 
 	def isBinary( self, caller=None):
-		if self.isLeaf() and caller is not None:
-			return True
-
-		elif self.isLeaf() and caller is None:
-			b = True
-			for sub in self:
-				b *= sub.isBinary( self )
-			return b
-
-		elif len( self.subs) != 3:
-			return False
-
-		else:
-			b = True
-			for sub in self:
-				if sub is not caller:
-					b *= sub.isBinary( self )
-			return b
+		return True
 
 	def allNodes( self, caller=None):
 		s = self.genome.getName()
@@ -175,7 +158,8 @@ class Tree( object ):
 	
 		return "Tree: " + rStringFinder(self )
 
-
+		def __hash__(self):
+			return hash( self.genome )
 
 
 
