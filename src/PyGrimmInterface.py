@@ -73,7 +73,7 @@ class GrimmInterface( object ):
 			elif line == "An optimal sequence of rearrangements:":
 				pass
 			elif "Step" in line:
-				transformations.append( (line.split(":")[-1], Genome(name=str(rn.randint(0,2**10)))) ) 
+				transformations.append( (line.split(":")[-1], Genome(name=str(rn.randint(0,2**64)))) ) 
 			elif line[-1] == "$":
 				transformations[-1][1].addChromosome( line )
 

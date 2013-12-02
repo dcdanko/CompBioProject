@@ -8,7 +8,7 @@ from nni import NNI
 import matplotlib.pyplot as plt
 from pylab import savefig
 from copy import deepcopy
-
+from sys import setrecursionlimit
 
 def fastRobinsonFouldsDistance(a,b):
 
@@ -153,9 +153,21 @@ def nniHarness(cSize,depth):
 
 	uRF = fastRobinsonFouldsDistance(a.tree.toTuple(), tree.toTuple())
 	uScore = tree.getScore()
-	
+
+	oldScore = tree.getScore()
+	newScore = 0
+
+	counter =0
 	n = NNI( tree )
-	n.calculate()
+
+	while abs(newScore - oldScore) >= 0:
+		n.calculate()
+		oldScore = newScore
+		newScore = tree.getScore()
+		counter += 1
+
+	print counter
+
 	tree = n.tree
 
 	nScore = tree.getScore()
@@ -200,10 +212,10 @@ def testNNI():
 def fileNNI():
 	nrf, urf, maxRF, uScore, nScore, aScore, itRF = 0,0,0,0,0,0,0
 	nrfs, urfs, maxRFs, uScores, nScores, aScores, itRFs = [], [], [], [], [], [], []
-	reps = 25.0
+	reps = 10.0
 	print("depth NRF URF maxRF uScore nScore aScore itRF")
-	for depth in range(100,501,50):
-		for arb in range(int(reps)):
+	for arb in range(int(reps)):
+		for depth in range(100,501,50):
 			(a,b,c,d,e,f,g) = nniHarness(20,depth)
 			nrf += a
 			urf += b
@@ -213,7 +225,7 @@ def fileNNI():
 			aScore += f
 			itRF += g
 
-		print("{} {} {} {} {} {} {} {}".format(depth,nrf/reps,urf/reps,maxRF/reps,uScore/reps,nScore/reps,aScore/reps,itRF/reps))
+			print("{} {} {} {} {} {} {} {}".format(depth,nrf,urf,maxRF,uScore,nScore,aScore,itRF))
 
 
 
@@ -226,6 +238,9 @@ if __name__ == "__main__":
 
 	# testNNI()
 	# 
+	
+	setrecursionlimit(4096)
+
 	fileNNI()
 
 

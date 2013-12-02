@@ -1,0 +1,8 @@
+depth NRF URF maxRF uScore nScore aScore itRF
+100 66.72 66.96 218.52 246.56 277.44 165.76 110.76
+Timed Out, depth: 3
+Timed Out, depth: 3
+Timed Out, depth: 3
+Timed Out, depth: 1
+150 166.08 166.76 542.96 627.12 707.88 415.68 274.48
+200 301.0 302.56 983.08 1147.0 1282.2 754.36 496.04

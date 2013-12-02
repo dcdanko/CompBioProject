@@ -10,6 +10,7 @@ class NNI( object ):
 		self.tree = initialTree
 		self.score = initialTree.getScore()
 		self.grimm = Grimm()
+		self.trees = [self.tree,]
 
 	def calculate( self, timeout=300 ):
 		self.timeout = timeout
@@ -18,88 +19,67 @@ class NNI( object ):
 		self.doNNI( self.tree)
 
 
+	def doNNI(self, target, caller=None, depth=0):
 
-	def doNNI(self, target, caller=None, depth=0 ):
-		# if caller is None:
-		# 	print("Starting")
-
-		# print( "Calling self.doNNI")
+		genomeUpdate = False
+		newGenomeScoring = False
+		timedOut = time() - self.startTime > self.timeout
+		tooDeep = depth + 50 > getrecursionlimit()
 
 		if caller is None and target.isLeaf():
-			# print("Started on leaf. Restarting.")
 			self.doNNI(target.subs[0])
 
 		elif caller is None and not target.isLeaf():
-			# print("Started on internal node {}".format(target.genome.getName()))
-			assert target.isBinary()
-			self.doNNI(target, caller=target.subs[0], depth=depth+1)
-			self.doNNI(target.subs[0], caller=target, depth=depth+1)
+			self.doNNI(target, caller=target.subs[0],depth=1)
+			self.doNNI(target.subs[0], caller=target,depth=1)
 
 		elif caller is not None and target.isLeaf():
-			# print("Hit leaf {} from {}".format(target.genome.getName(), caller.genome.getName()))
-			pass
+			return 
 
 		elif caller is not None and not caller.isLeaf() and not target.isLeaf():
+			
 			if target in self.hits:
-				return
-			else:
-				self.hits[target] = True
-				
-			# print("Hit internal node {} from {}".format(target.genome.getName(), caller.genome.getName()))
-			# print("{} has connections to {}".format(target.genome.getName(), [s.genome.getName() for s in target]))
-			grimm = Grimm()
+				self.hits[target]
 
-			if len( caller.subs ) != 3:
-				print caller.subs
-				raise Exception("Caller has wrong number of connections")
-			if len( target.subs ) != 3:
-				print target.subs
-				raise Exception("Target has wrong number of connections")
-
-			if caller[0] is target:
-				A,B = caller[1], caller[2]
-			elif caller[1] is target:
-				A,B = caller[0], caller[2]
-			elif caller[2] is target:
-				A,B = caller[0], caller[1]
-			else:
-				raise Exception("Caller and target not connected")
-
-			if target[0] is caller:
-				C,D = target[1], target[2]
-			elif target[1] is caller:
-				C,D = target[0], target[2]
-			elif target[2] is caller:
-				C,D = target[0], target[1]
-			else:
-				raise Exception("Caller and target not connected")
+			A, B, C, D = self.getSubtrees(target, caller)
 			
-			# if A in self.hits or B in self.hits or C in self.hits or D in self.hits:
-			# 	return
-			# else:
-			# 	self.hits[A] = True
-			# 	self.hits[B] = True
-			# 	self.hits[C] = True
-			# 	self.hits[D] = True
-			
-			gAB = grimm.midGenome(A.genome, B.genome)
-			gAC = grimm.midGenome(A.genome, C.genome)
-			gAD = grimm.midGenome(A.genome, D.genome)
-			gBC = grimm.midGenome(B.genome, C.genome)
-			gBD = grimm.midGenome(B.genome, D.genome)
-			gCD = grimm.midGenome(C.genome, D.genome)
+			if genomeUpdate or newGenomeScoring:
+				gAB, gAC, gAD, gBC, gBD, gCD = self.getNewGenomes(A,B,C,D)
 
-			scores = [ 	
-						grimm.getDistance(A.genome, B.genome) + grimm.getDistance(C.genome, D.genome) + grimm.getDistance(gAB, gCD),
-						grimm.getDistance(A.genome, C.genome) + grimm.getDistance(B.genome, D.genome) + grimm.getDistance(gAC, gBD),
-						grimm.getDistance(A.genome, D.genome) + grimm.getDistance(B.genome, C.genome) + grimm.getDistance(gAD, gBC),
-					]
+			if newGenomeScoring:
+
+				scores = [ 	
+							self.grimm.getDistance(A.genome, B.genome) + self.grimm.getDistance(C.genome, D.genome) + self.grimm.getDistance(gAB, gCD),
+							self.grimm.getDistance(A.genome, C.genome) + self.grimm.getDistance(B.genome, D.genome) + self.grimm.getDistance(gAC, gBD),
+							self.grimm.getDistance(A.genome, D.genome) + self.grimm.getDistance(B.genome, C.genome) + self.grimm.getDistance(gAD, gBC),
+						]
+
+			else:
+
+				scores = [ 	
+							self.grimm.getDistance(A.genome, B.genome) + self.grimm.getDistance(C.genome, D.genome), 
+							self.grimm.getDistance(A.genome, C.genome) + self.grimm.getDistance(B.genome, D.genome),
+							self.grimm.getDistance(A.genome, D.genome) + self.grimm.getDistance(B.genome, C.genome),
+						]
 
 			if min(scores) == scores[0]:
-				caller.setGenome( gAB )
-				target.setGenome( gCD )
 
-			elif min(scores) == scores[1]:
+				if genomeUpdate:
+					caller.setGenome( gAB )
+					target.setGenome( gCD )
+				else:
+					pass
+
+				if min(scores) in scores[1:]:
+					self.trees.append( deepcopy(target))
+					#wont work with genome update
+					if not timedOut and not tooDeep:
+						for sub in self.trees[-1]:
+							if sub.genome.getName() != caller.genome.getName and sub not in self.hits:
+								self.doNNI(sub, caller=self.trees[-1], depth=depth+1)
+
+
+			if min(scores) == scores[1]:
 					caller.breakConnection(A)
 					caller.breakConnection(B)
 					target.breakConnection(C)
@@ -110,10 +90,28 @@ class NNI( object ):
 					target.addConnection(B)
 					target.addConnection(D)
 
-					caller.setGenome( gAC )
-					target.setGenome( gBD )
+					if genomeUpdate:
+						caller.setGenome( gAC )
+						target.setGenome( gBD )
 
-			elif min(scores) == scores[2]:
+					if min(scores) == scores[2]:
+						self.trees.append( deepcopy(target))
+
+						caller.breakConnection(A)
+						caller.breakConnection(C)
+						target.breakConnection(B)
+						target.breakConnection(D)
+
+						caller.addConnection(A)
+						caller.addConnection(B)
+						target.addConnection(C)
+						target.addConnection(D)
+						if not timedOut and not tooDeep:
+							for sub in self.trees[-1]:
+								if sub.genome.getName() != caller.genome.getName and sub not in self.hits:
+									self.doNNI(sub, caller=self.trees[-1], depth=depth+1)
+
+			if min(scores) == scores[2]:
 					caller.breakConnection(A)
 					caller.breakConnection(B)
 					target.breakConnection(C)
@@ -124,26 +122,106 @@ class NNI( object ):
 					target.addConnection(B)
 					target.addConnection(C)
 
-					caller.setGenome( gAD )
-					target.setGenome( gBC )
+					if genomeUpdate:
+						caller.setGenome( gAD )
+						target.setGenome( gBC )
+
+			if not timedOut and not tooDeep:
+				for sub in target:
+					if sub is not caller and sub not in self.hits:
+						self.doNNI(sub, caller=target, depth=depth+1)
+
+
+
+	def getNewGenomes(self, A,B,C,D ):
+		gAB = self.grimm.midGenome(A.genome, B.genome)
+		gAC = self.grimm.midGenome(A.genome, C.genome)
+		gAD = self.grimm.midGenome(A.genome, D.genome)
+		gBC = self.grimm.midGenome(B.genome, C.genome)
+		gBD = self.grimm.midGenome(B.genome, D.genome)
+		gCD = self.grimm.midGenome(C.genome, D.genome)
+
+		return (gAB, gAC, gAD, gBC, gBD, gCD)
+
+	def getSubtrees(self, target, caller):
+		if caller[0] is target:
+			A,B = caller[1], caller[2]
+		elif caller[1] is target:
+			A,B = caller[0], caller[2]
+		elif caller[2] is target:
+			A,B = caller[0], caller[1]
+		else:
+			raise Exception("Caller and target not connected")
+
+		if target[0] is caller:
+			C,D = target[1], target[2]
+		elif target[1] is caller:
+			C,D = target[0], target[2]
+		elif target[2] is caller:
+			C,D = target[0], target[1]
+		else:
+			raise Exception("Caller and target not connected")
+
+		return (A,B,C,D)
+
+	def cull(self):
+		bestScore = 1000*1000
+		bestTrees = []
+		for tree in self.trees:
+			if tree.getScore() < bestScore:
+				bestScore = tree.getScore()
+				bestTrees = [tree, ]
+			elif tree.getScore() == bestScore:
+				bestTrees.append(tree)
+		self.trees = bestTrees
+
+	def buildConsensusTree(self):
+		consensusThreshold = .51
+
+		self.cull()
+		partitionsToSubs = {}
+		tipsToLabels = {}
+		parts = {}
+		numTrees = 1.0*len(self.trees)
+
+		for tip in self.trees[0]:
+			tipsToLabels[tip] = rn.randint(0,2**64)
+
+		def rParter( tree, caller=None):
+			if tree.isLeaf() and caller is None:
+				rParter(tree[0])
+
+			elif tree.isLeaf():
+				partitionsToSubs[tipsToLabels[tree]] = 
+				return tipsToLabels[tree]
+
+			elif caller is None:
+				parts[tree] = [rParter(target,target[0]),rParter(target[0],target)]
 
 			else:
-				raise Exception		
-
-			assert caller.isBinary()
-			assert target.isBinary()
-
-			if time() - self.startTime < self.timeout and depth + 25 < getrecursionlimit():
-				# for sub in target:
-				# 	if sub is not caller:
-				# 		for supersub in sub:
-				# 			# print("Going to {} from {}".format(supersub.genome.getName(), sub.genome.getName()))
-				# 			if supersub is not target:
-				# 				self.doNNI(supersub,sub, depth + 1)
-				# 			
-				for sub in target:
+				out = 0
+				for sub in tree:
 					if sub is not caller:
-						self.doNNI(sub, caller=target, depth=depth+1)
-			elif depth < 5:
-				print( "Timed Out, depth: {}".format(depth))
+						out = out ^ rParter( sub, tree)
+				parts[tree] = out
+				return out
+
+
+		for tree in self.trees:
+			rParter( tree)
+
+		countParts = {}
+		for tree in self.trees:
+			for part in parts[tree]:
+				if part in countParts:
+					countParts[part] += 1
+				else:
+					countParts[part] = 1
+
+		partsToKeep = []
+
+		for part, count in countParts.items():
+			if count/numTrees > consensusThreshold:
+				partsToKeep.append(part)
+
 
