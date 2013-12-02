@@ -160,7 +160,7 @@ def nniHarness(cSize,depth):
 	counter =0
 	n = NNI( tree )
 
-	while abs(newScore - oldScore) >= 0:
+	while abs(newScore - oldScore) >= 1:
 		n.calculate()
 		oldScore = newScore
 		newScore = tree.getScore()
