@@ -46,6 +46,7 @@ class ConsensusTree( object ):
 		partsToSubs = {}
 		tipGenomesToLabels = {}
 		labelsToTips = {}
+		partsToTree = {}
 		parts = {}
 		numTrees = 1.0*len(self.trees)
 		topLabel = 0
@@ -60,7 +61,7 @@ class ConsensusTree( object ):
 
 
 		for tree in self.trees[:]:
-			topLabel = self.rParter( tree, partsToSubs, parts, tipGenomesToLabels)
+			topLabel = self.rParter( tree, partsToSubs, parts, tipGenomesToLabels, partsToTree)
 			
 	
 
@@ -81,23 +82,25 @@ class ConsensusTree( object ):
 				partsToKeep.append(part)
 
 
-		self.conTree = self.rTreeBuilder(topLabel, partsToSubs, labelsToTips, partsToKeep)[0]
+		self.conTree = self.rTreeBuilder(topLabel, partsToSubs, labelsToTips, partsToKeep, partsToTree)[0]
 
-		self.genomeEstimator( self.conTree ) # Note: different consensus trees could develop from different starts
+		# self.genomeEstimator( self.conTree ) # Note: different consensus trees could develop from different starts
 		
 
 
-	def rTreeBuilder(self, keyLabel, partsToSubs, labelsToTips, partsToKeep):
+	def rTreeBuilder(self, keyLabel, partsToSubs, labelsToTips, partsToKeep,partsToTree):
 		subLabels = partsToSubs[keyLabel]
 
 		if subLabels == "TIP":
 			return [ labelsToTips[keyLabel], ]
 
 		elif keyLabel in partsToKeep:
-			newTree = Tree( Genome(name='place holder'))
+			# newTree = Tree( Genome(name='place holder'))
+			correspondingTree = partsToTree[keyLabel] 
+			newTree = Tree( correspondingTree.genome )
 			
 			for sLabel in subLabels:
-				sTrees = self.rTreeBuilder(sLabel, partsToSubs, labelsToTips, partsToKeep)
+				sTrees = self.rTreeBuilder(sLabel, partsToSubs, labelsToTips, partsToKeep, partsToTree)
 				for t in sTrees:
 					newTree.addConnection(t)
 			return [newTree]
@@ -105,13 +108,13 @@ class ConsensusTree( object ):
 		else:
 			out = []
 			for sLabel in subLabels:
-				out += self.rTreeBuilder(sLabel, partsToSubs, labelsToTips, partsToKeep)
+				out += self.rTreeBuilder(sLabel, partsToSubs, labelsToTips, partsToKeep, partsToTree)
 			return out
 
 
 		
 
-	def rParter(self, tree, partsToSubs, parts, tipGenomesToLabels, caller=None, originalTree=None):
+	def rParter(self, tree, partsToSubs, parts, tipGenomesToLabels, partsToTree, caller=None, originalTree=None):
 
 		if tree.isLeaf() and caller is None:
 
@@ -130,13 +133,14 @@ class ConsensusTree( object ):
 		elif caller is None:
 
 			parts[tree] = []
-			l = self.rParter(tree, partsToSubs, parts, tipGenomesToLabels, caller=tree[0],originalTree=tree)
-			r = self.rParter(tree[0], partsToSubs, parts, tipGenomesToLabels, caller=tree,originalTree=tree)
+			l = self.rParter(tree, partsToSubs, parts, tipGenomesToLabels, partsToTree, caller=tree[0],originalTree=tree)
+			r = self.rParter(tree[0], partsToSubs, parts, tipGenomesToLabels, partsToTree, caller=tree,originalTree=tree)
 			parts[tree].append(l)
 			parts[tree].append(r)
 
 			keyLabel = l ^ r
 			partsToSubs[keyLabel] = [l,r]
+			partsToTree[keyLabel] = tree
 			return keyLabel
 
 		else:
@@ -145,12 +149,13 @@ class ConsensusTree( object ):
 			subLabels = []
 			for sub in tree:
 				if sub is not caller:
-					label = self.rParter( sub, partsToSubs, parts, tipGenomesToLabels, caller=tree,originalTree=originalTree)
+					label = self.rParter( sub, partsToSubs, parts, tipGenomesToLabels, partsToTree, caller=tree,originalTree=originalTree)
 					subLabels.append( label)
 					out = out ^ label
 
 			parts[originalTree].append(out)
 			partsToSubs[out] = subLabels
+			partsToTree[out] = tree
 
 			return out
 

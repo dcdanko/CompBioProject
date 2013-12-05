@@ -26,15 +26,11 @@ def fastRFDist(a,b):
 				labels[val.genome] = rn.randint(0,2**64)
 				return recursive_labeling(val,parts)
 		else:
-			if len(val) != 2:
-				print(len(val))
-				print
-				for v in val:
-					print(v)
-					print
 
-				raise Exception("Val is wrong length")
-			newPartition = recursive_labeling(val[0], parts) ^ recursive_labeling(val[1], parts)
+			newPartition = 0
+			for v in val:
+				newPartition = newPartition ^ recursive_labeling(v, parts)
+
 			if(type(parts)  == dict):
 				parts[ newPartition ] = True
 			else:
@@ -198,9 +194,16 @@ def nniHarness(cSize,depth):
 	return (nRF, uRF, len(tree) - 3, uScore, nScore, a.tree.getScore(), intraTreeRF)
 
 def consensusHarness(cSize,depth):
+	print("^"*100)
 	a = ArtificialPhylogeny(size=cSize,numChromosomes=5)
+	evRates = []
 	while len( a.tree.getTips() ) < depth:
-		a.evolve()
+		evRate = rn.uniform(0.2,0.75)
+		evRates.append(evRate)
+		a.evolve(evolutionRate=evRate)
+
+
+	print("Finished generating phylogeny. Score is {}. Rates were {}".format( a.tree.getScore(), evRates ))
 
 	u = UPGMA( [t.genome for t in a.tree.getTips()])
 	u.calculate()
@@ -216,10 +219,15 @@ def consensusHarness(cSize,depth):
 	oldScore = tree.getScore()
 	newScore = 0
 
-	counter =0
 	n = NNI( tree )
 
-	n.calculate()
+	while abs(newScore - oldScore) >= 1:
+		n.calculate()
+		oldScore = newScore
+		newScore = sum([t.getScore() for t in n.trees])
+		nRFs = [fastRFDist(t.toTuple(), a.tree.toTuple()) for t in n.trees]
+		print("Running NNI. Current scores are {}. Current RF distances are {}".format([t.getScore() for t in n.trees], nRFs))
+
 
 	nRFs = [fastRFDist(t.toTuple(), a.tree.toTuple()) for t in n.trees]
 
@@ -233,6 +241,10 @@ def consensusHarness(cSize,depth):
 	cRF = fastRFDist(tree.toTuple(), a.tree.toTuple())
 
 	print("Finished consensus. Score is {}. RF distance is {}".format( tree.getScore(), cRF))
+
+	for l in tree.toTuple():
+		print(l)
+		print()
 
 	nScore = tree.getScore()
 
@@ -303,7 +315,7 @@ if __name__ == "__main__":
 	
 	setrecursionlimit(4096)
 	for arb in range(25):
-		consensusHarness(100,100)
+		consensusHarness(30,50)
 	# fileNNI()
 
 

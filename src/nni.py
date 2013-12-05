@@ -17,7 +17,8 @@ class NNI( object ):
 		self.timeout = timeout
 		self.startTime = time()
 		self.hits = {}
-		self.doNNI( self.tree)
+		for t in self.trees:
+			self.doNNI( t)
 
 
 	def doNNI(self, target, caller=None, depth=0):
