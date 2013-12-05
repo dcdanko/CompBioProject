@@ -4,9 +4,9 @@ class Genome( object ):
 	def __init__( self, genome=None, grimmString=None, name=None, chromosomeList=None):
 
 		if genome is not None:
-			self.chromosomeList = genome.chromosomeList[:]
+			self.chromosomeList = [chromosome[:] for chromosome in genome]
 			if name == None:
-				self.name = genome.name + "_clone"
+				self.name = genome.name[:]
 			else:
 				self.name = name
 		else:
@@ -48,7 +48,8 @@ class Genome( object ):
 
 	def __hash__(self):
 		k = sorted( self.chromosomeList)
-		return hash(str(k))
+		out =  hash(str(k))
+		return out
 		
 
 	def addChromosome( self, chromosome ):

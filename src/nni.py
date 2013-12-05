@@ -1,8 +1,8 @@
 from Tree import Tree
 from PyGrimmInterface import GrimmInterface as Grimm
 from time import time
-from copy import deepcopy
 from sys import getrecursionlimit
+
 
 class NNI( object ):
 
@@ -11,6 +11,7 @@ class NNI( object ):
 		self.score = initialTree.getScore()
 		self.grimm = Grimm()
 		self.trees = [self.tree,]
+		self.splitThreshold = 5
 
 	def calculate( self, timeout=300 ):
 		self.timeout = timeout
@@ -21,8 +22,9 @@ class NNI( object ):
 
 	def doNNI(self, target, caller=None, depth=0):
 
-		genomeUpdate = False
 		newGenomeScoring = False
+		deepScoring = True
+
 		timedOut = time() - self.startTime > self.timeout
 		tooDeep = depth + 50 > getrecursionlimit()
 
@@ -30,8 +32,8 @@ class NNI( object ):
 			self.doNNI(target.subs[0])
 
 		elif caller is None and not target.isLeaf():
-			self.doNNI(target, caller=target.subs[0],depth=1)
-			self.doNNI(target.subs[0], caller=target,depth=1)
+			self.doNNI(target, caller=target[0],depth=1)
+			self.doNNI(target[0], caller=target,depth=1)
 
 		elif caller is not None and target.isLeaf():
 			return 
@@ -39,11 +41,13 @@ class NNI( object ):
 		elif caller is not None and not caller.isLeaf() and not target.isLeaf():
 			
 			if target in self.hits:
-				self.hits[target]
+				self.hits[target] += 1
+			else:
+				self.hits[target] = 1
 
 			A, B, C, D = self.getSubtrees(target, caller)
 			
-			if genomeUpdate or newGenomeScoring:
+			if newGenomeScoring:
 				gAB, gAC, gAD, gBC, gBD, gCD = self.getNewGenomes(A,B,C,D)
 
 			if newGenomeScoring:
@@ -53,6 +57,20 @@ class NNI( object ):
 							self.grimm.getDistance(A.genome, C.genome) + self.grimm.getDistance(B.genome, D.genome) + self.grimm.getDistance(gAC, gBD),
 							self.grimm.getDistance(A.genome, D.genome) + self.grimm.getDistance(B.genome, C.genome) + self.grimm.getDistance(gAD, gBC),
 						]
+
+			elif deepScoring:
+
+				scores = []
+
+				self.switchToConformer(target,caller,0,A,B,C,D)
+				scores.append(target.getScore())
+
+				self.switchToConformer(target,caller,1,A,B,C,D)
+				scores.append(target.getScore())
+
+				self.switchToConformer(target,caller,2,A,B,C,D)
+				scores.append(target.getScore())
+
 
 			else:
 
@@ -64,73 +82,108 @@ class NNI( object ):
 
 			if min(scores) == scores[0]:
 
-				if genomeUpdate:
-					caller.setGenome( gAB )
-					target.setGenome( gCD )
-				else:
-					pass
+				self.switchToConformer(target,caller,0,A,B,C,D)
 
-				if min(scores) in scores[1:]:
-					self.trees.append( deepcopy(target))
+				if min(scores) in scores[1:] and len(self.trees) < self.splitThreshold:
+					# print("NNI: splitting from 0 at depth {}. Scores: {}".format(depth, scores))
+					# print("There are {} trees".format(len(self.trees)))
+					splitTree = Tree(target)
+					self.trees.append( splitTree)
 					#wont work with genome update
 					if not timedOut and not tooDeep:
-						for sub in self.trees[-1]:
-							if sub.genome.getName() != caller.genome.getName and sub not in self.hits:
-								self.doNNI(sub, caller=self.trees[-1], depth=depth+1)
+						for sub in splitTree:
+							assert splitTree in sub.subs
+							assert sub in splitTree.subs
+							if sub.genome.getName() != caller.genome.getName() and sub not in self.hits:
+								self.doNNI(sub, caller=splitTree, depth=depth+1)
 
 
 			if min(scores) == scores[1]:
-					caller.breakConnection(A)
-					caller.breakConnection(B)
-					target.breakConnection(C)
-					target.breakConnection(D)
 
-					caller.addConnection(A)
-					caller.addConnection(C)
-					target.addConnection(B)
-					target.addConnection(D)
+					self.switchToConformer(target,caller,1,A,B,C,D)
 
-					if genomeUpdate:
-						caller.setGenome( gAC )
-						target.setGenome( gBD )
+					if min(scores) == scores[2] and len(self.trees) < self.splitThreshold:
+						# print("NNI: splitting from 1 at depth {}. Scores: {}".format(depth, scores))
+						# print("There are {} trees".format(len(self.trees)))
 
-					if min(scores) == scores[2]:
-						self.trees.append( deepcopy(target))
-
-						caller.breakConnection(A)
-						caller.breakConnection(C)
-						target.breakConnection(B)
-						target.breakConnection(D)
-
-						caller.addConnection(A)
-						caller.addConnection(B)
-						target.addConnection(C)
-						target.addConnection(D)
+						splitTree = Tree(target)
+										
+						self.trees.append( splitTree)
+						#wont work with genome update
 						if not timedOut and not tooDeep:
-							for sub in self.trees[-1]:
-								if sub.genome.getName() != caller.genome.getName and sub not in self.hits:
-									self.doNNI(sub, caller=self.trees[-1], depth=depth+1)
+							for sub in splitTree:
+								assert splitTree in sub.subs
+								assert sub in splitTree.subs
+								if sub.genome.getName() != caller.genome.getName() and sub not in self.hits:
+									self.doNNI(sub, caller=splitTree, depth=depth+1)
 
 			if min(scores) == scores[2]:
-					caller.breakConnection(A)
-					caller.breakConnection(B)
-					target.breakConnection(C)
-					target.breakConnection(D)
-
-					caller.addConnection(A)
-					caller.addConnection(D)
-					target.addConnection(B)
-					target.addConnection(C)
-
-					if genomeUpdate:
-						caller.setGenome( gAD )
-						target.setGenome( gBC )
+					
+					self.switchToConformer(target,caller,2,A,B,C,D)
 
 			if not timedOut and not tooDeep:
 				for sub in target:
 					if sub is not caller and sub not in self.hits:
 						self.doNNI(sub, caller=target, depth=depth+1)
 
+
+	def switchToConformer(self, target, caller, conformer, A,B,C,D):
+		if conformer == 0:
+			if A not in caller.subs:
+				caller.addConnection(A)
+			if B not in caller.subs:
+				caller.addConnection(B)
+			if C in caller.subs:
+				caller.breakConnection(C)
+			if D in caller.subs:
+				caller.breakConnection(D)
+
+			if C not in target.subs:
+				target.addConnection(C)
+			if D not in target.subs:
+				target.addConnection(D)
+			if A in target.subs:
+				target.breakConnection(A)
+			if B in target.subs:
+				target.breakConnection(B)
+
+		elif conformer == 1:
+			if A not in caller.subs:
+				caller.addConnection(A)
+			if C not in caller.subs:
+				caller.addConnection(C)
+			if B in caller.subs:
+				caller.breakConnection(B)
+			if D in caller.subs:
+				caller.breakConnection(D)
+
+			if B not in target.subs:
+				target.addConnection(B)
+			if D not in target.subs:
+				target.addConnection(D)
+			if A in target.subs:
+				target.breakConnection(A)
+			if C in target.subs:
+				target.breakConnection(C)
+
+		if conformer == 2:
+			if A not in caller.subs:
+				caller.addConnection(A)
+			if D not in caller.subs:
+				caller.addConnection(D)
+			if C in caller.subs:
+				caller.breakConnection(C)
+			if B in caller.subs:
+				caller.breakConnection(B)
+
+			if C not in target.subs:
+				target.addConnection(C)
+			if B not in target.subs:
+				target.addConnection(B)
+			if A in target.subs:
+				target.breakConnection(A)
+			if D in target.subs:
+				target.breakConnection(D)
 
 
 	def getNewGenomes(self, A,B,C,D ):
@@ -151,7 +204,7 @@ class NNI( object ):
 		elif caller[2] is target:
 			A,B = caller[0], caller[1]
 		else:
-			raise Exception("Caller and target not connected")
+			raise Exception("Caller and target are not connected")
 
 		if target[0] is caller:
 			C,D = target[1], target[2]
@@ -160,68 +213,13 @@ class NNI( object ):
 		elif target[2] is caller:
 			C,D = target[0], target[1]
 		else:
-			raise Exception("Caller and target not connected")
+			raise Exception("Target and caller are not connected")
 
 		return (A,B,C,D)
 
-	def cull(self):
-		bestScore = 1000*1000
-		bestTrees = []
-		for tree in self.trees:
-			if tree.getScore() < bestScore:
-				bestScore = tree.getScore()
-				bestTrees = [tree, ]
-			elif tree.getScore() == bestScore:
-				bestTrees.append(tree)
-		self.trees = bestTrees
-
-	def buildConsensusTree(self):
-		consensusThreshold = .51
-
-		self.cull()
-		partitionsToSubs = {}
-		tipsToLabels = {}
-		parts = {}
-		numTrees = 1.0*len(self.trees)
-
-		for tip in self.trees[0]:
-			tipsToLabels[tip] = rn.randint(0,2**64)
-
-		def rParter( tree, caller=None):
-			if tree.isLeaf() and caller is None:
-				rParter(tree[0])
-
-			elif tree.isLeaf():
-				partitionsToSubs[tipsToLabels[tree]] = 
-				return tipsToLabels[tree]
-
-			elif caller is None:
-				parts[tree] = [rParter(target,target[0]),rParter(target[0],target)]
-
-			else:
-				out = 0
-				for sub in tree:
-					if sub is not caller:
-						out = out ^ rParter( sub, tree)
-				parts[tree] = out
-				return out
 
 
-		for tree in self.trees:
-			rParter( tree)
 
-		countParts = {}
-		for tree in self.trees:
-			for part in parts[tree]:
-				if part in countParts:
-					countParts[part] += 1
-				else:
-					countParts[part] = 1
 
-		partsToKeep = []
-
-		for part, count in countParts.items():
-			if count/numTrees > consensusThreshold:
-				partsToKeep.append(part)
 
 

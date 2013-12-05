@@ -9,12 +9,14 @@ import matplotlib.pyplot as plt
 from pylab import savefig
 from copy import deepcopy
 from sys import setrecursionlimit
+from consensusTree import ConsensusTree
 
-def fastRobinsonFouldsDistance(a,b):
+def fastRFDist(a,b):
 
 	# Trees are represented as tuples (0, (1, (2, (3,4))))
 
 	labels = {}
+
 
 	def recursive_labeling(val, parts):
 		if(type(val) is Tree):
@@ -25,7 +27,12 @@ def fastRobinsonFouldsDistance(a,b):
 				return recursive_labeling(val,parts)
 		else:
 			if len(val) != 2:
-				print( val)
+				print(len(val))
+				print
+				for v in val:
+					print(v)
+					print
+
 				raise Exception("Val is wrong length")
 			newPartition = recursive_labeling(val[0], parts) ^ recursive_labeling(val[1], parts)
 			if(type(parts)  == dict):
@@ -57,7 +64,18 @@ def testTrees():
 	for score in tipScores:
 		assert score == 0
 
-	copyTree = deepcopy(a.tree)
+	copyTree = Tree(a.tree)
+
+	if len(a.tree) != len(copyTree):
+		print( len(a.tree) )
+		print( len(copyTree))
+		print( a.tree.getTips())
+		print(copyTree.getTips())
+		print(a.tree)
+		print(copyTree)
+		print(a.tree.genome.getName())
+		print(copyTree.genome.getName())
+		raise Exception("Trees are not the same size")
 
 	sub = a.tree.subs[0]
 	a.tree.breakConnection( sub )
@@ -67,6 +85,10 @@ def testTrees():
 		assert False
 
 	a.tree.addConnection( sub)
+
+	aTips = a.tree.getTips()
+	for cTip in copyTree.getTips():
+		assert cTip not in aTips
 
 	tipScores = [tip.getScore() for tip in a.tree.getTips()]
 	s = a.tree.getScore()
@@ -94,7 +116,7 @@ def upgmaHarness(cSize,depth):
 	u = UPGMA( [t.genome for t in a.tree.getTips()])
 	u.calculate()
 
-	rf = fastRobinsonFouldsDistance(a.tree.toTuple(), u.tree.toTuple())
+	rf = fastRFDist(a.tree.toTuple(), u.tree.toTuple())
 	return (rf, len( u.tree ) - 3)
 
 def testUPGMA():
@@ -151,7 +173,7 @@ def nniHarness(cSize,depth):
 	upgmaTree = deepcopy(tree)
 	assert tree.isBinary()
 
-	uRF = fastRobinsonFouldsDistance(a.tree.toTuple(), tree.toTuple())
+	uRF = fastRFDist(a.tree.toTuple(), tree.toTuple())
 	uScore = tree.getScore()
 
 	oldScore = tree.getScore()
@@ -171,9 +193,49 @@ def nniHarness(cSize,depth):
 	tree = n.tree
 
 	nScore = tree.getScore()
-	nRF = fastRobinsonFouldsDistance(a.tree.toTuple(), tree.toTuple())
-	intraTreeRF = fastRobinsonFouldsDistance(tree.toTuple(), upgmaTree.toTuple())
+	nRF = fastRFDist(a.tree.toTuple(), tree.toTuple())
+	intraTreeRF = fastRFDist(tree.toTuple(), upgmaTree.toTuple())
 	return (nRF, uRF, len(tree) - 3, uScore, nScore, a.tree.getScore(), intraTreeRF)
+
+def consensusHarness(cSize,depth):
+	a = ArtificialPhylogeny(size=cSize,numChromosomes=5)
+	while len( a.tree.getTips() ) < depth:
+		a.evolve()
+
+	u = UPGMA( [t.genome for t in a.tree.getTips()])
+	u.calculate()
+
+	tree = u.tree 
+	uRF = fastRFDist(tree.toTuple(), a.tree.toTuple())
+
+	print("Finished upgma. Score is {}. RF distance is {}".format( tree.getScore(), uRF))
+
+	uRF = fastRFDist(a.tree.toTuple(), tree.toTuple())
+	uScore = tree.getScore()
+
+	oldScore = tree.getScore()
+	newScore = 0
+
+	counter =0
+	n = NNI( tree )
+
+	n.calculate()
+
+	nRFs = [fastRFDist(t.toTuple(), a.tree.toTuple()) for t in n.trees]
+
+	print("Finished NNI. Scores are {}. RF distances are {}".format([t.getScore() for t in n.trees], nRFs))
+
+	c = ConsensusTree(n.trees)
+	c.calculate()
+
+	tree = c.conTree
+
+	cRF = fastRFDist(tree.toTuple(), a.tree.toTuple())
+
+	print("Finished consensus. Score is {}. RF distance is {}".format( tree.getScore(), cRF))
+
+	nScore = tree.getScore()
+
 
 def testNNI():
 	print("Testing NNI trees.")
@@ -232,7 +294,7 @@ def fileNNI():
 
 
 if __name__ == "__main__":
-	# testTrees()
+	testTrees()
 
 	# testUPGMA()
 
@@ -240,7 +302,8 @@ if __name__ == "__main__":
 	# 
 	
 	setrecursionlimit(4096)
-
-	fileNNI()
+	for arb in range(25):
+		consensusHarness(100,100)
+	# fileNNI()
 
 

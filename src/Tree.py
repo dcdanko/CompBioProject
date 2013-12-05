@@ -1,15 +1,28 @@
 from genome import Genome
 from PyGrimmInterface import GrimmInterface as Grimm
-
+from random import randint
 
 class Tree( object ):
 
-	def __init__(self, genome): 
-		if type(genome) is Genome:
+	def __init__(self, origin, caller=None): 
+		if type(origin) is Genome:
 			self.subs = []
-			self.genome = genome
+			self.genome = origin
 			self.scored = False
 			self.scores = {}
+		elif type(origin) is Tree:
+
+			self.genome = Genome(origin.genome)
+
+			if caller is not None:
+				self.subs = [Tree(sub,(origin,self) ) for sub in origin if sub is not caller[0]]
+				self.subs.append(caller[1])
+
+			else:
+				self.subs = [Tree(sub, (origin,self) ) for sub in origin]
+
+		self.scored = False
+		self.scores = {}
 
 	def __iter__( self ):
 		return iter( self.subs )
@@ -158,8 +171,11 @@ class Tree( object ):
 	
 		return "Tree: " + rStringFinder(self )
 
-		def __hash__(self):
-			return hash( self.genome )
+	def genomeHash(self):
+		return hash( self.genome )
+
+	def getName(self):
+		return self.genome.getName()
 
 
 
