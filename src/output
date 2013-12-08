@@ -1,0 +1,4856 @@
+All tree tests passed.
+Testing UPGMA trees
+R.F. Distance:     [2, 7, 14, 23]
+Max R.F. Distance: [5, 22, 49, 90]
+Testing NNI trees.
+Starting
+Calling doNNI
+Started on internal node 216
+Calling doNNI
+Hit internal node 216 from 299
+216 has connections to ['299', '67', '4']
+Going to 62 from 67
+Calling doNNI
+Hit internal node 62 from 67
+62 has connections to ['455', '515', '67']
+Going to 7 from 803
+Calling doNNI
+Hit internal node 7 from 803
+7 has connections to ['224', '307', '803']
+Going to 194 from 224
+Calling doNNI
+Hit leaf 194 from 224
+Going to 633 from 224
+Calling doNNI
+Hit internal node 633 from 224
+633 has connections to ['592', '798', '224']
+Going to 307 from 961
+Calling doNNI
+Hit internal node 307 from 961
+307 has connections to ['32', '657', '961']
+Going to 373 from 32
+Calling doNNI
+Going to 373 from 657
+Calling doNNI
+Going to 1013 from 635
+Calling doNNI
+Hit internal node 1013 from 635
+1013 has connections to ['635', '4', '445']
+Going to 225 from 4
+Calling doNNI
+Hit leaf 225 from 4
+Going to 930 from 4
+Calling doNNI
+Hit leaf 930 from 4
+Going to 927 from 4
+Calling doNNI
+Hit internal node 927 from 4
+927 has connections to ['573', '4', '445']
+Going to 373 from 573
+Calling doNNI
+Hit internal node 373 from 573
+373 has connections to ['32', '657', '573']
+Going to 389 from 32
+Calling doNNI
+Going to 389 from 657
+Calling doNNI
+Going to 372 from 594
+Calling doNNI
+Hit internal node 372 from 594
+372 has connections to ['594', '230', '445']
+Going to 225 from 230
+Calling doNNI
+Hit leaf 225 from 230
+Going to 930 from 230
+Calling doNNI
+Hit leaf 930 from 230
+Going to 488 from 230
+Calling doNNI
+Hit internal node 488 from 230
+488 has connections to ['509', '230', '445']
+Going to 389 from 509
+Calling doNNI
+Hit internal node 389 from 509
+389 has connections to ['32', '657', '509']
+Going to 501 from 32
+Calling doNNI
+Going to 501 from 657
+Calling doNNI
+Going to 642 from 748
+Calling doNNI
+Hit internal node 642 from 748
+642 has connections to ['748', '398', '445']
+Going to 225 from 398
+Calling doNNI
+Hit leaf 225 from 398
+Going to 930 from 398
+Calling doNNI
+Hit leaf 930 from 398
+Going to 199 from 398
+Calling doNNI
+Hit internal node 199 from 398
+199 has connections to ['808', '398', '445']
+Going to 501 from 808
+Calling doNNI
+Hit internal node 501 from 808
+501 has connections to ['32', '657', '808']
+Going to 139 from 32
+Calling doNNI
+Going to 139 from 657
+Calling doNNI
+Going to 939 from 283
+Calling doNNI
+Hit internal node 939 from 283
+939 has connections to ['283', '503', '445']
+Going to 225 from 503
+Calling doNNI
+Hit leaf 225 from 503
+Going to 930 from 503
+Calling doNNI
+Hit leaf 930 from 503
+Going to 656 from 503
+Calling doNNI
+Hit internal node 656 from 503
+656 has connections to ['398', '503', '445']
+Going to 139 from 398
+Calling doNNI
+Hit internal node 139 from 398
+139 has connections to ['32', '657', '398']
+Going to 454 from 32
+Calling doNNI
+Going to 454 from 657
+Calling doNNI
+Going to 38 from 80
+Calling doNNI
+Hit internal node 38 from 80
+38 has connections to ['80', '43', '445']
+Going to 225 from 43
+Calling doNNI
+Hit leaf 225 from 43
+Going to 930 from 43
+Calling doNNI
+Hit leaf 930 from 43
+Going to 622 from 43
+Calling doNNI
+Hit internal node 622 from 43
+622 has connections to ['559', '43', '445']
+Going to 454 from 559
+Calling doNNI
+Hit internal node 454 from 559
+454 has connections to ['32', '657', '559']
+Going to 550 from 32
+Calling doNNI
+Going to 550 from 657
+Calling doNNI
+Going to 112 from 573
+Calling doNNI
+Hit internal node 112 from 573
+112 has connections to ['573', '879', '445']
+Going to 225 from 879
+Calling doNNI
+Hit leaf 225 from 879
+Going to 930 from 879
+Calling doNNI
+Hit leaf 930 from 879
+Going to 743 from 879
+Calling doNNI
+Hit internal node 743 from 879
+743 has connections to ['803', '879', '445']
+Going to 550 from 803
+Calling doNNI
+Hit internal node 550 from 803
+550 has connections to ['32', '657', '803']
+Going to 886 from 32
+Calling doNNI
+Going to 886 from 657
+Calling doNNI
+Going to 904 from 791
+Calling doNNI
+Hit internal node 904 from 791
+904 has connections to ['791', '584', '445']
+Going to 225 from 584
+Calling doNNI
+Hit leaf 225 from 584
+Going to 930 from 584
+Calling doNNI
+Hit leaf 930 from 584
+Going to 34 from 584
+Calling doNNI
+Hit internal node 34 from 584
+34 has connections to ['643', '584', '445']
+Going to 886 from 643
+Calling doNNI
+Hit internal node 886 from 643
+886 has connections to ['32', '657', '643']
+Going to 735 from 32
+Calling doNNI
+Going to 735 from 657
+Calling doNNI
+Going to 569 from 93
+Calling doNNI
+Hit internal node 569 from 93
+569 has connections to ['93', '747', '445']
+Going to 225 from 747
+Calling doNNI
+Hit leaf 225 from 747
+Going to 930 from 747
+Calling doNNI
+Hit leaf 930 from 747
+Going to 876 from 747
+Calling doNNI
+Hit internal node 876 from 747
+876 has connections to ['844', '747', '445']
+Going to 735 from 844
+Calling doNNI
+Hit internal node 735 from 844
+735 has connections to ['32', '657', '844']
+Going to 560 from 32
+Calling doNNI
+Going to 560 from 657
+Calling doNNI
+Going to 340 from 640
+Calling doNNI
+Hit internal node 340 from 640
+340 has connections to ['640', '291', '445']
+Going to 225 from 291
+Calling doNNI
+Hit leaf 225 from 291
+Going to 930 from 291
+Calling doNNI
+Hit leaf 930 from 291
+Going to 249 from 291
+Calling doNNI
+Hit internal node 249 from 291
+249 has connections to ['615', '291', '445']
+Going to 560 from 615
+Calling doNNI
+Hit internal node 560 from 615
+560 has connections to ['32', '657', '615']
+Going to 656 from 32
+Calling doNNI
+Going to 656 from 657
+Calling doNNI
+Going to 731 from 508
+Calling doNNI
+Hit internal node 731 from 508
+731 has connections to ['508', '352', '445']
+Going to 225 from 352
+Calling doNNI
+Hit leaf 225 from 352
+Going to 930 from 352
+Calling doNNI
+Hit leaf 930 from 352
+Going to 277 from 352
+Calling doNNI
+Hit internal node 277 from 352
+277 has connections to ['597', '352', '445']
+Going to 656 from 597
+Calling doNNI
+Hit internal node 656 from 597
+656 has connections to ['32', '657', '597']
+Going to 610 from 32
+Calling doNNI
+Going to 610 from 657
+Calling doNNI
+Going to 569 from 133
+Calling doNNI
+Hit internal node 569 from 133
+569 has connections to ['133', '169', '445']
+Going to 225 from 169
+Calling doNNI
+Hit leaf 225 from 169
+Going to 930 from 169
+Calling doNNI
+Hit leaf 930 from 169
+Going to 548 from 169
+Calling doNNI
+Hit internal node 548 from 169
+548 has connections to ['902', '169', '445']
+Going to 610 from 902
+Calling doNNI
+Hit internal node 610 from 902
+610 has connections to ['32', '657', '902']
+Going to 521 from 32
+Calling doNNI
+Going to 521 from 657
+Calling doNNI
+Going to 928 from 607
+Calling doNNI
+Hit internal node 928 from 607
+928 has connections to ['607', '534', '445']
+Going to 225 from 534
+Calling doNNI
+Hit leaf 225 from 534
+Going to 930 from 534
+Calling doNNI
+Hit leaf 930 from 534
+Going to 182 from 534
+Calling doNNI
+Hit internal node 182 from 534
+182 has connections to ['160', '534', '445']
+Going to 521 from 160
+Calling doNNI
+Hit internal node 521 from 160
+521 has connections to ['32', '657', '160']
+Going to 553 from 32
+Calling doNNI
+Going to 553 from 657
+Calling doNNI
+Going to 1011 from 126
+Calling doNNI
+Hit internal node 1011 from 126
+1011 has connections to ['126', '771', '445']
+Going to 225 from 771
+Calling doNNI
+Hit leaf 225 from 771
+Going to 930 from 771
+Calling doNNI
+Hit leaf 930 from 771
+Going to 615 from 771
+Calling doNNI
+Hit internal node 615 from 771
+615 has connections to ['442', '771', '445']
+Going to 553 from 442
+Calling doNNI
+Hit internal node 553 from 442
+553 has connections to ['32', '657', '442']
+Going to 297 from 32
+Calling doNNI
+Going to 297 from 657
+Calling doNNI
+Going to 510 from 898
+Calling doNNI
+Hit internal node 510 from 898
+510 has connections to ['898', '953', '445']
+Going to 225 from 953
+Calling doNNI
+Hit leaf 225 from 953
+Going to 930 from 953
+Calling doNNI
+Hit leaf 930 from 953
+Going to 232 from 953
+Calling doNNI
+Hit internal node 232 from 953
+232 has connections to ['375', '953', '445']
+Going to 297 from 375
+Calling doNNI
+Hit internal node 297 from 375
+297 has connections to ['32', '657', '375']
+Going to 709 from 32
+Calling doNNI
+Going to 709 from 657
+Calling doNNI
+Going to 677 from 415
+Calling doNNI
+Hit internal node 677 from 415
+677 has connections to ['415', '293', '445']
+Going to 225 from 293
+Calling doNNI
+Hit leaf 225 from 293
+Going to 930 from 293
+Calling doNNI
+Hit leaf 930 from 293
+Going to 149 from 293
+Calling doNNI
+Hit internal node 149 from 293
+149 has connections to ['949', '293', '445']
+Going to 709 from 949
+Calling doNNI
+Hit internal node 709 from 949
+709 has connections to ['32', '657', '949']
+Going to 850 from 32
+Calling doNNI
+Going to 850 from 657
+Calling doNNI
+Going to 514 from 498
+Calling doNNI
+Hit internal node 514 from 498
+514 has connections to ['498', '13', '445']
+Going to 225 from 13
+Calling doNNI
+Hit leaf 225 from 13
+Going to 930 from 13
+Calling doNNI
+Hit leaf 930 from 13
+Going to 206 from 13
+Calling doNNI
+Hit internal node 206 from 13
+206 has connections to ['277', '13', '445']
+Going to 850 from 277
+Calling doNNI
+Hit internal node 850 from 277
+850 has connections to ['32', '657', '277']
+Going to 244 from 32
+Calling doNNI
+Going to 244 from 657
+Calling doNNI
+Going to 175 from 371
+Calling doNNI
+Hit internal node 175 from 371
+175 has connections to ['371', '502', '445']
+Going to 225 from 502
+Calling doNNI
+Hit leaf 225 from 502
+Going to 930 from 502
+Calling doNNI
+Hit leaf 930 from 502
+Going to 132 from 502
+Calling doNNI
+Hit internal node 132 from 502
+132 has connections to ['642', '502', '445']
+Going to 244 from 642
+Calling doNNI
+Hit internal node 244 from 642
+244 has connections to ['32', '657', '642']
+Going to 312 from 32
+Calling doNNI
+Going to 312 from 657
+Calling doNNI
+Going to 625 from 193
+Calling doNNI
+Hit internal node 625 from 193
+625 has connections to ['193', '563', '445']
+Going to 225 from 563
+Calling doNNI
+Hit leaf 225 from 563
+Going to 930 from 563
+Calling doNNI
+Hit leaf 930 from 563
+Going to 179 from 563
+Calling doNNI
+Hit internal node 179 from 563
+179 has connections to ['785', '563', '445']
+Going to 312 from 785
+Calling doNNI
+Hit internal node 312 from 785
+312 has connections to ['32', '657', '785']
+Going to 552 from 32
+Calling doNNI
+Going to 552 from 657
+Calling doNNI
+Going to 960 from 281
+Calling doNNI
+Hit internal node 960 from 281
+960 has connections to ['281', '786', '445']
+Going to 225 from 786
+Calling doNNI
+Hit leaf 225 from 786
+Going to 930 from 786
+Calling doNNI
+Hit leaf 930 from 786
+Going to 346 from 786
+Calling doNNI
+Hit internal node 346 from 786
+346 has connections to ['881', '786', '445']
+Going to 552 from 881
+Calling doNNI
+Hit internal node 552 from 881
+552 has connections to ['32', '657', '881']
+Going to 292 from 32
+Calling doNNI
+Going to 292 from 657
+Calling doNNI
+Going to 1016 from 942
+Calling doNNI
+Hit internal node 1016 from 942
+1016 has connections to ['942', '244', '445']
+Going to 225 from 244
+Calling doNNI
+Hit leaf 225 from 244
+Going to 930 from 244
+Calling doNNI
+Hit leaf 930 from 244
+Going to 123 from 244
+Calling doNNI
+Hit internal node 123 from 244
+123 has connections to ['566', '244', '445']
+Going to 292 from 566
+Calling doNNI
+Hit internal node 292 from 566
+292 has connections to ['32', '657', '566']
+Going to 800 from 32
+Calling doNNI
+Going to 800 from 657
+Calling doNNI
+Going to 672 from 226
+Calling doNNI
+Hit internal node 672 from 226
+672 has connections to ['226', '375', '445']
+Going to 225 from 375
+Calling doNNI
+Hit leaf 225 from 375
+Going to 930 from 375
+Calling doNNI
+Hit leaf 930 from 375
+Going to 41 from 375
+Calling doNNI
+Hit internal node 41 from 375
+41 has connections to ['686', '375', '445']
+Going to 800 from 686
+Calling doNNI
+Hit internal node 800 from 686
+800 has connections to ['32', '657', '686']
+Going to 384 from 32
+Calling doNNI
+Going to 384 from 657
+Calling doNNI
+Going to 922 from 2
+Calling doNNI
+Hit internal node 922 from 2
+922 has connections to ['2', '421', '445']
+Going to 225 from 421
+Calling doNNI
+Hit leaf 225 from 421
+Going to 930 from 421
+Calling doNNI
+Hit leaf 930 from 421
+Going to 189 from 421
+Calling doNNI
+Hit internal node 189 from 421
+189 has connections to ['551', '421', '445']
+Going to 384 from 551
+Calling doNNI
+Hit internal node 384 from 551
+384 has connections to ['32', '657', '551']
+Going to 342 from 32
+Calling doNNI
+Going to 342 from 657
+Calling doNNI
+Going to 164 from 401
+Calling doNNI
+Hit internal node 164 from 401
+164 has connections to ['401', '2', '445']
+Going to 225 from 2
+Calling doNNI
+Hit leaf 225 from 2
+Going to 930 from 2
+Calling doNNI
+Hit leaf 930 from 2
+Going to 314 from 2
+Calling doNNI
+Hit internal node 314 from 2
+314 has connections to ['493', '2', '445']
+Going to 342 from 493
+Calling doNNI
+Hit internal node 342 from 493
+342 has connections to ['32', '657', '493']
+Going to 731 from 32
+Calling doNNI
+Going to 731 from 657
+Calling doNNI
+Going to 764 from 14
+Calling doNNI
+Hit internal node 764 from 14
+764 has connections to ['14', '228', '445']
+Going to 225 from 228
+Calling doNNI
+Hit leaf 225 from 228
+Going to 930 from 228
+Calling doNNI
+Hit leaf 930 from 228
+Going to 53 from 228
+Calling doNNI
+Hit internal node 53 from 228
+53 has connections to ['712', '228', '445']
+Going to 731 from 712
+Calling doNNI
+Hit internal node 731 from 712
+731 has connections to ['32', '657', '712']
+Going to 441 from 32
+Calling doNNI
+Going to 441 from 657
+Calling doNNI
+Going to 243 from 585
+Calling doNNI
+Hit internal node 243 from 585
+243 has connections to ['585', '656', '445']
+Going to 225 from 656
+Calling doNNI
+Hit leaf 225 from 656
+Going to 930 from 656
+Calling doNNI
+Hit leaf 930 from 656
+Going to 51 from 656
+Calling doNNI
+Hit internal node 51 from 656
+51 has connections to ['170', '656', '445']
+Going to 441 from 170
+Calling doNNI
+Hit internal node 441 from 170
+441 has connections to ['32', '657', '170']
+Going to 5 from 32
+Calling doNNI
+Going to 5 from 657
+Calling doNNI
+Going to 640 from 156
+Calling doNNI
+Hit internal node 640 from 156
+640 has connections to ['156', '725', '445']
+Going to 225 from 725
+Calling doNNI
+Hit leaf 225 from 725
+Going to 930 from 725
+Calling doNNI
+Hit leaf 930 from 725
+Going to 728 from 725
+Calling doNNI
+Hit internal node 728 from 725
+728 has connections to ['210', '725', '445']
+Going to 5 from 210
+Calling doNNI
+Hit internal node 5 from 210
+5 has connections to ['32', '657', '210']
+Going to 644 from 32
+Calling doNNI
+Going to 644 from 657
+Calling doNNI
+Going to 341 from 159
+Calling doNNI
+Hit internal node 341 from 159
+341 has connections to ['159', '716', '445']
+Going to 225 from 716
+Calling doNNI
+Hit leaf 225 from 716
+Going to 930 from 716
+Calling doNNI
+Hit leaf 930 from 716
+Going to 213 from 716
+Calling doNNI
+Hit internal node 213 from 716
+213 has connections to ['750', '716', '445']
+Going to 644 from 750
+Calling doNNI
+Hit internal node 644 from 750
+644 has connections to ['32', '657', '750']
+Going to 255 from 32
+Calling doNNI
+Going to 255 from 657
+Calling doNNI
+Going to 0 from 770
+Calling doNNI
+Hit internal node 0 from 770
+0 has connections to ['770', '411', '445']
+Going to 225 from 411
+Calling doNNI
+Hit leaf 225 from 411
+Going to 930 from 411
+Calling doNNI
+Hit leaf 930 from 411
+Going to 926 from 411
+Calling doNNI
+Hit internal node 926 from 411
+926 has connections to ['28', '411', '445']
+Going to 255 from 28
+Calling doNNI
+Hit internal node 255 from 28
+255 has connections to ['32', '657', '28']
+Going to 754 from 32
+Calling doNNI
+Going to 754 from 657
+Calling doNNI
+Going to 980 from 773
+Calling doNNI
+Hit internal node 980 from 773
+980 has connections to ['773', '978', '445']
+Going to 225 from 978
+Calling doNNI
+Hit leaf 225 from 978
+Going to 930 from 978
+Calling doNNI
+Hit leaf 930 from 978
+Going to 991 from 978
+Calling doNNI
+Hit internal node 991 from 978
+991 has connections to ['42', '978', '445']
+Going to 754 from 42
+Calling doNNI
+Hit internal node 754 from 42
+754 has connections to ['32', '657', '42']
+Going to 439 from 32
+Calling doNNI
+Going to 439 from 657
+Calling doNNI
+Going to 34 from 923
+Calling doNNI
+Hit internal node 34 from 923
+34 has connections to ['923', '531', '445']
+Going to 225 from 531
+Calling doNNI
+Hit leaf 225 from 531
+Going to 930 from 531
+Calling doNNI
+Hit leaf 930 from 531
+Going to 295 from 531
+Calling doNNI
+Hit internal node 295 from 531
+295 has connections to ['841', '531', '445']
+Going to 439 from 841
+Calling doNNI
+Hit internal node 439 from 841
+439 has connections to ['32', '657', '841']
+Going to 679 from 32
+Calling doNNI
+Going to 679 from 657
+Calling doNNI
+Going to 525 from 409
+Calling doNNI
+Hit internal node 525 from 409
+525 has connections to ['409', '743', '445']
+Going to 225 from 743
+Calling doNNI
+Hit leaf 225 from 743
+Going to 930 from 743
+Calling doNNI
+Hit leaf 930 from 743
+Going to 647 from 743
+Calling doNNI
+Hit internal node 647 from 743
+647 has connections to ['347', '743', '445']
+Going to 679 from 347
+Calling doNNI
+Hit internal node 679 from 347
+679 has connections to ['32', '657', '347']
+Going to 8 from 32
+Calling doNNI
+Going to 8 from 657
+Calling doNNI
+Going to 739 from 642
+Calling doNNI
+Hit internal node 739 from 642
+739 has connections to ['642', '90', '445']
+Going to 225 from 90
+Calling doNNI
+Hit leaf 225 from 90
+Going to 930 from 90
+Calling doNNI
+Hit leaf 930 from 90
+Going to 213 from 90
+Calling doNNI
+Hit internal node 213 from 90
+213 has connections to ['407', '90', '445']
+Going to 8 from 407
+Calling doNNI
+Hit internal node 8 from 407
+8 has connections to ['32', '657', '407']
+Going to 20 from 32
+Calling doNNI
+Going to 20 from 657
+Calling doNNI
+Going to 3 from 942
+Calling doNNI
+Hit internal node 3 from 942
+3 has connections to ['942', '189', '445']
+Going to 225 from 189
+Calling doNNI
+Hit leaf 225 from 189
+Going to 930 from 189
+Calling doNNI
+Hit leaf 930 from 189
+Going to 115 from 189
+Calling doNNI
+Hit internal node 115 from 189
+115 has connections to ['854', '189', '445']
+Going to 20 from 854
+Calling doNNI
+Hit internal node 20 from 854
+20 has connections to ['32', '657', '854']
+Going to 467 from 32
+Calling doNNI
+Going to 467 from 657
+Calling doNNI
+Going to 499 from 824
+Calling doNNI
+Hit internal node 499 from 824
+499 has connections to ['824', '485', '445']
+Going to 225 from 485
+Calling doNNI
+Hit leaf 225 from 485
+Going to 930 from 485
+Calling doNNI
+Hit leaf 930 from 485
+Going to 510 from 485
+Calling doNNI
+Hit internal node 510 from 485
+510 has connections to ['739', '485', '445']
+Going to 467 from 739
+Calling doNNI
+Hit internal node 467 from 739
+467 has connections to ['32', '657', '739']
+Going to 895 from 32
+Calling doNNI
+Going to 895 from 657
+Calling doNNI
+Going to 452 from 611
+Calling doNNI
+Hit internal node 452 from 611
+452 has connections to ['611', '312', '445']
+Going to 225 from 312
+Calling doNNI
+Hit leaf 225 from 312
+Going to 930 from 312
+Calling doNNI
+Hit leaf 930 from 312
+Going to 405 from 312
+Calling doNNI
+Hit internal node 405 from 312
+405 has connections to ['511', '312', '445']
+Going to 895 from 511
+Calling doNNI
+Hit internal node 895 from 511
+895 has connections to ['32', '657', '511']
+Going to 829 from 32
+Calling doNNI
+Going to 829 from 657
+Calling doNNI
+Going to 245 from 1008
+Calling doNNI
+Hit internal node 245 from 1008
+245 has connections to ['1008', '768', '445']
+Going to 225 from 768
+Calling doNNI
+Hit leaf 225 from 768
+Going to 930 from 768
+Calling doNNI
+Hit leaf 930 from 768
+Going to 901 from 768
+Calling doNNI
+Hit internal node 901 from 768
+901 has connections to ['737', '768', '445']
+Going to 829 from 737
+Calling doNNI
+Hit internal node 829 from 737
+829 has connections to ['32', '657', '737']
+Going to 461 from 32
+Calling doNNI
+Going to 461 from 657
+Calling doNNI
+Going to 723 from 553
+Calling doNNI
+Hit internal node 723 from 553
+723 has connections to ['553', '619', '445']
+Going to 225 from 619
+Calling doNNI
+Hit leaf 225 from 619
+Going to 930 from 619
+Calling doNNI
+Hit leaf 930 from 619
+Going to 258 from 619
+Calling doNNI
+Hit internal node 258 from 619
+258 has connections to ['224', '619', '445']
+Going to 461 from 224
+Calling doNNI
+Hit internal node 461 from 224
+461 has connections to ['32', '657', '224']
+Going to 813 from 32
+Calling doNNI
+Going to 813 from 657
+Calling doNNI
+Going to 539 from 950
+Calling doNNI
+Hit internal node 539 from 950
+539 has connections to ['950', '4', '445']
+Going to 225 from 4
+Calling doNNI
+Hit leaf 225 from 4
+Going to 930 from 4
+Calling doNNI
+Hit leaf 930 from 4
+Going to 838 from 4
+Calling doNNI
+Hit internal node 838 from 4
+838 has connections to ['980', '4', '445']
+Going to 813 from 980
+Calling doNNI
+Hit internal node 813 from 980
+813 has connections to ['32', '657', '980']
+Going to 890 from 32
+Calling doNNI
+Going to 890 from 657
+Calling doNNI
+Going to 468 from 122
+Calling doNNI
+Hit internal node 468 from 122
+468 has connections to ['122', '419', '445']
+Going to 225 from 419
+Calling doNNI
+Hit leaf 225 from 419
+Going to 930 from 419
+Calling doNNI
+Hit leaf 930 from 419
+Going to 763 from 419
+Calling doNNI
+Hit internal node 763 from 419
+763 has connections to ['835', '419', '445']
+Going to 890 from 835
+Calling doNNI
+Hit internal node 890 from 835
+890 has connections to ['32', '657', '835']
+Going to 775 from 32
+Calling doNNI
+Going to 775 from 657
+Calling doNNI
+Going to 236 from 236
+Calling doNNI
+Hit internal node 236 from 236
+236 has connections to ['236', '878', '445']
+Going to 225 from 878
+Calling doNNI
+Hit leaf 225 from 878
+Going to 930 from 878
+Calling doNNI
+Hit leaf 930 from 878
+Going to 751 from 878
+Calling doNNI
+Hit internal node 751 from 878
+751 has connections to ['52', '878', '445']
+Going to 775 from 52
+Calling doNNI
+Hit internal node 775 from 52
+775 has connections to ['32', '657', '52']
+Going to 458 from 32
+Calling doNNI
+Going to 458 from 657
+Calling doNNI
+Going to 837 from 979
+Calling doNNI
+Hit internal node 837 from 979
+837 has connections to ['979', '197', '445']
+Going to 225 from 197
+Calling doNNI
+Hit leaf 225 from 197
+Going to 930 from 197
+Calling doNNI
+Hit leaf 930 from 197
+Going to 606 from 197
+Calling doNNI
+Hit internal node 606 from 197
+606 has connections to ['377', '197', '445']
+Going to 458 from 377
+Calling doNNI
+Hit internal node 458 from 377
+458 has connections to ['32', '657', '377']
+Going to 502 from 32
+Calling doNNI
+Going to 502 from 657
+Calling doNNI
+Going to 753 from 665
+Calling doNNI
+Hit internal node 753 from 665
+753 has connections to ['665', '837', '445']
+Going to 225 from 837
+Calling doNNI
+Hit leaf 225 from 837
+Going to 930 from 837
+Calling doNNI
+Hit leaf 930 from 837
+Going to 67 from 837
+Calling doNNI
+Hit internal node 67 from 837
+67 has connections to ['218', '837', '445']
+Going to 502 from 218
+Calling doNNI
+Hit internal node 502 from 218
+502 has connections to ['32', '657', '218']
+Going to 369 from 32
+Calling doNNI
+Going to 369 from 657
+Calling doNNI
+Going to 744 from 977
+Calling doNNI
+Hit internal node 744 from 977
+744 has connections to ['977', '135', '445']
+Going to 225 from 135
+Calling doNNI
+Hit leaf 225 from 135
+Going to 930 from 135
+Calling doNNI
+Hit leaf 930 from 135
+Going to 1001 from 135
+Calling doNNI
+Hit internal node 1001 from 135
+1001 has connections to ['791', '135', '445']
+Going to 369 from 791
+Calling doNNI
+Hit internal node 369 from 791
+369 has connections to ['32', '657', '791']
+Going to 543 from 32
+Calling doNNI
+Going to 543 from 657
+Calling doNNI
+Going to 802 from 625
+Calling doNNI
+Hit internal node 802 from 625
+802 has connections to ['625', '120', '445']
+Going to 225 from 120
+Calling doNNI
+Hit leaf 225 from 120
+Going to 930 from 120
+Calling doNNI
+Hit leaf 930 from 120
+Going to 895 from 120
+Calling doNNI
+Hit internal node 895 from 120
+895 has connections to ['260', '120', '445']
+Going to 543 from 260
+Calling doNNI
+Hit internal node 543 from 260
+543 has connections to ['32', '657', '260']
+Going to 884 from 32
+Calling doNNI
+Going to 884 from 657
+Calling doNNI
+Going to 211 from 163
+Calling doNNI
+Hit internal node 211 from 163
+211 has connections to ['163', '966', '445']
+Going to 225 from 966
+Calling doNNI
+Hit leaf 225 from 966
+Going to 930 from 966
+Calling doNNI
+Hit leaf 930 from 966
+Going to 987 from 966
+Calling doNNI
+Hit internal node 987 from 966
+987 has connections to ['840', '966', '445']
+Going to 884 from 840
+Calling doNNI
+Hit internal node 884 from 840
+884 has connections to ['32', '657', '840']
+Going to 710 from 32
+Calling doNNI
+Going to 710 from 657
+Calling doNNI
+Going to 974 from 497
+Calling doNNI
+Hit internal node 974 from 497
+974 has connections to ['497', '507', '445']
+Going to 225 from 507
+Calling doNNI
+Hit leaf 225 from 507
+Going to 930 from 507
+Calling doNNI
+Hit leaf 930 from 507
+Going to 335 from 507
+Calling doNNI
+Hit internal node 335 from 507
+335 has connections to ['290', '507', '445']
+Going to 710 from 290
+Calling doNNI
+Hit internal node 710 from 290
+710 has connections to ['32', '657', '290']
+Going to 6 from 32
+Calling doNNI
+Going to 6 from 657
+Calling doNNI
+Going to 144 from 836
+Calling doNNI
+Hit internal node 144 from 836
+144 has connections to ['836', '559', '445']
+Going to 225 from 559
+Calling doNNI
+Hit leaf 225 from 559
+Going to 930 from 559
+Calling doNNI
+Hit leaf 930 from 559
+Going to 505 from 559
+Calling doNNI
+Hit internal node 505 from 559
+505 has connections to ['844', '559', '445']
+Going to 6 from 844
+Calling doNNI
+Hit internal node 6 from 844
+6 has connections to ['32', '657', '844']
+Going to 589 from 32
+Calling doNNI
+Going to 589 from 657
+Calling doNNI
+Going to 985 from 565
+Calling doNNI
+Hit internal node 985 from 565
+985 has connections to ['565', '602', '445']
+Going to 225 from 602
+Calling doNNI
+Hit leaf 225 from 602
+Going to 930 from 602
+Calling doNNI
+Hit leaf 930 from 602
+Going to 555 from 602
+Calling doNNI
+Hit internal node 555 from 602
+555 has connections to ['592', '602', '445']
+Going to 589 from 592
+Calling doNNI
+Hit internal node 589 from 592
+589 has connections to ['32', '657', '592']
+Going to 105 from 32
+Calling doNNI
+Going to 105 from 657
+Calling doNNI
+Going to 675 from 700
+Calling doNNI
+Hit internal node 675 from 700
+675 has connections to ['700', '11', '445']
+Going to 225 from 11
+Calling doNNI
+Hit leaf 225 from 11
+Going to 930 from 11
+Calling doNNI
+Hit leaf 930 from 11
+Going to 727 from 11
+Calling doNNI
+Hit internal node 727 from 11
+727 has connections to ['125', '11', '445']
+Going to 105 from 125
+Calling doNNI
+Hit internal node 105 from 125
+105 has connections to ['32', '657', '125']
+Going to 1004 from 32
+Calling doNNI
+Going to 1004 from 657
+Calling doNNI
+Going to 758 from 191
+Calling doNNI
+Hit internal node 758 from 191
+758 has connections to ['191', '432', '445']
+Going to 225 from 432
+Calling doNNI
+Hit leaf 225 from 432
+Going to 930 from 432
+Calling doNNI
+Hit leaf 930 from 432
+Going to 485 from 432
+Calling doNNI
+Hit internal node 485 from 432
+485 has connections to ['772', '432', '445']
+Going to 1004 from 772
+Calling doNNI
+Hit internal node 1004 from 772
+1004 has connections to ['32', '657', '772']
+Going to 920 from 32
+Calling doNNI
+Going to 920 from 657
+Calling doNNI
+Going to 395 from 415
+Calling doNNI
+Hit internal node 395 from 415
+395 has connections to ['415', '919', '445']
+Going to 225 from 919
+Calling doNNI
+Hit leaf 225 from 919
+Going to 930 from 919
+Calling doNNI
+Hit leaf 930 from 919
+Going to 549 from 919
+Calling doNNI
+Hit internal node 549 from 919
+549 has connections to ['284', '919', '445']
+Going to 920 from 284
+Calling doNNI
+Hit internal node 920 from 284
+920 has connections to ['32', '657', '284']
+Going to 583 from 32
+Calling doNNI
+Going to 583 from 657
+Calling doNNI
+Going to 680 from 94
+Calling doNNI
+Hit internal node 680 from 94
+680 has connections to ['94', '444', '445']
+Going to 225 from 444
+Calling doNNI
+Hit leaf 225 from 444
+Going to 930 from 444
+Calling doNNI
+Hit leaf 930 from 444
+Going to 443 from 444
+Calling doNNI
+Hit internal node 443 from 444
+443 has connections to ['458', '444', '445']
+Going to 583 from 458
+Calling doNNI
+Hit internal node 583 from 458
+583 has connections to ['32', '657', '458']
+Going to 419 from 32
+Calling doNNI
+Going to 419 from 657
+Calling doNNI
+Going to 647 from 504
+Calling doNNI
+Hit internal node 647 from 504
+647 has connections to ['504', '358', '445']
+Going to 225 from 358
+Calling doNNI
+Hit leaf 225 from 358
+Going to 930 from 358
+Calling doNNI
+Hit leaf 930 from 358
+Going to 450 from 358
+Calling doNNI
+Hit internal node 450 from 358
+450 has connections to ['834', '358', '445']
+Going to 419 from 834
+Calling doNNI
+Hit internal node 419 from 834
+419 has connections to ['32', '657', '834']
+Going to 874 from 32
+Calling doNNI
+Going to 874 from 657
+Calling doNNI
+Going to 611 from 322
+Calling doNNI
+Hit internal node 611 from 322
+611 has connections to ['322', '21', '445']
+Going to 225 from 21
+Calling doNNI
+Hit leaf 225 from 21
+Going to 930 from 21
+Calling doNNI
+Hit leaf 930 from 21
+Going to 519 from 21
+Calling doNNI
+Hit internal node 519 from 21
+519 has connections to ['702', '21', '445']
+Going to 874 from 702
+Calling doNNI
+Hit internal node 874 from 702
+874 has connections to ['32', '657', '702']
+Going to 141 from 32
+Calling doNNI
+Going to 141 from 657
+Calling doNNI
+Going to 116 from 203
+Calling doNNI
+Hit internal node 116 from 203
+116 has connections to ['203', '347', '445']
+Going to 225 from 347
+Calling doNNI
+Hit leaf 225 from 347
+Going to 930 from 347
+Calling doNNI
+Hit leaf 930 from 347
+Going to 255 from 347
+Calling doNNI
+Hit internal node 255 from 347
+255 has connections to ['123', '347', '445']
+Going to 141 from 123
+Calling doNNI
+Hit internal node 141 from 123
+141 has connections to ['32', '657', '123']
+Going to 161 from 32
+Calling doNNI
+Going to 161 from 657
+Calling doNNI
+Going to 125 from 942
+Calling doNNI
+Hit internal node 125 from 942
+125 has connections to ['942', '738', '445']
+Going to 225 from 738
+Calling doNNI
+Hit leaf 225 from 738
+Going to 930 from 738
+Calling doNNI
+Hit leaf 930 from 738
+Going to 766 from 738
+Calling doNNI
+Hit internal node 766 from 738
+766 has connections to ['984', '738', '445']
+Going to 161 from 984
+Calling doNNI
+Hit internal node 161 from 984
+161 has connections to ['32', '657', '984']
+Going to 609 from 32
+Calling doNNI
+Going to 609 from 657
+Calling doNNI
+Going to 380 from 258
+Calling doNNI
+Hit internal node 380 from 258
+380 has connections to ['258', '305', '445']
+Going to 225 from 305
+Calling doNNI
+Hit leaf 225 from 305
+Going to 930 from 305
+Calling doNNI
+Hit leaf 930 from 305
+Going to 692 from 305
+Calling doNNI
+Hit internal node 692 from 305
+692 has connections to ['964', '305', '445']
+Going to 609 from 964
+Calling doNNI
+Hit internal node 609 from 964
+609 has connections to ['32', '657', '964']
+Going to 755 from 32
+Calling doNNI
+Going to 755 from 657
+Calling doNNI
+Going to 509 from 316
+Calling doNNI
+Hit internal node 509 from 316
+509 has connections to ['316', '677', '445']
+Going to 225 from 677
+Calling doNNI
+Hit leaf 225 from 677
+Going to 930 from 677
+Calling doNNI
+Hit leaf 930 from 677
+Going to 632 from 677
+Calling doNNI
+Hit internal node 632 from 677
+632 has connections to ['82', '677', '445']
+Going to 755 from 82
+Calling doNNI
+Hit internal node 755 from 82
+755 has connections to ['32', '657', '82']
+Going to 619 from 32
+Calling doNNI
+Going to 619 from 657
+Calling doNNI
+Going to 767 from 687
+Calling doNNI
+Hit internal node 767 from 687
+767 has connections to ['687', '936', '445']
+Going to 225 from 936
+Calling doNNI
+Hit leaf 225 from 936
+Going to 930 from 936
+Calling doNNI
+Hit leaf 930 from 936
+Going to 887 from 936
+Calling doNNI
+Hit internal node 887 from 936
+887 has connections to ['722', '936', '445']
+Going to 619 from 722
+Calling doNNI
+Hit internal node 619 from 722
+619 has connections to ['32', '657', '722']
+Going to 271 from 32
+Calling doNNI
+Going to 271 from 657
+Calling doNNI
+Going to 857 from 428
+Calling doNNI
+Hit internal node 857 from 428
+857 has connections to ['428', '425', '445']
+Going to 225 from 425
+Calling doNNI
+Hit leaf 225 from 425
+Going to 930 from 425
+Calling doNNI
+Hit leaf 930 from 425
+Going to 771 from 425
+Calling doNNI
+Hit internal node 771 from 425
+771 has connections to ['836', '425', '445']
+Going to 271 from 836
+Calling doNNI
+Hit internal node 271 from 836
+271 has connections to ['32', '657', '836']
+Going to 142 from 32
+Calling doNNI
+Going to 142 from 657
+Calling doNNI
+Going to 431 from 513
+Calling doNNI
+Hit internal node 431 from 513
+431 has connections to ['513', '482', '445']
+Going to 225 from 482
+Calling doNNI
+Hit leaf 225 from 482
+Going to 930 from 482
+Calling doNNI
+Hit leaf 930 from 482
+Going to 284 from 482
+Calling doNNI
+Hit internal node 284 from 482
+284 has connections to ['747', '482', '445']
+Going to 142 from 747
+Calling doNNI
+Hit internal node 142 from 747
+142 has connections to ['32', '657', '747']
+Going to 730 from 32
+Calling doNNI
+Going to 730 from 657
+Calling doNNI
+Going to 269 from 939
+Calling doNNI
+Hit internal node 269 from 939
+269 has connections to ['939', '703', '445']
+Going to 225 from 703
+Calling doNNI
+Hit leaf 225 from 703
+Going to 930 from 703
+Calling doNNI
+Hit leaf 930 from 703
+Going to 50 from 703
+Calling doNNI
+Hit internal node 50 from 703
+50 has connections to ['765', '703', '445']
+Going to 730 from 765
+Calling doNNI
+Hit internal node 730 from 765
+730 has connections to ['32', '657', '765']
+Going to 641 from 32
+Calling doNNI
+Going to 641 from 657
+Calling doNNI
+Going to 286 from 906
+Calling doNNI
+Hit internal node 286 from 906
+286 has connections to ['906', '597', '445']
+Going to 225 from 597
+Calling doNNI
+Hit leaf 225 from 597
+Going to 930 from 597
+Calling doNNI
+Hit leaf 930 from 597
+Going to 440 from 597
+Calling doNNI
+Hit internal node 440 from 597
+440 has connections to ['533', '597', '445']
+Going to 641 from 533
+Calling doNNI
+Hit internal node 641 from 533
+641 has connections to ['32', '657', '533']
+Going to 252 from 32
+Calling doNNI
+Going to 252 from 657
+Calling doNNI
+Going to 511 from 735
+Calling doNNI
+Hit internal node 511 from 735
+511 has connections to ['735', '431', '445']
+Going to 225 from 431
+Calling doNNI
+Hit leaf 225 from 431
+Going to 930 from 431
+Calling doNNI
+Hit leaf 930 from 431
+Going to 197 from 431
+Calling doNNI
+Hit internal node 197 from 431
+197 has connections to ['495', '431', '445']
+Going to 252 from 495
+Calling doNNI
+Hit internal node 252 from 495
+252 has connections to ['32', '657', '495']
+Going to 218 from 32
+Calling doNNI
+Going to 218 from 657
+Calling doNNI
+Going to 807 from 363
+Calling doNNI
+Hit internal node 807 from 363
+807 has connections to ['363', '645', '445']
+Going to 225 from 645
+Calling doNNI
+Hit leaf 225 from 645
+Going to 930 from 645
+Calling doNNI
+Hit leaf 930 from 645
+Going to 745 from 645
+Calling doNNI
+Hit internal node 745 from 645
+745 has connections to ['327', '645', '445']
+Going to 218 from 327
+Calling doNNI
+Hit internal node 218 from 327
+218 has connections to ['32', '657', '327']
+Going to 132 from 32
+Calling doNNI
+Going to 132 from 657
+Calling doNNI
+Going to 877 from 553
+Calling doNNI
+Hit internal node 877 from 553
+877 has connections to ['553', '674', '445']
+Going to 225 from 674
+Calling doNNI
+Hit leaf 225 from 674
+Going to 930 from 674
+Calling doNNI
+Hit leaf 930 from 674
+Going to 190 from 674
+Calling doNNI
+Hit internal node 190 from 674
+190 has connections to ['853', '674', '445']
+Going to 132 from 853
+Calling doNNI
+Hit internal node 132 from 853
+132 has connections to ['32', '657', '853']
+Going to 886 from 32
+Calling doNNI
+Going to 886 from 657
+Calling doNNI
+Going to 876 from 1022
+Calling doNNI
+Hit internal node 876 from 1022
+876 has connections to ['1022', '486', '445']
+Going to 225 from 486
+Calling doNNI
+Hit leaf 225 from 486
+Going to 930 from 486
+Calling doNNI
+Hit leaf 930 from 486
+Going to 509 from 486
+Calling doNNI
+Hit internal node 509 from 486
+509 has connections to ['520', '486', '445']
+Going to 886 from 520
+Calling doNNI
+Hit internal node 886 from 520
+886 has connections to ['32', '657', '520']
+Going to 959 from 32
+Calling doNNI
+Going to 959 from 657
+Calling doNNI
+Going to 5 from 995
+Calling doNNI
+Hit internal node 5 from 995
+5 has connections to ['995', '500', '445']
+Going to 225 from 500
+Calling doNNI
+Hit leaf 225 from 500
+Going to 930 from 500
+Calling doNNI
+Hit leaf 930 from 500
+Going to 129 from 500
+Calling doNNI
+Hit internal node 129 from 500
+129 has connections to ['408', '500', '445']
+Going to 959 from 408
+Calling doNNI
+Hit internal node 959 from 408
+959 has connections to ['32', '657', '408']
+Going to 976 from 32
+Calling doNNI
+Going to 976 from 657
+Calling doNNI
+Going to 734 from 348
+Calling doNNI
+Hit internal node 734 from 348
+734 has connections to ['348', '37', '445']
+Going to 225 from 37
+Calling doNNI
+Hit leaf 225 from 37
+Going to 930 from 37
+Calling doNNI
+Hit leaf 930 from 37
+Going to 683 from 37
+Calling doNNI
+Hit internal node 683 from 37
+683 has connections to ['1003', '37', '445']
+Going to 976 from 1003
+Calling doNNI
+Hit internal node 976 from 1003
+976 has connections to ['32', '657', '1003']
+Going to 565 from 32
+Calling doNNI
+Going to 565 from 657
+Calling doNNI
+Going to 808 from 376
+Calling doNNI
+Hit internal node 808 from 376
+808 has connections to ['376', '781', '445']
+Going to 225 from 781
+Calling doNNI
+Hit leaf 225 from 781
+Going to 930 from 781
+Calling doNNI
+Hit leaf 930 from 781
+Going to 732 from 781
+Calling doNNI
+Hit internal node 732 from 781
+732 has connections to ['876', '781', '445']
+Going to 565 from 876
+Calling doNNI
+Hit internal node 565 from 876
+565 has connections to ['32', '657', '876']
+Going to 739 from 32
+Calling doNNI
+Going to 739 from 657
+Calling doNNI
+Going to 649 from 103
+Calling doNNI
+Hit internal node 649 from 103
+649 has connections to ['103', '785', '445']
+Going to 225 from 785
+Calling doNNI
+Hit leaf 225 from 785
+Going to 930 from 785
+Calling doNNI
+Hit leaf 930 from 785
+Going to 162 from 785
+Calling doNNI
+Hit internal node 162 from 785
+162 has connections to ['49', '785', '445']
+Going to 739 from 49
+Calling doNNI
+Hit internal node 739 from 49
+739 has connections to ['32', '657', '49']
+Going to 297 from 32
+Calling doNNI
+Going to 297 from 657
+Calling doNNI
+Going to 124 from 111
+Calling doNNI
+Hit internal node 124 from 111
+124 has connections to ['111', '278', '445']
+Going to 225 from 278
+Calling doNNI
+Hit leaf 225 from 278
+Going to 930 from 278
+Calling doNNI
+Hit leaf 930 from 278
+Going to 647 from 278
+Calling doNNI
+Hit internal node 647 from 278
+647 has connections to ['297', '278', '445']
+Going to 297 from 297
+Calling doNNI
+Hit internal node 297 from 297
+297 has connections to ['32', '657', '297']
+Going to 738 from 32
+Calling doNNI
+Going to 738 from 657
+Calling doNNI
+Going to 480 from 528
+Calling doNNI
+Hit internal node 480 from 528
+480 has connections to ['528', '905', '445']
+Going to 225 from 905
+Calling doNNI
+Hit leaf 225 from 905
+Going to 930 from 905
+Calling doNNI
+Hit leaf 930 from 905
+Going to 82 from 905
+Calling doNNI
+Hit internal node 82 from 905
+82 has connections to ['330', '905', '445']
+Going to 738 from 330
+Calling doNNI
+Hit internal node 738 from 330
+738 has connections to ['32', '657', '330']
+Going to 174 from 32
+Calling doNNI
+Going to 174 from 657
+Calling doNNI
+Going to 1012 from 511
+Calling doNNI
+Hit internal node 1012 from 511
+1012 has connections to ['511', '356', '445']
+Going to 225 from 356
+Calling doNNI
+Hit leaf 225 from 356
+Going to 930 from 356
+Calling doNNI
+Hit leaf 930 from 356
+Going to 476 from 356
+Calling doNNI
+Hit internal node 476 from 356
+476 has connections to ['794', '356', '445']
+Going to 174 from 794
+Calling doNNI
+Hit internal node 174 from 794
+174 has connections to ['32', '657', '794']
+Going to 741 from 32
+Calling doNNI
+Going to 741 from 657
+Calling doNNI
+Going to 544 from 965
+Calling doNNI
+Hit internal node 544 from 965
+544 has connections to ['965', '308', '445']
+Going to 225 from 308
+Calling doNNI
+Hit leaf 225 from 308
+Going to 930 from 308
+Calling doNNI
+Hit leaf 930 from 308
+Going to 955 from 308
+Calling doNNI
+Hit internal node 955 from 308
+955 has connections to ['65', '308', '445']
+Going to 741 from 65
+Calling doNNI
+Hit internal node 741 from 65
+741 has connections to ['32', '657', '65']
+Going to 288 from 32
+Calling doNNI
+Going to 288 from 657
+Calling doNNI
+Going to 421 from 841
+Calling doNNI
+Hit internal node 421 from 841
+421 has connections to ['841', '729', '445']
+Going to 225 from 729
+Calling doNNI
+Hit leaf 225 from 729
+Going to 930 from 729
+Calling doNNI
+Hit leaf 930 from 729
+Going to 665 from 729
+Calling doNNI
+Hit internal node 665 from 729
+665 has connections to ['113', '729', '445']
+Going to 288 from 113
+Calling doNNI
+Hit internal node 288 from 113
+288 has connections to ['32', '657', '113']
+Going to 502 from 32
+Calling doNNI
+Going to 502 from 657
+Calling doNNI
+Going to 178 from 721
+Calling doNNI
+Hit internal node 178 from 721
+178 has connections to ['721', '16', '445']
+Going to 225 from 16
+Calling doNNI
+Hit leaf 225 from 16
+Going to 930 from 16
+Calling doNNI
+Hit leaf 930 from 16
+Going to 718 from 16
+Calling doNNI
+Hit internal node 718 from 16
+718 has connections to ['784', '16', '445']
+Going to 502 from 784
+Calling doNNI
+Hit internal node 502 from 784
+502 has connections to ['32', '657', '784']
+Going to 406 from 32
+Calling doNNI
+Going to 406 from 657
+Calling doNNI
+Going to 779 from 777
+Calling doNNI
+Hit internal node 779 from 777
+779 has connections to ['777', '388', '445']
+Going to 225 from 388
+Calling doNNI
+Hit leaf 225 from 388
+Going to 930 from 388
+Calling doNNI
+Hit leaf 930 from 388
+Going to 332 from 388
+Calling doNNI
+Hit internal node 332 from 388
+332 has connections to ['63', '388', '445']
+Going to 406 from 63
+Calling doNNI
+Hit internal node 406 from 63
+406 has connections to ['32', '657', '63']
+Going to 274 from 32
+Calling doNNI
+Going to 274 from 657
+Calling doNNI
+Going to 412 from 883
+Calling doNNI
+Hit internal node 412 from 883
+412 has connections to ['883', '721', '445']
+Going to 225 from 721
+Calling doNNI
+Hit leaf 225 from 721
+Going to 930 from 721
+Calling doNNI
+Hit leaf 930 from 721
+Going to 459 from 721
+Calling doNNI
+Hit internal node 459 from 721
+459 has connections to ['613', '721', '445']
+Going to 274 from 613
+Calling doNNI
+Hit internal node 274 from 613
+274 has connections to ['32', '657', '613']
+Going to 141 from 32
+Calling doNNI
+Going to 141 from 657
+Calling doNNI
+Going to 406 from 593
+Calling doNNI
+Hit internal node 406 from 593
+406 has connections to ['593', '949', '445']
+Going to 225 from 949
+Calling doNNI
+Hit leaf 225 from 949
+Going to 930 from 949
+Calling doNNI
+Hit leaf 930 from 949
+Going to 467 from 949
+Calling doNNI
+Hit internal node 467 from 949
+467 has connections to ['127', '949', '445']
+Going to 141 from 127
+Calling doNNI
+Hit internal node 141 from 127
+141 has connections to ['32', '657', '127']
+Going to 845 from 32
+Calling doNNI
+Going to 845 from 657
+Calling doNNI
+Going to 594 from 645
+Calling doNNI
+Hit internal node 594 from 645
+594 has connections to ['645', '64', '445']
+Going to 225 from 64
+Calling doNNI
+Hit leaf 225 from 64
+Going to 930 from 64
+Calling doNNI
+Hit leaf 930 from 64
+Going to 988 from 64
+Calling doNNI
+Hit internal node 988 from 64
+988 has connections to ['750', '64', '445']
+Going to 845 from 750
+Calling doNNI
+Hit internal node 845 from 750
+845 has connections to ['32', '657', '750']
+Going to 823 from 32
+Calling doNNI
+Going to 823 from 657
+Calling doNNI
+Going to 1004 from 398
+Calling doNNI
+Hit internal node 1004 from 398
+1004 has connections to ['398', '373', '445']
+Going to 225 from 373
+Calling doNNI
+Hit leaf 225 from 373
+Going to 930 from 373
+Calling doNNI
+Hit leaf 930 from 373
+Going to 344 from 373
+Calling doNNI
+Hit internal node 344 from 373
+344 has connections to ['344', '373', '445']
+Going to 823 from 344
+Calling doNNI
+Hit internal node 823 from 344
+823 has connections to ['32', '657', '344']
+Going to 419 from 32
+Calling doNNI
+Going to 419 from 657
+Calling doNNI
+Going to 776 from 82
+Calling doNNI
+Hit internal node 776 from 82
+776 has connections to ['82', '160', '445']
+Going to 225 from 160
+Calling doNNI
+Hit leaf 225 from 160
+Going to 930 from 160
+Calling doNNI
+Hit leaf 930 from 160
+Going to 642 from 160
+Calling doNNI
+Hit internal node 642 from 160
+642 has connections to ['515', '160', '445']
+Going to 419 from 515
+Calling doNNI
+Hit internal node 419 from 515
+419 has connections to ['32', '657', '515']
+Going to 823 from 32
+Calling doNNI
+Going to 823 from 657
+Calling doNNI
+Going to 165 from 496
+Calling doNNI
+Hit internal node 165 from 496
+165 has connections to ['496', '947', '445']
+Going to 225 from 947
+Calling doNNI
+Hit leaf 225 from 947
+Going to 930 from 947
+Calling doNNI
+Hit leaf 930 from 947
+Going to 880 from 947
+Calling doNNI
+Hit internal node 880 from 947
+880 has connections to ['812', '947', '445']
+Going to 823 from 812
+Calling doNNI
+Hit internal node 823 from 812
+823 has connections to ['32', '657', '812']
+Going to 615 from 32
+Calling doNNI
+Going to 615 from 657
+Calling doNNI
+Going to 537 from 656
+Calling doNNI
+Hit internal node 537 from 656
+537 has connections to ['656', '804', '445']
+Going to 225 from 804
+Calling doNNI
+Hit leaf 225 from 804
+Going to 930 from 804
+Calling doNNI
+Hit leaf 930 from 804
+Going to 377 from 804
+Calling doNNI
+Hit internal node 377 from 804
+377 has connections to ['636', '804', '445']
+Going to 615 from 636
+Calling doNNI
+Hit internal node 615 from 636
+615 has connections to ['32', '657', '636']
+Going to 205 from 32
+Calling doNNI
+Going to 205 from 657
+Calling doNNI
+Going to 479 from 693
+Calling doNNI
+Hit internal node 479 from 693
+479 has connections to ['693', '715', '445']
+Going to 225 from 715
+Calling doNNI
+Hit leaf 225 from 715
+Going to 930 from 715
+Calling doNNI
+Hit leaf 930 from 715
+Going to 981 from 715
+Calling doNNI
+Hit internal node 981 from 715
+981 has connections to ['276', '715', '445']
+Going to 205 from 276
+Calling doNNI
+Hit internal node 205 from 276
+205 has connections to ['32', '657', '276']
+Going to 374 from 32
+Calling doNNI
+Going to 374 from 657
+Calling doNNI
+Going to 63 from 452
+Calling doNNI
+Hit internal node 63 from 452
+63 has connections to ['452', '273', '445']
+Going to 225 from 273
+Calling doNNI
+Hit leaf 225 from 273
+Going to 930 from 273
+Calling doNNI
+Hit leaf 930 from 273
+Going to 102 from 273
+Calling doNNI
+Hit internal node 102 from 273
+102 has connections to ['275', '273', '445']
+Going to 374 from 275
+Calling doNNI
+Hit internal node 374 from 275
+374 has connections to ['32', '657', '275']
+Going to 185 from 32
+Calling doNNI
+Going to 185 from 657
+Calling doNNI
+Going to 274 from 328
+Calling doNNI
+Hit internal node 274 from 328
+274 has connections to ['328', '172', '445']
+Going to 225 from 172
+Calling doNNI
+Hit leaf 225 from 172
+Going to 930 from 172
+Calling doNNI
+Hit leaf 930 from 172
+Going to 672 from 172
+Calling doNNI
+Hit internal node 672 from 172
+672 has connections to ['901', '172', '445']
+Going to 185 from 901
+Calling doNNI
+Hit internal node 185 from 901
+185 has connections to ['32', '657', '901']
+Going to 918 from 32
+Calling doNNI
+Going to 918 from 657
+Calling doNNI
+Going to 745 from 837
+Calling doNNI
+Hit internal node 745 from 837
+745 has connections to ['837', '841', '445']
+Going to 225 from 841
+Calling doNNI
+Hit leaf 225 from 841
+Going to 930 from 841
+Calling doNNI
+Hit leaf 930 from 841
+Going to 246 from 841
+Calling doNNI
+Hit internal node 246 from 841
+246 has connections to ['54', '841', '445']
+Going to 918 from 54
+Calling doNNI
+Hit internal node 918 from 54
+918 has connections to ['32', '657', '54']
+Going to 1022 from 32
+Calling doNNI
+Going to 1022 from 657
+Calling doNNI
+Going to 322 from 167
+Calling doNNI
+Hit internal node 322 from 167
+322 has connections to ['167', '892', '445']
+Going to 225 from 892
+Calling doNNI
+Hit leaf 225 from 892
+Going to 930 from 892
+Calling doNNI
+Hit leaf 930 from 892
+Going to 192 from 892
+Calling doNNI
+Hit internal node 192 from 892
+192 has connections to ['420', '892', '445']
+Going to 1022 from 420
+Calling doNNI
+Hit internal node 1022 from 420
+1022 has connections to ['32', '657', '420']
+Going to 115 from 32
+Calling doNNI
+Going to 115 from 657
+Calling doNNI
+Going to 947 from 599
+Calling doNNI
+Hit internal node 947 from 599
+947 has connections to ['599', '1017', '445']
+Going to 225 from 1017
+Calling doNNI
+Hit leaf 225 from 1017
+Going to 930 from 1017
+Calling doNNI
+Hit leaf 930 from 1017
+Going to 488 from 1017
+Calling doNNI
+Hit internal node 488 from 1017
+488 has connections to ['18', '1017', '445']
+Going to 115 from 18
+Calling doNNI
+Hit internal node 115 from 18
+115 has connections to ['32', '657', '18']
+Going to 203 from 32
+Calling doNNI
+Going to 203 from 657
+Calling doNNI
+Going to 336 from 672
+Calling doNNI
+Hit internal node 336 from 672
+336 has connections to ['672', '301', '445']
+Going to 225 from 301
+Calling doNNI
+Hit leaf 225 from 301
+Going to 930 from 301
+Calling doNNI
+Hit leaf 930 from 301
+Going to 759 from 301
+Calling doNNI
+Hit internal node 759 from 301
+759 has connections to ['956', '301', '445']
+Going to 203 from 956
+Calling doNNI
+Hit internal node 203 from 956
+203 has connections to ['32', '657', '956']
+Going to 310 from 32
+Calling doNNI
+Going to 310 from 657
+Calling doNNI
+Going to 862 from 977
+Calling doNNI
+Hit internal node 862 from 977
+862 has connections to ['977', '224', '445']
+Going to 225 from 224
+Calling doNNI
+Hit leaf 225 from 224
+Going to 930 from 224
+Calling doNNI
+Hit leaf 930 from 224
+Going to 106 from 224
+Calling doNNI
+Hit internal node 106 from 224
+106 has connections to ['624', '224', '445']
+Going to 310 from 624
+Calling doNNI
+Hit internal node 310 from 624
+310 has connections to ['32', '657', '624']
+Going to 770 from 32
+Calling doNNI
+Going to 770 from 657
+Calling doNNI
+Going to 947 from 608
+Calling doNNI
+Hit internal node 947 from 608
+947 has connections to ['608', '945', '445']
+Going to 225 from 945
+Calling doNNI
+Hit leaf 225 from 945
+Going to 930 from 945
+Calling doNNI
+Hit leaf 930 from 945
+Going to 641 from 945
+Calling doNNI
+Hit internal node 641 from 945
+641 has connections to ['452', '945', '445']
+Going to 770 from 452
+Calling doNNI
+Hit internal node 770 from 452
+770 has connections to ['32', '657', '452']
+Going to 743 from 32
+Calling doNNI
+Going to 743 from 657
+Calling doNNI
+Going to 213 from 457
+Calling doNNI
+Hit internal node 213 from 457
+213 has connections to ['457', '229', '445']
+Going to 225 from 229
+Calling doNNI
+Hit leaf 225 from 229
+Going to 930 from 229
+Calling doNNI
+Hit leaf 930 from 229
+Going to 356 from 229
+Calling doNNI
+Hit internal node 356 from 229
+356 has connections to ['854', '229', '445']
+Going to 743 from 854
+Calling doNNI
+Hit internal node 743 from 854
+743 has connections to ['32', '657', '854']
+Going to 412 from 32
+Calling doNNI
+Going to 412 from 657
+Calling doNNI
+Going to 813 from 802
+Calling doNNI
+Hit internal node 813 from 802
+813 has connections to ['802', '560', '445']
+Going to 225 from 560
+Calling doNNI
+Hit leaf 225 from 560
+Going to 930 from 560
+Calling doNNI
+Hit leaf 930 from 560
+Going to 85 from 560
+Calling doNNI
+Hit internal node 85 from 560
+85 has connections to ['638', '560', '445']
+Going to 412 from 638
+Calling doNNI
+Hit internal node 412 from 638
+412 has connections to ['32', '657', '638']
+Going to 614 from 32
+Calling doNNI
+Going to 614 from 657
+Calling doNNI
+Going to 1007 from 563
+Calling doNNI
+Hit internal node 1007 from 563
+1007 has connections to ['563', '783', '445']
+Going to 225 from 783
+Calling doNNI
+Hit leaf 225 from 783
+Going to 930 from 783
+Calling doNNI
+Hit leaf 930 from 783
+Going to 47 from 783
+Calling doNNI
+Hit internal node 47 from 783
+47 has connections to ['1003', '783', '445']
+Going to 614 from 1003
+Calling doNNI
+Hit internal node 614 from 1003
+614 has connections to ['32', '657', '1003']
+Going to 467 from 32
+Calling doNNI
+Going to 467 from 657
+Calling doNNI
+Going to 684 from 255
+Calling doNNI
+Hit internal node 684 from 255
+684 has connections to ['255', '230', '445']
+Going to 225 from 230
+Calling doNNI
+Hit leaf 225 from 230
+Going to 930 from 230
+Calling doNNI
+Hit leaf 930 from 230
+Going to 974 from 230
+Calling doNNI
+Hit internal node 974 from 230
+974 has connections to ['254', '230', '445']
+Going to 467 from 254
+Calling doNNI
+Hit internal node 467 from 254
+467 has connections to ['32', '657', '254']
+Going to 435 from 32
+Calling doNNI
+Going to 435 from 657
+Calling doNNI
+Going to 471 from 883
+Calling doNNI
+Hit internal node 471 from 883
+471 has connections to ['883', '957', '445']
+Going to 225 from 957
+Calling doNNI
+Hit leaf 225 from 957
+Going to 930 from 957
+Calling doNNI
+Hit leaf 930 from 957
+Going to 428 from 957
+Calling doNNI
+Hit internal node 428 from 957
+428 has connections to ['851', '957', '445']
+Going to 435 from 851
+Calling doNNI
+Hit internal node 435 from 851
+435 has connections to ['32', '657', '851']
+Going to 858 from 32
+Calling doNNI
+Going to 858 from 657
+Calling doNNI
+Going to 512 from 190
+Calling doNNI
+Hit internal node 512 from 190
+512 has connections to ['190', '841', '445']
+Going to 225 from 841
+Calling doNNI
+Hit leaf 225 from 841
+Going to 930 from 841
+Calling doNNI
+Hit leaf 930 from 841
+Going to 19 from 841
+Calling doNNI
+Hit internal node 19 from 841
+19 has connections to ['754', '841', '445']
+Going to 858 from 754
+Calling doNNI
+Hit internal node 858 from 754
+858 has connections to ['32', '657', '754']
+Going to 208 from 32
+Calling doNNI
+Going to 208 from 657
+Calling doNNI
+Going to 786 from 214
+Calling doNNI
+Hit internal node 786 from 214
+786 has connections to ['214', '80', '445']
+Going to 225 from 80
+Calling doNNI
+Hit leaf 225 from 80
+Going to 930 from 80
+Calling doNNI
+Hit leaf 930 from 80
+Going to 830 from 80
+Calling doNNI
+Hit internal node 830 from 80
+830 has connections to ['316', '80', '445']
+Going to 208 from 316
+Calling doNNI
+Hit internal node 208 from 316
+208 has connections to ['32', '657', '316']
+Going to 115 from 32
+Calling doNNI
+Going to 115 from 657
+Calling doNNI
+Going to 358 from 192
+Calling doNNI
+Hit internal node 358 from 192
+358 has connections to ['192', '728', '445']
+Going to 225 from 728
+Calling doNNI
+Hit leaf 225 from 728
+Going to 930 from 728
+Calling doNNI
+Hit leaf 930 from 728
+Going to 350 from 728
+Calling doNNI
+Hit internal node 350 from 728
+350 has connections to ['933', '728', '445']
+Going to 115 from 933
+Calling doNNI
+Hit internal node 115 from 933
+115 has connections to ['32', '657', '933']
+Going to 152 from 32
+Calling doNNI
+Going to 152 from 657
+Calling doNNI
+Going to 677 from 1015
+Calling doNNI
+Hit internal node 677 from 1015
+677 has connections to ['1015', '810', '445']
+Going to 225 from 810
+Calling doNNI
+Hit leaf 225 from 810
+Going to 930 from 810
+Calling doNNI
+Hit leaf 930 from 810
+Going to 1016 from 810
+Calling doNNI
+Hit internal node 1016 from 810
+1016 has connections to ['621', '810', '445']
+Going to 152 from 621
+Calling doNNI
+Hit internal node 152 from 621
+152 has connections to ['32', '657', '621']
+Going to 32 from 32
+Calling doNNI
+Going to 32 from 657
+Calling doNNI
+Going to 738 from 521
+Calling doNNI
+Hit internal node 738 from 521
+738 has connections to ['521', '67', '445']
+Going to 225 from 67
+Calling doNNI
+Hit leaf 225 from 67
+Going to 930 from 67
+Calling doNNI
+Hit leaf 930 from 67
+Going to 428 from 67
+Calling doNNI
+Hit internal node 428 from 67
+428 has connections to ['712', '67', '445']
+Going to 32 from 712
+Calling doNNI
+Hit internal node 32 from 712
+32 has connections to ['32', '657', '712']
+Going to 831 from 32
+Calling doNNI
+Going to 831 from 657
+Calling doNNI
+Going to 526 from 525
+Calling doNNI
+Hit internal node 526 from 525
+526 has connections to ['525', '457', '445']
+Going to 225 from 457
+Calling doNNI
+Hit leaf 225 from 457
+Going to 930 from 457
+Calling doNNI
+Hit leaf 930 from 457
+Going to 201 from 457
+Calling doNNI
+Hit internal node 201 from 457
+201 has connections to ['274', '457', '445']
+Going to 831 from 274
+Calling doNNI
+Hit internal node 831 from 274
+831 has connections to ['32', '657', '274']
+Going to 757 from 32
+Calling doNNI
+Going to 757 from 657
+Calling doNNI
+Going to 473 from 732
+Calling doNNI
+Hit internal node 473 from 732
+473 has connections to ['732', '346', '445']
+Going to 225 from 346
+Calling doNNI
+Hit leaf 225 from 346
+Going to 930 from 346
+Calling doNNI
+Hit leaf 930 from 346
+Going to 448 from 346
+Calling doNNI
+Hit internal node 448 from 346
+448 has connections to ['541', '346', '445']
+Going to 757 from 541
+Calling doNNI
+Hit internal node 757 from 541
+757 has connections to ['32', '657', '541']
+Going to 389 from 32
+Calling doNNI
+Going to 389 from 657
+Calling doNNI
+Going to 802 from 29
+Calling doNNI
+Hit internal node 802 from 29
+802 has connections to ['29', '860', '445']
+Going to 225 from 860
+Calling doNNI
+Hit leaf 225 from 860
+Going to 930 from 860
+Calling doNNI
+Hit leaf 930 from 860
+Going to 460 from 860
+Calling doNNI
+Hit internal node 460 from 860
+460 has connections to ['685', '860', '445']
+Going to 389 from 685
+Calling doNNI
+Hit internal node 389 from 685
+389 has connections to ['32', '657', '685']
+Going to 182 from 32
+Calling doNNI
+Going to 182 from 657
+Calling doNNI
+Going to 335 from 417
+Calling doNNI
+Hit internal node 335 from 417
+335 has connections to ['417', '13', '445']
+Going to 225 from 13
+Calling doNNI
+Hit leaf 225 from 13
+Going to 930 from 13
+Calling doNNI
+Hit leaf 930 from 13
+Going to 224 from 13
+Calling doNNI
+Hit internal node 224 from 13
+224 has connections to ['622', '13', '445']
+Going to 182 from 622
+Calling doNNI
+Hit internal node 182 from 622
+182 has connections to ['32', '657', '622']
+Going to 106 from 32
+Calling doNNI
+Going to 106 from 657
+Calling doNNI
+Going to 220 from 362
+Calling doNNI
+Hit internal node 220 from 362
+220 has connections to ['362', '613', '445']
+Going to 225 from 613
+Calling doNNI
+Hit leaf 225 from 613
+Going to 930 from 613
+Calling doNNI
+Hit leaf 930 from 613
+Going to 64 from 613
+Calling doNNI
+Hit internal node 64 from 613
+64 has connections to ['809', '613', '445']
+Going to 106 from 809
+Calling doNNI
+Hit internal node 106 from 809
+106 has connections to ['32', '657', '809']
+Going to 669 from 32
+Calling doNNI
+Going to 669 from 657
+Calling doNNI
+Going to 825 from 883
+Calling doNNI
+Hit internal node 825 from 883
+825 has connections to ['883', '928', '445']
+Going to 225 from 928
+Calling doNNI
+Hit leaf 225 from 928
+Going to 930 from 928
+Calling doNNI
+Hit leaf 930 from 928
+Going to 675 from 928
+Calling doNNI
+Hit internal node 675 from 928
+675 has connections to ['892', '928', '445']
+Going to 669 from 892
+Calling doNNI
+Hit internal node 669 from 892
+669 has connections to ['32', '657', '892']
+Going to 425 from 32
+Calling doNNI
+Going to 425 from 657
+Calling doNNI
+Going to 4 from 757
+Calling doNNI
+Hit internal node 4 from 757
+4 has connections to ['757', '235', '445']
+Going to 225 from 235
+Calling doNNI
+Hit leaf 225 from 235
+Going to 930 from 235
+Calling doNNI
+Hit leaf 930 from 235
+Going to 566 from 235
+Calling doNNI
+Hit internal node 566 from 235
+566 has connections to ['372', '235', '445']
+Going to 425 from 372
+Calling doNNI
+Hit internal node 425 from 372
+425 has connections to ['32', '657', '372']
+Going to 624 from 32
+Calling doNNI
+Going to 624 from 657
+Calling doNNI
+Going to 57 from 416
+Calling doNNI
+Hit internal node 57 from 416
+57 has connections to ['416', '853', '445']
+Going to 225 from 853
+Calling doNNI
+Hit leaf 225 from 853
+Going to 930 from 853
+Calling doNNI
+Hit leaf 930 from 853
+Going to 779 from 853
+Calling doNNI
+Hit internal node 779 from 853
+779 has connections to ['889', '853', '445']
+Going to 624 from 889
+Calling doNNI
+Hit internal node 624 from 889
+624 has connections to ['32', '657', '889']
+Going to 355 from 32
+Calling doNNI
+Going to 355 from 657
+Calling doNNI
+Going to 324 from 550
+Calling doNNI
+Hit internal node 324 from 550
+324 has connections to ['550', '37', '445']
+Going to 225 from 37
+Calling doNNI
+Hit leaf 225 from 37
+Going to 930 from 37
+Calling doNNI
+Hit leaf 930 from 37
+Going to 81 from 37
+Calling doNNI
+Hit internal node 81 from 37
+81 has connections to ['404', '37', '445']
+Going to 355 from 404
+Calling doNNI
+Hit internal node 355 from 404
+355 has connections to ['32', '657', '404']
+Going to 222 from 32
+Calling doNNI
+Going to 222 from 657
+Calling doNNI
+Going to 433 from 778
+Calling doNNI
+Hit internal node 433 from 778
+433 has connections to ['778', '83', '445']
+Going to 225 from 83
+Calling doNNI
+Hit leaf 225 from 83
+Going to 930 from 83
+Calling doNNI
+Hit leaf 930 from 83
+Going to 215 from 83
+Calling doNNI
+Hit internal node 215 from 83
+215 has connections to ['593', '83', '445']
+Going to 222 from 593
+Calling doNNI
+Hit internal node 222 from 593
+222 has connections to ['32', '657', '593']
+Going to 232 from 32
+Calling doNNI
+Going to 232 from 657
+Calling doNNI
+Going to 778 from 1022
+Calling doNNI
+Hit internal node 778 from 1022
+778 has connections to ['1022', '1014', '445']
+Going to 225 from 1014
+Calling doNNI
+Hit leaf 225 from 1014
+Going to 930 from 1014
+Calling doNNI
+Hit leaf 930 from 1014
+Going to 903 from 1014
+Calling doNNI
+Hit internal node 903 from 1014
+903 has connections to ['62', '1014', '445']
+Going to 232 from 62
+Calling doNNI
+Hit internal node 232 from 62
+232 has connections to ['32', '657', '62']
+Going to 1010 from 32
+Calling doNNI
+Going to 1010 from 657
+Calling doNNI
+Going to 625 from 458
+Calling doNNI
+Hit internal node 625 from 458
+625 has connections to ['458', '912', '445']
+Going to 225 from 912
+Calling doNNI
+Hit leaf 225 from 912
+Going to 930 from 912
+Calling doNNI
+Hit leaf 930 from 912
+Going to 698 from 912
+Calling doNNI
+Hit internal node 698 from 912
+698 has connections to ['806', '912', '445']
+Going to 1010 from 806
+Calling doNNI
+Hit internal node 1010 from 806
+1010 has connections to ['32', '657', '806']
+Going to 121 from 32
+Calling doNNI
+Going to 121 from 657
+Calling doNNI
+Going to 865 from 188
+Calling doNNI
+Hit internal node 865 from 188
+865 has connections to ['188', '702', '445']
+Going to 225 from 702
+Calling doNNI
+Hit leaf 225 from 702
+Going to 930 from 702
+Calling doNNI
+Hit leaf 930 from 702
+Going to 998 from 702
+Calling doNNI
+Hit internal node 998 from 702
+998 has connections to ['621', '702', '445']
+Going to 121 from 621
+Calling doNNI
+Hit internal node 121 from 621
+121 has connections to ['32', '657', '621']
+Going to 1009 from 32
+Calling doNNI
+Going to 1009 from 657
+Calling doNNI
+Going to 599 from 727
+Calling doNNI
+Hit internal node 599 from 727
+599 has connections to ['727', '843', '445']
+Going to 225 from 843
+Calling doNNI
+Hit leaf 225 from 843
+Going to 930 from 843
+Calling doNNI
+Hit leaf 930 from 843
+Going to 542 from 843
+Calling doNNI
+Hit internal node 542 from 843
+542 has connections to ['509', '843', '445']
+Going to 1009 from 509
+Calling doNNI
+Hit internal node 1009 from 509
+1009 has connections to ['32', '657', '509']
+Going to 513 from 32
+Calling doNNI
+Going to 513 from 657
+Calling doNNI
+Going to 368 from 237
+Calling doNNI
+Hit internal node 368 from 237
+368 has connections to ['237', '211', '445']
+Going to 225 from 211
+Calling doNNI
+Hit leaf 225 from 211
+Going to 930 from 211
+Calling doNNI
+Hit leaf 930 from 211
+Going to 433 from 211
+Calling doNNI
+Hit internal node 433 from 211
+433 has connections to ['282', '211', '445']
+Going to 513 from 282
+Calling doNNI
+Hit internal node 513 from 282
+513 has connections to ['32', '657', '282']
+Going to 296 from 32
+Calling doNNI
+Going to 296 from 657
+Calling doNNI
+Going to 684 from 654
+Calling doNNI
+Hit internal node 684 from 654
+684 has connections to ['654', '595', '445']
+Going to 225 from 595
+Calling doNNI
+Hit leaf 225 from 595
+Going to 930 from 595
+Calling doNNI
+Hit leaf 930 from 595
+Going to 364 from 595
+Calling doNNI
+Hit internal node 364 from 595
+364 has connections to ['669', '595', '445']
+Going to 296 from 669
+Calling doNNI
+Hit internal node 296 from 669
+296 has connections to ['32', '657', '669']
+Going to 838 from 32
+Calling doNNI
+Going to 838 from 657
+Calling doNNI
+Going to 630 from 505
+Calling doNNI
+Hit internal node 630 from 505
+630 has connections to ['505', '550', '445']
+Going to 225 from 550
+Calling doNNI
+Hit leaf 225 from 550
+Going to 930 from 550
+Calling doNNI
+Hit leaf 930 from 550
+Going to 54 from 550
+Calling doNNI
+Hit internal node 54 from 550
+54 has connections to ['687', '550', '445']
+Going to 838 from 687
+Calling doNNI
+Hit internal node 838 from 687
+838 has connections to ['32', '657', '687']
+Going to 291 from 32
+Calling doNNI
+Going to 291 from 657
+Calling doNNI
+Going to 981 from 912
+Calling doNNI
+Hit internal node 981 from 912
+981 has connections to ['912', '781', '445']
+Going to 225 from 781
+Calling doNNI
+Hit leaf 225 from 781
+Going to 930 from 781
+Calling doNNI
+Hit leaf 930 from 781
+Going to 709 from 781
+Calling doNNI
+Hit internal node 709 from 781
+709 has connections to ['354', '781', '445']
+Going to 291 from 354
+Calling doNNI
+Hit internal node 291 from 354
+291 has connections to ['32', '657', '354']
+Going to 519 from 32
+Calling doNNI
+Going to 519 from 657
+Calling doNNI
+Going to 428 from 50
+Calling doNNI
+Hit internal node 428 from 50
+428 has connections to ['50', '726', '445']
+Going to 225 from 726
+Calling doNNI
+Hit leaf 225 from 726
+Going to 930 from 726
+Calling doNNI
+Hit leaf 930 from 726
+Going to 664 from 726
+Calling doNNI
+Hit internal node 664 from 726
+664 has connections to ['393', '726', '445']
+Going to 519 from 393
+Calling doNNI
+Hit internal node 519 from 393
+519 has connections to ['32', '657', '393']
+Going to 187 from 32
+Calling doNNI
+Going to 187 from 657
+Calling doNNI
+Going to 988 from 706
+Calling doNNI
+Hit internal node 988 from 706
+988 has connections to ['706', '689', '445']
+Going to 225 from 689
+Calling doNNI
+Hit leaf 225 from 689
+Going to 930 from 689
+Calling doNNI
+Hit leaf 930 from 689
+Going to 437 from 689
+Calling doNNI
+Hit internal node 437 from 689
+437 has connections to ['381', '689', '445']
+Going to 187 from 381
+Calling doNNI
+Hit internal node 187 from 381
+187 has connections to ['32', '657', '381']
+Going to 984 from 32
+Calling doNNI
+Going to 984 from 657
+Calling doNNI
+Going to 967 from 920
+Calling doNNI
+Hit internal node 967 from 920
+967 has connections to ['920', '775', '445']
+Going to 225 from 775
+Calling doNNI
+Hit leaf 225 from 775
+Going to 930 from 775
+Calling doNNI
+Hit leaf 930 from 775
+Going to 60 from 775
+Calling doNNI
+Hit internal node 60 from 775
+60 has connections to ['971', '775', '445']
+Going to 984 from 971
+Calling doNNI
+Hit internal node 984 from 971
+984 has connections to ['32', '657', '971']
+Going to 110 from 32
+Calling doNNI
+Going to 110 from 657
+Calling doNNI
+Going to 729 from 723
+Calling doNNI
+Hit internal node 729 from 723
+729 has connections to ['723', '482', '445']
+Going to 225 from 482
+Calling doNNI
+Hit leaf 225 from 482
+Going to 930 from 482
+Calling doNNI
+Hit leaf 930 from 482
+Going to 15 from 482
+Calling doNNI
+Hit internal node 15 from 482
+15 has connections to ['433', '482', '445']
+Going to 110 from 433
+Calling doNNI
+Hit internal node 110 from 433
+110 has connections to ['32', '657', '433']
+Going to 838 from 32
+Calling doNNI
+Going to 838 from 657
+Calling doNNI
+Going to 437 from 114
+Calling doNNI
+Hit internal node 437 from 114
+437 has connections to ['114', '550', '445']
+Going to 225 from 550
+Calling doNNI
+Hit leaf 225 from 550
+Going to 930 from 550
+Calling doNNI
+Hit leaf 930 from 550
+Going to 652 from 550
+Calling doNNI
+Hit internal node 652 from 550
+652 has connections to ['1017', '550', '445']
+Going to 838 from 1017
+Calling doNNI
+Hit internal node 838 from 1017
+838 has connections to ['32', '657', '1017']
+Going to 81 from 32
+Calling doNNI
+Going to 81 from 657
+Calling doNNI
+Going to 147 from 169
+Calling doNNI
+Hit internal node 147 from 169
+147 has connections to ['169', '1021', '445']
+Going to 225 from 1021
+Calling doNNI
+Hit leaf 225 from 1021
+Going to 930 from 1021
+Calling doNNI
+Hit leaf 930 from 1021
+Going to 479 from 1021
+Calling doNNI
+Hit internal node 479 from 1021
+479 has connections to ['561', '1021', '445']
+Going to 81 from 561
+Calling doNNI
+Hit internal node 81 from 561
+81 has connections to ['32', '657', '561']
+Going to 820 from 32
+Calling doNNI
+Going to 820 from 657
+Calling doNNI
+Going to 814 from 375
+Calling doNNI
+Hit internal node 814 from 375
+814 has connections to ['375', '378', '445']
+Going to 225 from 378
+Calling doNNI
+Hit leaf 225 from 378
+Going to 930 from 378
+Calling doNNI
+Hit leaf 930 from 378
+Going to 336 from 378
+Calling doNNI
+Hit internal node 336 from 378
+336 has connections to ['911', '378', '445']
+Going to 820 from 911
+Calling doNNI
+Hit internal node 820 from 911
+820 has connections to ['32', '657', '911']
+Going to 570 from 32
+Calling doNNI
+Going to 570 from 657
+Calling doNNI
+Going to 276 from 420
+Calling doNNI
+Hit internal node 276 from 420
+276 has connections to ['420', '487', '445']
+Going to 225 from 487
+Calling doNNI
+Hit leaf 225 from 487
+Going to 930 from 487
+Calling doNNI
+Hit leaf 930 from 487
+Going to 608 from 487
+Calling doNNI
+Hit internal node 608 from 487
+608 has connections to ['823', '487', '445']
+Going to 570 from 823
+Calling doNNI
+Hit internal node 570 from 823
+570 has connections to ['32', '657', '823']
+Going to 604 from 32
+Calling doNNI
+Going to 604 from 657
+Calling doNNI
+Going to 379 from 978
+Calling doNNI
+Hit internal node 379 from 978
+379 has connections to ['978', '540', '445']
+Going to 225 from 540
+Calling doNNI
+Hit leaf 225 from 540
+Going to 930 from 540
+Calling doNNI
+Hit leaf 930 from 540
+Going to 115 from 540
+Calling doNNI
+Hit internal node 115 from 540
+115 has connections to ['152', '540', '445']
+Going to 604 from 152
+Calling doNNI
+Hit internal node 604 from 152
+604 has connections to ['32', '657', '152']
+Going to 44 from 32
+Calling doNNI
+Going to 44 from 657
+Calling doNNI
+Going to 191 from 481
+Calling doNNI
+Hit internal node 191 from 481
+191 has connections to ['481', '545', '445']
+Going to 225 from 545
+Calling doNNI
+Hit leaf 225 from 545
+Going to 930 from 545
+Calling doNNI
+Hit leaf 930 from 545
+Going to 654 from 545
+Calling doNNI
+Hit internal node 654 from 545
+654 has connections to ['265', '545', '445']
+Going to 44 from 265
+Calling doNNI
+Hit internal node 44 from 265
+44 has connections to ['32', '657', '265']
+Going to 927 from 32
+Calling doNNI
+Going to 927 from 657
+Calling doNNI
+Going to 678 from 461
+Calling doNNI
+Hit internal node 678 from 461
+678 has connections to ['461', '590', '445']
+Going to 225 from 590
+Calling doNNI
+Hit leaf 225 from 590
+Going to 930 from 590
+Calling doNNI
+Hit leaf 930 from 590
+Going to 553 from 590
+Calling doNNI
+Hit internal node 553 from 590
+553 has connections to ['58', '590', '445']
+Going to 927 from 58
+Calling doNNI
+Hit internal node 927 from 58
+927 has connections to ['32', '657', '58']
+Going to 966 from 32
+Calling doNNI
+Going to 966 from 657
+Calling doNNI
+Going to 61 from 813
+Calling doNNI
+Hit internal node 61 from 813
+61 has connections to ['813', '997', '445']
+Going to 225 from 997
+Calling doNNI
+Hit leaf 225 from 997
+Going to 930 from 997
+Calling doNNI
+Hit leaf 930 from 997
+Going to 970 from 997
+Calling doNNI
+Hit internal node 970 from 997
+970 has connections to ['427', '997', '445']
+Going to 966 from 427
+Calling doNNI
+Hit internal node 966 from 427
+966 has connections to ['32', '657', '427']
+Going to 738 from 32
+Calling doNNI
+Going to 738 from 657
+Calling doNNI
+Going to 95 from 942
+Calling doNNI
+Hit internal node 95 from 942
+95 has connections to ['942', '153', '445']
+Going to 225 from 153
+Calling doNNI
+Hit leaf 225 from 153
+Going to 930 from 153
+Calling doNNI
+Hit leaf 930 from 153
+Going to 588 from 153
+Calling doNNI
+Hit internal node 588 from 153
+588 has connections to ['889', '153', '445']
+Going to 738 from 889
+Calling doNNI
+Hit internal node 738 from 889
+738 has connections to ['32', '657', '889']
+Going to 340 from 32
+Calling doNNI
+Going to 340 from 657
+Calling doNNI
+Going to 959 from 857
+Calling doNNI
+Hit internal node 959 from 857
+959 has connections to ['857', '904', '445']
+Going to 225 from 904
+Calling doNNI
+Hit leaf 225 from 904
+Going to 930 from 904
+Calling doNNI
+Hit leaf 930 from 904
+Going to 390 from 904
+Calling doNNI
+Hit internal node 390 from 904
+390 has connections to ['227', '904', '445']
+Going to 340 from 227
+Calling doNNI
+Hit internal node 340 from 227
+340 has connections to ['32', '657', '227']
+Going to 725 from 32
+Calling doNNI
+Going to 725 from 657
+Calling doNNI
+Going to 564 from 1020
+Calling doNNI
+Hit internal node 564 from 1020
+564 has connections to ['1020', '746', '445']
+Going to 225 from 746
+Calling doNNI
+Hit leaf 225 from 746
+Going to 930 from 746
+Calling doNNI
+Hit leaf 930 from 746
+Going to 322 from 746
+Calling doNNI
+Hit internal node 322 from 746
+322 has connections to ['861', '746', '445']
+Going to 725 from 861
+Calling doNNI
+Hit internal node 725 from 861
+725 has connections to ['32', '657', '861']
+Going to 356 from 32
+Calling doNNI
+Going to 356 from 657
+Calling doNNI
+Going to 913 from 368
+Calling doNNI
+Hit internal node 913 from 368
+913 has connections to ['368', '127', '445']
+Going to 225 from 127
+Calling doNNI
+Hit leaf 225 from 127
+Going to 930 from 127
+Calling doNNI
+Hit leaf 930 from 127
+Going to 1005 from 127
+Calling doNNI
+Hit internal node 1005 from 127
+1005 has connections to ['80', '127', '445']
+Going to 356 from 80
+Calling doNNI
+Hit internal node 356 from 80
+356 has connections to ['32', '657', '80']
+Going to 362 from 32
+Calling doNNI
+Going to 362 from 657
+Calling doNNI
+Going to 764 from 95
+Calling doNNI
+Hit internal node 764 from 95
+764 has connections to ['95', '879', '445']
+Going to 225 from 879
+Calling doNNI
+Hit leaf 225 from 879
+Going to 930 from 879
+Calling doNNI
+Hit leaf 930 from 879
+Going to 341 from 879
+Calling doNNI
+Hit internal node 341 from 879
+341 has connections to ['768', '879', '445']
+Going to 362 from 768
+Calling doNNI
+Hit internal node 362 from 768
+362 has connections to ['32', '657', '768']
+Going to 372 from 32
+Calling doNNI
+Going to 372 from 657
+Calling doNNI
+Going to 660 from 364
+Calling doNNI
+Hit internal node 660 from 364
+660 has connections to ['364', '178', '445']
+Going to 225 from 178
+Calling doNNI
+Hit leaf 225 from 178
+Going to 930 from 178
+Calling doNNI
+Hit leaf 930 from 178
+Going to 327 from 178
+Calling doNNI
+Hit internal node 327 from 178
+327 has connections to ['267', '178', '445']
+Going to 372 from 267
+Calling doNNI
+Hit internal node 372 from 267
+372 has connections to ['32', '657', '267']
+Going to 488 from 32
+Calling doNNI
+Going to 488 from 657
+Calling doNNI
+Going to 34 from 411
+Calling doNNI
+Hit internal node 34 from 411
+34 has connections to ['411', '890', '445']
+Going to 225 from 890
+Calling doNNI
+Hit leaf 225 from 890
+Going to 930 from 890
+Calling doNNI
+Hit leaf 930 from 890
+Going to 430 from 890
+Calling doNNI
+Hit internal node 430 from 890
+430 has connections to ['222', '890', '445']
+Going to 488 from 222
+Calling doNNI
+Hit internal node 488 from 222
+488 has connections to ['32', '657', '222']
+Going to 418 from 32
+Calling doNNI
+Going to 418 from 657
+Calling doNNI
+Going to 136 from 655
+Calling doNNI
+Hit internal node 136 from 655
+136 has connections to ['655', '39', '445']
+Going to 225 from 39
+Calling doNNI
+Hit leaf 225 from 39
+Going to 930 from 39
+Calling doNNI
+Hit leaf 930 from 39
+Going to 642 from 39
+Calling doNNI
+Hit internal node 642 from 39
+642 has connections to ['717', '39', '445']
+Going to 418 from 717
+Calling doNNI
+Hit internal node 418 from 717
+418 has connections to ['32', '657', '717']
+Going to 224 from 32
+Calling doNNI
+Going to 224 from 657
+Calling doNNI
+Going to 961 from 30
+Calling doNNI
+Hit internal node 961 from 30
+961 has connections to ['30', '618', '445']
+Going to 225 from 618
+Calling doNNI
+Hit leaf 225 from 618
+Going to 930 from 618
+Calling doNNI
+Hit leaf 930 from 618
+Going to 781 from 618
+Calling doNNI
+Hit internal node 781 from 618
+781 has connections to ['115', '618', '445']
+Going to 224 from 115
+Calling doNNI
+Hit internal node 224 from 115
+224 has connections to ['32', '657', '115']
+Going to 36 from 32
+Calling doNNI
+Going to 36 from 657
+Calling doNNI
+Going to 786 from 533
+Calling doNNI
+Hit internal node 786 from 533
+786 has connections to ['533', '21', '445']
+Going to 225 from 21
+Calling doNNI
+Hit leaf 225 from 21
+Going to 930 from 21
+Calling doNNI
+Hit leaf 930 from 21
+Going to 53 from 21
+Calling doNNI
+Hit internal node 53 from 21
+53 has connections to ['647', '21', '445']
+Going to 36 from 647
+Calling doNNI
+Hit internal node 36 from 647
+36 has connections to ['32', '657', '647']
+Going to 105 from 32
+Calling doNNI
+Going to 105 from 657
+Calling doNNI
+Going to 136 from 881
+Calling doNNI
+Hit internal node 136 from 881
+136 has connections to ['881', '96', '445']
+Going to 225 from 96
+Calling doNNI
+Hit leaf 225 from 96
+Going to 930 from 96
+Calling doNNI
+Hit leaf 930 from 96
+Going to 89 from 96
+Calling doNNI
+Hit internal node 89 from 96
+89 has connections to ['186', '96', '445']
+Going to 105 from 186
+Calling doNNI
+Hit internal node 105 from 186
+105 has connections to ['32', '657', '186']
+Going to 658 from 32
+Calling doNNI
+Going to 658 from 657
+Calling doNNI
+Going to 469 from 74
+Calling doNNI
+Hit internal node 469 from 74
+469 has connections to ['74', '667', '445']
+Going to 225 from 667
+Calling doNNI
+Hit leaf 225 from 667
+Going to 930 from 667
+Calling doNNI
+Hit leaf 930 from 667
+Going to 747 from 667
+Calling doNNI
+Hit internal node 747 from 667
+747 has connections to ['1021', '667', '445']
+Going to 658 from 1021
+Calling doNNI
+Hit internal node 658 from 1021
+658 has connections to ['32', '657', '1021']
+Going to 394 from 32
+Calling doNNI
+Going to 394 from 657
+Calling doNNI
+Going to 123 from 916
+Calling doNNI
+Hit internal node 123 from 916
+123 has connections to ['916', '385', '445']
+Going to 225 from 385
+Calling doNNI
+Hit leaf 225 from 385
+Going to 930 from 385
+Calling doNNI
+Hit leaf 930 from 385
+Going to 511 from 385
+Calling doNNI
+Hit internal node 511 from 385
+511 has connections to ['190', '385', '445']
+Going to 394 from 190
+Calling doNNI
+Hit internal node 394 from 190
+394 has connections to ['32', '657', '190']
+Going to 392 from 32
+Calling doNNI
+Going to 392 from 657
+Calling doNNI
+Going to 303 from 138
+Calling doNNI
+Hit internal node 303 from 138
+303 has connections to ['138', '486', '445']
+Going to 225 from 486
+Calling doNNI
+Hit leaf 225 from 486
+Going to 930 from 486
+Calling doNNI
+Hit leaf 930 from 486
+Going to 564 from 486
+Calling doNNI
+Hit internal node 564 from 486
+564 has connections to ['179', '486', '445']
+Going to 392 from 179
+Calling doNNI
+Hit internal node 392 from 179
+392 has connections to ['32', '657', '179']
+Going to 929 from 32
+Calling doNNI
+Going to 929 from 657
+Calling doNNI
+Going to 873 from 517
+Calling doNNI
+Hit internal node 873 from 517
+873 has connections to ['517', '52', '445']
+Going to 225 from 52
+Calling doNNI
+Hit leaf 225 from 52
+Going to 930 from 52
+Calling doNNI
+Hit leaf 930 from 52
+Going to 115 from 52
+Calling doNNI
+Hit internal node 115 from 52
+115 has connections to ['323', '52', '445']
+Going to 929 from 323
+Calling doNNI
+Hit internal node 929 from 323
+929 has connections to ['32', '657', '323']
+Going to 120 from 32
+Calling doNNI
+Going to 120 from 657
+Calling doNNI
+Going to 130 from 932
+Calling doNNI
+Hit internal node 130 from 932
+130 has connections to ['932', '414', '445']
+Going to 225 from 414
+Calling doNNI
+Hit leaf 225 from 414
+Going to 930 from 414
+Calling doNNI
+Hit leaf 930 from 414
+Going to 403 from 414
+Calling doNNI
+Hit internal node 403 from 414
+403 has connections to ['996', '414', '445']
+Going to 120 from 996
+Calling doNNI
+Hit internal node 120 from 996
+120 has connections to ['32', '657', '996']
+Going to 538 from 32
+Calling doNNI
+Going to 538 from 657
+Calling doNNI
+Going to 389 from 46
+Calling doNNI
+Hit internal node 389 from 46
+389 has connections to ['46', '200', '445']
+Going to 225 from 200
+Calling doNNI
+Hit leaf 225 from 200
+Going to 930 from 200
+Calling doNNI
+Hit leaf 930 from 200
+Going to 117 from 200
+Calling doNNI
+Hit internal node 117 from 200
+117 has connections to ['334', '200', '445']
+Going to 538 from 334
+Calling doNNI
+Hit internal node 538 from 334
+538 has connections to ['32', '657', '334']
+Going to 257 from 32
+Calling doNNI
+Going to 257 from 657
+Calling doNNI
+Going to 155 from 717
+Calling doNNI
+Hit internal node 155 from 717
+155 has connections to ['717', '586', '445']
+Going to 225 from 586
+Calling doNNI
+Hit leaf 225 from 586
+Going to 930 from 586
+Calling doNNI
+Hit leaf 930 from 586
+Going to 889 from 586
+Calling doNNI
+Hit internal node 889 from 586
+889 has connections to ['836', '586', '445']
+Going to 257 from 836
+Calling doNNI
+Hit internal node 257 from 836
+257 has connections to ['32', '657', '836']
+Going to 287 from 32
+Calling doNNI
+Going to 287 from 657
+Calling doNNI
+Going to 151 from 236
+Calling doNNI
+Hit internal node 151 from 236
+151 has connections to ['236', '707', '445']
+Going to 225 from 707
+Calling doNNI
+Hit leaf 225 from 707
+Going to 930 from 707
+Calling doNNI
+Hit leaf 930 from 707
+Going to 688 from 707
+Calling doNNI
+Hit internal node 688 from 707
+688 has connections to ['765', '707', '445']
+Going to 287 from 765
+Calling doNNI
+Hit internal node 287 from 765
+287 has connections to ['32', '657', '765']
+Going to 39 from 32
+Calling doNNI
+Going to 39 from 657
+Calling doNNI
+Going to 652 from 153
+Calling doNNI
+Hit internal node 652 from 153
+652 has connections to ['153', '209', '445']
+Going to 225 from 209
+Calling doNNI
+Hit leaf 225 from 209
+Going to 930 from 209
+Calling doNNI
+Hit leaf 930 from 209
+Going to 105 from 209
+Calling doNNI
+Hit internal node 105 from 209
+105 has connections to ['428', '209', '445']
+Going to 39 from 428
+Calling doNNI
+Hit internal node 39 from 428
+39 has connections to ['32', '657', '428']
+Going to 865 from 32
+Calling doNNI
+Going to 865 from 657
+Calling doNNI
+Going to 1023 from 21
+Calling doNNI
+Hit internal node 1023 from 21
+1023 has connections to ['21', '814', '445']
+Going to 225 from 814
+Calling doNNI
+Hit leaf 225 from 814
+Going to 930 from 814
+Calling doNNI
+Hit leaf 930 from 814
+Going to 142 from 814
+Calling doNNI
+Hit internal node 142 from 814
+142 has connections to ['120', '814', '445']
+Going to 865 from 120
+Calling doNNI
+Hit internal node 865 from 120
+865 has connections to ['32', '657', '120']
+Going to 675 from 32
+Calling doNNI
+Going to 675 from 657
+Calling doNNI
+Going to 997 from 217
+Calling doNNI
+Hit internal node 997 from 217
+997 has connections to ['217', '909', '445']
+Going to 225 from 909
+Calling doNNI
+Hit leaf 225 from 909
+Going to 930 from 909
+Calling doNNI
+Hit leaf 930 from 909
+Going to 897 from 909
+Calling doNNI
+Hit internal node 897 from 909
+897 has connections to ['122', '909', '445']
+Going to 675 from 122
+Calling doNNI
+Hit internal node 675 from 122
+675 has connections to ['32', '657', '122']
+Going to 362 from 32
+Calling doNNI
+Going to 362 from 657
+Calling doNNI
+Going to 985 from 419
+Calling doNNI
+Hit internal node 985 from 419
+985 has connections to ['419', '656', '445']
+Going to 225 from 656
+Calling doNNI
+Hit leaf 225 from 656
+Going to 930 from 656
+Calling doNNI
+Hit leaf 930 from 656
+Going to 911 from 656
+Calling doNNI
+Hit internal node 911 from 656
+911 has connections to ['406', '656', '445']
+Going to 362 from 406
+Calling doNNI
+Hit internal node 362 from 406
+362 has connections to ['32', '657', '406']
+Going to 305 from 32
+Calling doNNI
+Going to 305 from 657
+Calling doNNI
+Going to 273 from 371
+Calling doNNI
+Hit internal node 273 from 371
+273 has connections to ['371', '138', '445']
+Going to 225 from 138
+Calling doNNI
+Hit leaf 225 from 138
+Going to 930 from 138
+Calling doNNI
+Hit leaf 930 from 138
+Going to 294 from 138
+Calling doNNI
+Hit internal node 294 from 138
+294 has connections to ['323', '138', '445']
+Going to 305 from 323
+Calling doNNI
+Hit internal node 305 from 323
+305 has connections to ['32', '657', '323']
+Going to 336 from 32
+Calling doNNI
+Going to 336 from 657
+Calling doNNI
+Going to 177 from 528
+Calling doNNI
+Hit internal node 177 from 528
+177 has connections to ['528', '502', '445']
+Going to 225 from 502
+Calling doNNI
+Hit leaf 225 from 502
+Going to 930 from 502
+Calling doNNI
+Hit leaf 930 from 502
+Going to 910 from 502
+Calling doNNI
+Hit internal node 910 from 502
+910 has connections to ['622', '502', '445']
+Going to 336 from 622
+Calling doNNI
+Hit internal node 336 from 622
+336 has connections to ['32', '657', '622']
+Going to 781 from 32
+Calling doNNI
+Going to 781 from 657
+Calling doNNI
+Going to 614 from 750
+Calling doNNI
+Hit internal node 614 from 750
+614 has connections to ['750', '534', '445']
+Going to 225 from 534
+Calling doNNI
+Hit leaf 225 from 534
+Going to 930 from 534
+Calling doNNI
+Hit leaf 930 from 534
+Going to 118 from 534
+Calling doNNI
+Hit internal node 118 from 534
+118 has connections to ['627', '534', '445']
+Going to 781 from 627
+Calling doNNI
+Hit internal node 781 from 627
+781 has connections to ['32', '657', '627']
+Going to 733 from 32
+Calling doNNI
+Going to 733 from 657
+Calling doNNI
+Going to 755 from 343
+Calling doNNI
+Hit internal node 755 from 343
+755 has connections to ['343', '204', '445']
+Going to 225 from 204
+Calling doNNI
+Hit leaf 225 from 204
+Going to 930 from 204
+Calling doNNI
+Hit leaf 930 from 204
+Going to 860 from 204
+Calling doNNI
+Hit internal node 860 from 204
+860 has connections to ['681', '204', '445']
+Going to 733 from 681
+Calling doNNI
+Hit internal node 733 from 681
+733 has connections to ['32', '657', '681']
+Going to 985 from 32
+Calling doNNI
+Going to 985 from 657
+Calling doNNI
+Going to 261 from 261
+Calling doNNI
+Hit internal node 261 from 261
+261 has connections to ['261', '837', '445']
+Going to 225 from 837
+Calling doNNI
+Hit leaf 225 from 837
+Going to 930 from 837
+Calling doNNI
+Hit leaf 930 from 837
+Going to 350 from 837
+Calling doNNI
+Hit internal node 350 from 837
+350 has connections to ['257', '837', '445']
+Going to 985 from 257
+Calling doNNI
+Hit internal node 985 from 257
+985 has connections to ['32', '657', '257']
+Going to 834 from 32
+Calling doNNI
+Going to 834 from 657
+Calling doNNI
+Going to 1020 from 988
+Calling doNNI
+Hit internal node 1020 from 988
+1020 has connections to ['988', '550', '445']
+Going to 225 from 550
+Calling doNNI
+Hit leaf 225 from 550
+Going to 930 from 550
+Calling doNNI
+Hit leaf 930 from 550
+Going to 999 from 550
+Calling doNNI
+Hit internal node 999 from 550
+999 has connections to ['21', '550', '445']
+Going to 834 from 21
+Calling doNNI
+Hit internal node 834 from 21
+834 has connections to ['32', '657', '21']
+Going to 326 from 32
+Calling doNNI
+Going to 326 from 657
+Calling doNNI
+Going to 682 from 304
+Calling doNNI
+Hit internal node 682 from 304
+682 has connections to ['304', '600', '445']
+Going to 225 from 600
+Calling doNNI
+Hit leaf 225 from 600
+Going to 930 from 600
+Calling doNNI
+Hit leaf 930 from 600
+Going to 353 from 600
+Calling doNNI
+Hit internal node 353 from 600
+353 has connections to ['97', '600', '445']
+Going to 326 from 97
+Calling doNNI
+Hit internal node 326 from 97
+326 has connections to ['32', '657', '97']
+Going to 596 from 32
+Calling doNNI
+Going to 596 from 657
+Calling doNNI
+Going to 847 from 200
+Calling doNNI
+Hit internal node 847 from 200
+847 has connections to ['200', '968', '445']
+Going to 225 from 968
+Calling doNNI
+Hit leaf 225 from 968
+Going to 930 from 968
+Calling doNNI
+Hit leaf 930 from 968
+Going to 617 from 968
+Calling doNNI
+Hit internal node 617 from 968
+617 has connections to ['246', '968', '445']
+Going to 596 from 246
+Calling doNNI
+Hit internal node 596 from 246
+596 has connections to ['32', '657', '246']
+Going to 538 from 32
+Calling doNNI
+Going to 538 from 657
+Calling doNNI
+Going to 441 from 379
+Calling doNNI
+Hit internal node 441 from 379
+441 has connections to ['379', '162', '445']
+Going to 225 from 162
+Calling doNNI
+Hit leaf 225 from 162
+Going to 930 from 162
+Calling doNNI
+Hit leaf 930 from 162
+Going to 400 from 162
+Calling doNNI
+Hit internal node 400 from 162
+400 has connections to ['932', '162', '445']
+Going to 538 from 932
+Calling doNNI
+Hit internal node 538 from 932
+538 has connections to ['32', '657', '932']
+Going to 237 from 32
+Calling doNNI
+Going to 237 from 657
+Calling doNNI
+Going to 711 from 590
+Calling doNNI
+Hit internal node 711 from 590
+711 has connections to ['590', '107', '445']
+Going to 225 from 107
+Calling doNNI
+Hit leaf 225 from 107
+Going to 930 from 107
+Calling doNNI
+Hit leaf 930 from 107
+Going to 661 from 107
+Calling doNNI
+Hit internal node 661 from 107
+661 has connections to ['216', '107', '445']
+Going to 237 from 216
+Calling doNNI
+Hit internal node 237 from 216
+237 has connections to ['32', '657', '216']
+Going to 466 from 32
+Calling doNNI
+Going to 466 from 657
+Calling doNNI
+Going to 145 from 713
+Calling doNNI
+Hit internal node 145 from 713
+145 has connections to ['713', '804', '445']
+Going to 225 from 804
+Calling doNNI
+Hit leaf 225 from 804
+Going to 930 from 804
+Calling doNNI
+Hit leaf 930 from 804
+Going to 404 from 804
+Calling doNNI
+Hit internal node 404 from 804
+404 has connections to ['17', '804', '445']
+Going to 466 from 17
+Calling doNNI
+Hit internal node 466 from 17
+466 has connections to ['32', '657', '17']
+Going to 538 from 32
+Calling doNNI
+Going to 538 from 657
+Calling doNNI
+Going to 981 from 924
+Calling doNNI
+Hit internal node 981 from 924
+981 has connections to ['924', '609', '445']
+Going to 225 from 609
+Calling doNNI
+Hit leaf 225 from 609
+Going to 930 from 609
+Calling doNNI
+Hit leaf 930 from 609
+Going to 88 from 609
+Calling doNNI
+Hit internal node 88 from 609
+88 has connections to ['594', '609', '445']
+Going to 538 from 594
+Calling doNNI
+Hit internal node 538 from 594
+538 has connections to ['32', '657', '594']
+Going to 85 from 32
+Calling doNNI
+Going to 85 from 657
+Calling doNNI
+Going to 323 from 912
+Calling doNNI
+Hit internal node 323 from 912
+323 has connections to ['912', '236', '445']
+Going to 225 from 236
+Calling doNNI
+Hit leaf 225 from 236
+Going to 930 from 236
+Calling doNNI
+Hit leaf 930 from 236
+Going to 535 from 236
+Calling doNNI
+Hit internal node 535 from 236
+535 has connections to ['596', '236', '445']
+Going to 85 from 596
+Calling doNNI
+Hit internal node 85 from 596
+85 has connections to ['32', '657', '596']
+Going to 696 from 32
+Calling doNNI
+Going to 696 from 657
+Calling doNNI
+Going to 548 from 78
+Calling doNNI
+Hit internal node 548 from 78
+548 has connections to ['78', '853', '445']
+Going to 225 from 853
+Calling doNNI
+Hit leaf 225 from 853
+Going to 930 from 853
+Calling doNNI
+Hit leaf 930 from 853
+Going to 585 from 853
+Calling doNNI
+Hit internal node 585 from 853
+585 has connections to ['805', '853', '445']
+Going to 696 from 805
+Calling doNNI
+Hit internal node 696 from 805
+696 has connections to ['32', '657', '805']
+Going to 603 from 32
+Calling doNNI
+Going to 603 from 657
+Calling doNNI
+Going to 9 from 439
+Calling doNNI
+Hit internal node 9 from 439
+9 has connections to ['439', '968', '445']
+Going to 225 from 968
+Calling doNNI
+Hit leaf 225 from 968
+Going to 930 from 968
+Calling doNNI
+Hit leaf 930 from 968
+Going to 679 from 968
+Calling doNNI
+Hit internal node 679 from 968
+679 has connections to ['924', '968', '445']
+Going to 603 from 924
+Calling doNNI
+Hit internal node 603 from 924
+603 has connections to ['32', '657', '924']
+Going to 630 from 32
+Calling doNNI
+Going to 630 from 657
+Calling doNNI
+Going to 83 from 889
+Calling doNNI
+Hit internal node 83 from 889
+83 has connections to ['889', '979', '445']
+Going to 225 from 979
+Calling doNNI
+Hit leaf 225 from 979
+Going to 930 from 979
+Calling doNNI
+Hit leaf 930 from 979
+Going to 914 from 979
+Calling doNNI
+Hit internal node 914 from 979
+914 has connections to ['157', '979', '445']
+Going to 630 from 157
+Calling doNNI
+Hit internal node 630 from 157
+630 has connections to ['32', '657', '157']
+Going to 730 from 32
+Calling doNNI
+Going to 730 from 657
+Calling doNNI
+Going to 885 from 686
+Calling doNNI
+Hit internal node 885 from 686
+885 has connections to ['686', '865', '445']
+Going to 225 from 865
+Calling doNNI
+Hit leaf 225 from 865
+Going to 930 from 865
+Calling doNNI
+Hit leaf 930 from 865
+Going to 365 from 865
+Calling doNNI
+Hit internal node 365 from 865
+365 has connections to ['563', '865', '445']
+Going to 730 from 563
+Calling doNNI
+Hit internal node 730 from 563
+730 has connections to ['32', '657', '563']
+Going to 70 from 32
+Calling doNNI
+Going to 70 from 657
+Calling doNNI
+Going to 752 from 483
+Calling doNNI
+Hit internal node 752 from 483
+752 has connections to ['483', '893', '445']
+Going to 225 from 893
+Calling doNNI
+Hit leaf 225 from 893
+Going to 930 from 893
+Calling doNNI
+Hit leaf 930 from 893
+Going to 824 from 893
+Calling doNNI
+Hit internal node 824 from 893
+824 has connections to ['900', '893', '445']
+Going to 70 from 900
+Calling doNNI
+Hit internal node 70 from 900
+70 has connections to ['32', '657', '900']
+Going to 670 from 32
+Calling doNNI
+Going to 670 from 657
+Calling doNNI
+Going to 450 from 1017
+Calling doNNI
+Hit internal node 450 from 1017
+450 has connections to ['1017', '773', '445']
+Going to 225 from 773
+Calling doNNI
+Hit leaf 225 from 773
+Going to 930 from 773
+Calling doNNI
+Hit leaf 930 from 773
+Going to 284 from 773
+Calling doNNI
+Hit internal node 284 from 773
+284 has connections to ['443', '773', '445']
+Going to 670 from 443
+Calling doNNI
+Hit internal node 670 from 443
+670 has connections to ['32', '657', '443']
+Going to 873 from 32
+Calling doNNI
+Going to 873 from 657
+Calling doNNI
+Going to 226 from 718
+Calling doNNI
+Hit internal node 226 from 718
+226 has connections to ['718', '521', '445']
+Going to 225 from 521
+Calling doNNI
+Hit leaf 225 from 521
+Going to 930 from 521
+Calling doNNI
+Hit leaf 930 from 521
+Going to 143 from 521
+Calling doNNI
+Hit internal node 143 from 521
+143 has connections to ['11', '521', '445']
+Going to 873 from 11
+Calling doNNI
+Hit internal node 873 from 11
+873 has connections to ['32', '657', '11']
+Going to 282 from 32
+Calling doNNI
+Going to 282 from 657
+Calling doNNI
+Going to 546 from 645
+Calling doNNI
+Hit internal node 546 from 645
+546 has connections to ['645', '376', '445']
+Going to 225 from 376
+Calling doNNI
+Hit leaf 225 from 376
+Going to 930 from 376
+Calling doNNI
+Hit leaf 930 from 376
+Going to 624 from 376
+Calling doNNI
+Hit internal node 624 from 376
+624 has connections to ['487', '376', '445']
+Going to 282 from 487
+Calling doNNI
+Hit internal node 282 from 487
+282 has connections to ['32', '657', '487']
+Going to 606 from 32
+Calling doNNI
+Going to 606 from 657
+Calling doNNI
+Going to 102 from 1016
+Calling doNNI
+Hit internal node 102 from 1016
+102 has connections to ['1016', '568', '445']
+Going to 225 from 568
+Calling doNNI
+Hit leaf 225 from 568
+Going to 930 from 568
+Calling doNNI
+Hit leaf 930 from 568
+Going to 457 from 568
+Calling doNNI
+Hit internal node 457 from 568
+457 has connections to ['25', '568', '445']
+Going to 606 from 25
+Calling doNNI
+Hit internal node 606 from 25
+606 has connections to ['32', '657', '25']
+Going to 732 from 32
+Calling doNNI
+Going to 732 from 657
+Calling doNNI
+Going to 152 from 822
+Calling doNNI
+Hit internal node 152 from 822
+152 has connections to ['822', '395', '445']
+Going to 225 from 395
+Calling doNNI
+Hit leaf 225 from 395
+Going to 930 from 395
+Calling doNNI
+Hit leaf 930 from 395
+Going to 384 from 395
+Calling doNNI
+Hit internal node 384 from 395
+384 has connections to ['114', '395', '445']
+Going to 732 from 114
+Calling doNNI
+Hit internal node 732 from 114
+732 has connections to ['32', '657', '114']
+Going to 827 from 32
+Calling doNNI
+Going to 827 from 657
+Calling doNNI
+Going to 612 from 497
+Calling doNNI
+Hit internal node 612 from 497
+612 has connections to ['497', '62', '445']
+Going to 225 from 62
+Calling doNNI
+Hit leaf 225 from 62
+Going to 930 from 62
+Calling doNNI
+Hit leaf 930 from 62
+Going to 41 from 62
+Calling doNNI
+Hit internal node 41 from 62
+41 has connections to ['655', '62', '445']
+Going to 827 from 655
+Calling doNNI
+Hit internal node 827 from 655
+827 has connections to ['32', '657', '655']
+Going to 312 from 32
+Calling doNNI
+Going to 312 from 657
+Calling doNNI
+Going to 468 from 7
+Calling doNNI
+Hit internal node 468 from 7
+468 has connections to ['7', '915', '445']
+Going to 225 from 915
+Calling doNNI
+Hit leaf 225 from 915
+Going to 930 from 915
+Calling doNNI
+Hit leaf 930 from 915
+Going to 648 from 915
+Calling doNNI
+Hit internal node 648 from 915
+648 has connections to ['1012', '915', '445']
+Going to 312 from 1012
+Calling doNNI
+Hit internal node 312 from 1012
+312 has connections to ['32', '657', '1012']
+Going to 49 from 32
+Calling doNNI
+Going to 49 from 657
+Calling doNNI
+Going to 530 from 433
+Calling doNNI
+Hit internal node 530 from 433
+530 has connections to ['433', '684', '445']
+Going to 225 from 684
+Calling doNNI
+Hit leaf 225 from 684
+Going to 930 from 684
+Calling doNNI
+Hit leaf 930 from 684
+Going to 22 from 684
+Calling doNNI
+Hit internal node 22 from 684
+22 has connections to ['516', '684', '445']
+Going to 49 from 516
+Calling doNNI
+Hit internal node 49 from 516
+49 has connections to ['32', '657', '516']
+Going to 874 from 32
+Calling doNNI
+Going to 874 from 657
+Calling doNNI
+Going to 351 from 162
+Calling doNNI
+Hit internal node 351 from 162
+351 has connections to ['162', '601', '445']
+Going to 225 from 601
+Calling doNNI
+Hit leaf 225 from 601
+Going to 930 from 601
+Calling doNNI
+Hit leaf 930 from 601
+Going to 474 from 601
+Calling doNNI
+Hit internal node 474 from 601
+474 has connections to ['849', '601', '445']
+Going to 874 from 849
+Calling doNNI
+Hit internal node 874 from 849
+874 has connections to ['32', '657', '849']
+Going to 242 from 32
+Calling doNNI
+Going to 242 from 657
+Calling doNNI
+Going to 194 from 754
+Calling doNNI
+Hit internal node 194 from 754
+194 has connections to ['754', '256', '445']
+Going to 225 from 256
+Calling doNNI
+Hit leaf 225 from 256
+Going to 930 from 256
+Calling doNNI
+Hit leaf 930 from 256
+Going to 990 from 256
+Calling doNNI
+Hit internal node 990 from 256
+990 has connections to ['948', '256', '445']
+Going to 242 from 948
+Calling doNNI
+Hit internal node 242 from 948
+242 has connections to ['32', '657', '948']
+Going to 793 from 32
+Calling doNNI
+Going to 793 from 657
+Calling doNNI
+Going to 624 from 123
+Calling doNNI
+Hit internal node 624 from 123
+624 has connections to ['123', '304', '445']
+Going to 225 from 304
+Calling doNNI
+Hit leaf 225 from 304
+Going to 930 from 304
+Calling doNNI
+Hit leaf 930 from 304
+Going to 241 from 304
+Calling doNNI
+Hit internal node 241 from 304
+241 has connections to ['218', '304', '445']
+Going to 793 from 218
+Calling doNNI
+Hit internal node 793 from 218
+793 has connections to ['32', '657', '218']
+Going to 3 from 32
+Calling doNNI
+Going to 3 from 657
+Calling doNNI
+Going to 1017 from 660
+Calling doNNI
+Hit internal node 1017 from 660
+1017 has connections to ['660', '41', '445']
+Going to 225 from 41
+Calling doNNI
+Hit leaf 225 from 41
+Going to 930 from 41
+Calling doNNI
+Hit leaf 930 from 41
+Going to 987 from 41
+Calling doNNI
+Hit internal node 987 from 41
+987 has connections to ['879', '41', '445']
+Going to 3 from 879
+Calling doNNI
+Hit internal node 3 from 879
+3 has connections to ['32', '657', '879']
+Going to 183 from 32
+Calling doNNI
+Going to 183 from 657
+Calling doNNI
+Going to 819 from 788
+Calling doNNI
+Hit internal node 819 from 788
+819 has connections to ['788', '711', '445']
+Going to 225 from 711
+Calling doNNI
+Hit leaf 225 from 711
+Going to 930 from 711
+Calling doNNI
+Hit leaf 930 from 711
+Going to 991 from 711
+Calling doNNI
+Hit internal node 991 from 711
+991 has connections to ['574', '711', '445']
+Going to 183 from 574
+Calling doNNI
+Hit internal node 183 from 574
+183 has connections to ['32', '657', '574']
+Going to 348 from 32
+Calling doNNI
+Going to 348 from 657
+Calling doNNI
+Going to 621 from 969
+Calling doNNI
+Hit internal node 621 from 969
+621 has connections to ['969', '212', '445']
+Going to 225 from 212
+Calling doNNI
+Hit leaf 225 from 212
+Going to 930 from 212
+Calling doNNI
+Hit leaf 930 from 212
+Going to 978 from 212
+Calling doNNI
+Hit internal node 978 from 212
+978 has connections to ['768', '212', '445']
+Going to 348 from 768
+Calling doNNI
+Hit internal node 348 from 768
+348 has connections to ['32', '657', '768']
+Going to 781 from 32
+Calling doNNI
+Going to 781 from 657
+Calling doNNI
+Going to 77 from 780
+Calling doNNI
+Hit internal node 77 from 780
+77 has connections to ['780', '373', '445']
+Going to 225 from 373
+Calling doNNI
+Hit leaf 225 from 373
+Going to 930 from 373
+Calling doNNI
+Hit leaf 930 from 373
+Going to 854 from 373
+Calling doNNI
+Hit internal node 854 from 373
+854 has connections to ['61', '373', '445']
+Going to 781 from 61
+Calling doNNI
+Hit internal node 781 from 61
+781 has connections to ['32', '657', '61']
+Going to 558 from 32
+Calling doNNI
+Going to 558 from 657
+Calling doNNI
+Going to 31 from 913
+Calling doNNI
+Hit internal node 31 from 913
+31 has connections to ['913', '178', '445']
+Going to 225 from 178
+Calling doNNI
+Hit leaf 225 from 178
+Going to 930 from 178
+Calling doNNI
+Hit leaf 930 from 178
+Going to 832 from 178
+Calling doNNI
+Hit internal node 832 from 178
+832 has connections to ['947', '178', '445']
+Going to 558 from 947
+Calling doNNI
+Hit internal node 558 from 947
+558 has connections to ['32', '657', '947']
+Going to 40 from 32
+Calling doNNI
+Going to 40 from 657
+Calling doNNI
+Going to 759 from 248
+Calling doNNI
+Hit internal node 759 from 248
+759 has connections to ['248', '21', '445']
+Going to 225 from 21
+Calling doNNI
+Hit leaf 225 from 21
+Going to 930 from 21
+Calling doNNI
+Hit leaf 930 from 21
+Going to 447 from 21
+Calling doNNI
+Hit internal node 447 from 21
+447 has connections to ['939', '21', '445']
+Going to 40 from 939
+Calling doNNI
+Hit internal node 40 from 939
+40 has connections to ['32', '657', '939']
+Going to 110 from 32
+Calling doNNI
+Going to 110 from 657
+Calling doNNI
+Going to 339 from 1007
+Calling doNNI
+Hit internal node 339 from 1007
+339 has connections to ['1007', '543', '445']
+Going to 225 from 543
+Calling doNNI
+Hit leaf 225 from 543
+Going to 930 from 543
+Calling doNNI
+Hit leaf 930 from 543
+Going to 685 from 543
+Calling doNNI
+Hit internal node 685 from 543
+685 has connections to ['424', '543', '445']
+Going to 110 from 424
+Calling doNNI
+Hit internal node 110 from 424
+110 has connections to ['32', '657', '424']
+Going to 931 from 32
+Calling doNNI
+Going to 931 from 657
+Calling doNNI
+Going to 440 from 983
+Calling doNNI
+Hit internal node 440 from 983
+440 has connections to ['983', '699', '445']
+Going to 225 from 699
+Calling doNNI
+Hit leaf 225 from 699
+Going to 930 from 699
+Calling doNNI
+Hit leaf 930 from 699
+Going to 183 from 699
+Calling doNNI
+Hit internal node 183 from 699
+183 has connections to ['751', '699', '445']
+Going to 931 from 751
+Calling doNNI
+Hit internal node 931 from 751
+931 has connections to ['32', '657', '751']
+Going to 929 from 32
+Calling doNNI
+Going to 929 from 657
+Calling doNNI
+Going to 211 from 932
+Calling doNNI
+Hit internal node 211 from 932
+211 has connections to ['932', '130', '445']
+Going to 225 from 130
+Calling doNNI
+Hit leaf 225 from 130
+Going to 930 from 130
+Calling doNNI
+Hit leaf 930 from 130
+Going to 855 from 130
+Calling doNNI
+Hit internal node 855 from 130
+855 has connections to ['789', '130', '445']
+Going to 929 from 789
+Calling doNNI
+Hit internal node 929 from 789
+929 has connections to ['32', '657', '789']
+Going to 80 from 32
+Calling doNNI
+Going to 80 from 657
+Calling doNNI
+Going to 227 from 538
+Calling doNNI
+Hit internal node 227 from 538
+227 has connections to ['538', '475', '445']
+Going to 225 from 475
+Calling doNNI
+Hit leaf 225 from 475
+Going to 930 from 475
+Calling doNNI
+Hit leaf 930 from 475
+Going to 603 from 475
+Calling doNNI
+Hit internal node 603 from 475
+603 has connections to ['71', '475', '445']
+Going to 80 from 71
+Calling doNNI
+Hit internal node 80 from 71
+80 has connections to ['32', '657', '71']
+Going to 359 from 32
+Calling doNNI
+Going to 359 from 657
+Calling doNNI
+Going to 654 from 439
+Calling doNNI
+Hit internal node 654 from 439
+654 has connections to ['439', '614', '445']
+Going to 225 from 614
+Calling doNNI
+Hit leaf 225 from 614
+Going to 930 from 614
+Calling doNNI
+Hit leaf 930 from 614
+Going to 794 from 614
+Calling doNNI
+Hit internal node 794 from 614
+794 has connections to ['209', '614', '445']
+Going to 359 from 209
+Calling doNNI
+Hit internal node 359 from 209
+359 has connections to ['32', '657', '209']
+Going to 939 from 32
+Calling doNNI
+Going to 939 from 657
+Calling doNNI
+Going to 524 from 204
+Calling doNNI
+Hit internal node 524 from 204
+524 has connections to ['204', '702', '445']
+Going to 225 from 702
+Calling doNNI
+Hit leaf 225 from 702
+Going to 930 from 702
+Calling doNNI
+Hit leaf 930 from 702
+Going to 687 from 702
+Calling doNNI
+Hit internal node 687 from 702
+687 has connections to ['554', '702', '445']
+Going to 939 from 554
+Calling doNNI
+Hit internal node 939 from 554
+939 has connections to ['32', '657', '554']
+Going to 498 from 32
+Calling doNNI
+Going to 498 from 657
+Calling doNNI
+Going to 815 from 668
+Calling doNNI
+Hit internal node 815 from 668
+815 has connections to ['668', '248', '445']
+Going to 225 from 248
+Calling doNNI
+Hit leaf 225 from 248
+Going to 930 from 248
+Calling doNNI
+Hit leaf 930 from 248
+Going to 903 from 248
+Calling doNNI
+Hit internal node 903 from 248
+903 has connections to ['898', '248', '445']
+Going to 498 from 898
+Calling doNNI
+Hit internal node 498 from 898
+498 has connections to ['32', '657', '898']
+Going to 980 from 32
+Calling doNNI
+Going to 980 from 657
+Calling doNNI
+Going to 829 from 450
+Calling doNNI
+Hit internal node 829 from 450
+829 has connections to ['450', '322', '445']
+Going to 225 from 322
+Calling doNNI
+Hit leaf 225 from 322
+Going to 930 from 322
+Calling doNNI
+Hit leaf 930 from 322
+Going to 874 from 322
+Calling doNNI
+Hit internal node 874 from 322
+874 has connections to ['167', '322', '445']
+Going to 980 from 167
+Calling doNNI
+Hit internal node 980 from 167
+980 has connections to ['32', '657', '167']
+Going to 974 from 32
+Calling doNNI
+Going to 974 from 657
+Calling doNNI
+Going to 10 from 255
+Calling doNNI
+Hit internal node 10 from 255
+10 has connections to ['255', '879', '445']
+Going to 225 from 879
+Calling doNNI
+Hit leaf 225 from 879
+Going to 930 from 879
+Calling doNNI
+Hit leaf 930 from 879
+Going to 411 from 879
+Calling doNNI
+Hit internal node 411 from 879
+411 has connections to ['206', '879', '445']
+Going to 974 from 206
+Calling doNNI
+Hit internal node 974 from 206
+974 has connections to ['32', '657', '206']
+Going to 737 from 32
+Calling doNNI
+Going to 737 from 657
+Calling doNNI
+Going to 899 from 6
+Calling doNNI
+Hit internal node 899 from 6
+899 has connections to ['6', '979', '445']
+Going to 225 from 979
+Calling doNNI
+Hit leaf 225 from 979
+Going to 930 from 979
+Calling doNNI
+Hit leaf 930 from 979
+Going to 165 from 979
+Calling doNNI
+Hit internal node 165 from 979
+165 has connections to ['741', '979', '445']
+Going to 737 from 741
+Calling doNNI
+Hit internal node 737 from 741
+737 has connections to ['32', '657', '741']
+Going to 881 from 32
+Calling doNNI
+Going to 881 from 657
+Calling doNNI
+Going to 599 from 230
+Calling doNNI
+Hit internal node 599 from 230
+599 has connections to ['230', '996', '445']
+Going to 225 from 996
+Calling doNNI
+Hit leaf 225 from 996
+Going to 930 from 996
+Calling doNNI
+Hit leaf 930 from 996
+Going to 593 from 996
+Calling doNNI
+Hit internal node 593 from 996
+593 has connections to ['154', '996', '445']
+Going to 881 from 154
+Calling doNNI
+Hit internal node 881 from 154
+881 has connections to ['32', '657', '154']
+Going to 554 from 32
+Calling doNNI
+Going to 554 from 657
+Calling doNNI
+Going to 283 from 140
+Calling doNNI
+Hit internal node 283 from 140
+283 has connections to ['140', '976', '445']
+Going to 225 from 976
+Calling doNNI
+Hit leaf 225 from 976
+Going to 930 from 976
+Calling doNNI
+Hit leaf 930 from 976
+Going to 439 from 976
+Calling doNNI
+Hit internal node 439 from 976
+439 has connections to ['198', '976', '445']
+Going to 554 from 198
+Calling doNNI
+Hit internal node 554 from 198
+554 has connections to ['32', '657', '198']
+Going to 16 from 32
+Calling doNNI
+Going to 16 from 657
+Calling doNNI
+Going to 112 from 806
+Calling doNNI
+Hit internal node 112 from 806
+112 has connections to ['806', '649', '445']
+Going to 225 from 649
+Calling doNNI
+Hit leaf 225 from 649
+Going to 930 from 649
+Calling doNNI
+Hit leaf 930 from 649
+Going to 382 from 649
+Calling doNNI
+Hit internal node 382 from 649
+382 has connections to ['952', '649', '445']
+Going to 16 from 952
+Calling doNNI
+Hit internal node 16 from 952
+16 has connections to ['32', '657', '952']
+Going to 818 from 32
+Calling doNNI
+Going to 818 from 657
+Calling doNNI
+Going to 357 from 382
+Calling doNNI
+Hit internal node 357 from 382
+357 has connections to ['382', '327', '445']
+Going to 225 from 327
+Calling doNNI
+Hit leaf 225 from 327
+Going to 930 from 327
+Calling doNNI
+Hit leaf 930 from 327
+Going to 376 from 327
+Calling doNNI
+Hit internal node 376 from 327
+376 has connections to ['26', '327', '445']
+Going to 818 from 26
+Calling doNNI
+Hit internal node 818 from 26
+818 has connections to ['32', '657', '26']
+Going to 184 from 32
+Calling doNNI
+Going to 184 from 657
+Calling doNNI
+Going to 605 from 153
+Calling doNNI
+Hit internal node 605 from 153
+605 has connections to ['153', '966', '445']
+Going to 225 from 966
+Calling doNNI
+Hit leaf 225 from 966
+Going to 930 from 966
+Calling doNNI
+Hit leaf 930 from 966
+Going to 723 from 966
+Calling doNNI
+Hit internal node 723 from 966
+723 has connections to ['211', '966', '445']
+Going to 184 from 211
+Calling doNNI
+Hit internal node 184 from 211
+184 has connections to ['32', '657', '211']
+Going to 872 from 32
+Calling doNNI
+Going to 872 from 657
+Calling doNNI
+Going to 544 from 824
+Calling doNNI
+Hit internal node 544 from 824
+544 has connections to ['824', '15', '445']
+Going to 225 from 15
+Calling doNNI
+Hit leaf 225 from 15
+Going to 930 from 15
+Calling doNNI
+Hit leaf 930 from 15
+Going to 741 from 15
+Calling doNNI
+Hit internal node 741 from 15
+741 has connections to ['40', '15', '445']
+Going to 872 from 40
+Calling doNNI
+Hit internal node 872 from 40
+872 has connections to ['32', '657', '40']
+Going to 88 from 32
+Calling doNNI
+Going to 88 from 657
+Calling doNNI
+Going to 18 from 308
+Calling doNNI
+Hit internal node 18 from 308
+18 has connections to ['308', '22', '445']
+Going to 225 from 22
+Calling doNNI
+Hit leaf 225 from 22
+Going to 930 from 22
+Calling doNNI
+Hit leaf 930 from 22
+Going to 980 from 22
+Calling doNNI
+Hit internal node 980 from 22
+980 has connections to ['202', '22', '445']
+Going to 88 from 202
+Calling doNNI
+Hit internal node 88 from 202
+88 has connections to ['32', '657', '202']
+Going to 624 from 32
+Calling doNNI
+Going to 624 from 657
+Calling doNNI
+Going to 308 from 547
+Calling doNNI
+Hit internal node 308 from 547
+308 has connections to ['547', '102', '445']
+Going to 225 from 102
+Calling doNNI
+Hit leaf 225 from 102
+Going to 930 from 102
+Calling doNNI
+Hit leaf 930 from 102
+Going to 224 from 102
+Calling doNNI
+Hit internal node 224 from 102
+224 has connections to ['800', '102', '445']
+Going to 624 from 800
+Calling doNNI
+Hit internal node 624 from 800
+624 has connections to ['32', '657', '800']
+Going to 692 from 32
+Calling doNNI
+Going to 692 from 657
+Calling doNNI
+Going to 153 from 505
+Calling doNNI
+Hit internal node 153 from 505
+153 has connections to ['505', '1000', '445']
+Going to 225 from 1000
+Calling doNNI
+Hit leaf 225 from 1000
+Going to 930 from 1000
+Calling doNNI
+Hit leaf 930 from 1000
+Going to 835 from 1000
+Calling doNNI
+Hit internal node 835 from 1000
+835 has connections to ['299', '1000', '445']
+Going to 692 from 299
+Calling doNNI
+Hit internal node 692 from 299
+692 has connections to ['32', '657', '299']
+Going to 969 from 32
+Calling doNNI
+Going to 969 from 657
+Calling doNNI
+Going to 328 from 855
+Calling doNNI
+Hit internal node 328 from 855
+328 has connections to ['855', '708', '445']
+Going to 225 from 708
+Calling doNNI
+Hit leaf 225 from 708
+Going to 930 from 708
+Calling doNNI
+Hit leaf 930 from 708
+Going to 320 from 708
+Calling doNNI
+Hit internal node 320 from 708
+320 has connections to ['839', '708', '445']
+Going to 969 from 839
+Calling doNNI
+Hit internal node 969 from 839
+969 has connections to ['32', '657', '839']
+Going to 757 from 32
+Calling doNNI
+Going to 757 from 657
+Calling doNNI
+Going to 110 from 318
+Calling doNNI
+Hit internal node 110 from 318
+110 has connections to ['318', '193', '445']
+Going to 225 from 193
+Calling doNNI
+Hit leaf 225 from 193
+Going to 930 from 193
+Calling doNNI
+Hit leaf 930 from 193
+Going to 351 from 193
+Calling doNNI
+Hit internal node 351 from 193
+351 has connections to ['694', '193', '445']
+Going to 757 from 694
+Calling doNNI
+Hit internal node 757 from 694
+757 has connections to ['32', '657', '694']
+Going to 822 from 32
+Calling doNNI
+Going to 822 from 657
+Calling doNNI
+Going to 357 from 950
+Calling doNNI
+Hit internal node 357 from 950
+357 has connections to ['950', '53', '445']
+Going to 225 from 53
+Calling doNNI
+Hit leaf 225 from 53
+Going to 930 from 53
+Calling doNNI
+Hit leaf 930 from 53
+Going to 982 from 53
+Calling doNNI
+Hit internal node 982 from 53
+982 has connections to ['192', '53', '445']
+Going to 822 from 192
+Calling doNNI
+Hit internal node 822 from 192
+822 has connections to ['32', '657', '192']
+Going to 737 from 32
+Calling doNNI
+Going to 737 from 657
+Calling doNNI
+Going to 703 from 625
+Calling doNNI
+Hit internal node 703 from 625
+703 has connections to ['625', '713', '445']
+Going to 225 from 713
+Calling doNNI
+Hit leaf 225 from 713
+Going to 930 from 713
+Calling doNNI
+Hit leaf 930 from 713
+Going to 321 from 713
+Calling doNNI
+Hit internal node 321 from 713
+321 has connections to ['402', '713', '445']
+Going to 737 from 402
+Calling doNNI
+Hit internal node 737 from 402
+737 has connections to ['32', '657', '402']
+Going to 300 from 32
+Calling doNNI
+Going to 300 from 657
+Calling doNNI
+Going to 827 from 771
+Calling doNNI
+Hit internal node 827 from 771
+827 has connections to ['771', '439', '445']
+Going to 225 from 439
+Calling doNNI
+Hit leaf 225 from 439
+Going to 930 from 439
+Calling doNNI
+Hit leaf 930 from 439
+Going to 308 from 439
+Calling doNNI
+Hit internal node 308 from 439
+308 has connections to ['591', '439', '445']
+Going to 300 from 591
+Calling doNNI
+Hit internal node 300 from 591
+300 has connections to ['32', '657', '591']
+Going to 753 from 32
+Calling doNNI
+Going to 753 from 657
+Calling doNNI
+Going to 954 from 21
+Calling doNNI
+Hit internal node 954 from 21
+954 has connections to ['21', '655', '445']
+Going to 225 from 655
+Calling doNNI
+Hit leaf 225 from 655
+Going to 930 from 655
+Calling doNNI
+Hit leaf 930 from 655
+Going to 808 from 655
+Calling doNNI
+Hit internal node 808 from 655
+808 has connections to ['208', '655', '445']
+Going to 753 from 208
+Calling doNNI
+Hit internal node 753 from 208
+753 has connections to ['32', '657', '208']
+Going to 991 from 32
+Calling doNNI
+Going to 991 from 657
+Calling doNNI
+Going to 576 from 449
+Calling doNNI
+Hit internal node 576 from 449
+576 has connections to ['449', '509', '445']
+Going to 225 from 509
+Calling doNNI
+Hit leaf 225 from 509
+Going to 930 from 509
+Calling doNNI
+Hit leaf 930 from 509
+Going to 499 from 509
+Calling doNNI
+Hit internal node 499 from 509
+499 has connections to ['426', '509', '445']
+Going to 991 from 426
+Calling doNNI
+Hit internal node 991 from 426
+991 has connections to ['32', '657', '426']
+Going to 358 from 32
+Calling doNNI
+Going to 358 from 657
+Calling doNNI
+Going to 572 from 40
+Calling doNNI
+Hit internal node 572 from 40
+572 has connections to ['40', '276', '445']
+Going to 225 from 276
+Calling doNNI
+Hit leaf 225 from 276
+Going to 930 from 276
+Calling doNNI
+Hit leaf 930 from 276
+Going to 25 from 276
+Calling doNNI
+Hit internal node 25 from 276
+25 has connections to ['143', '276', '445']
+Going to 358 from 143
+Calling doNNI
+Hit internal node 358 from 143
+358 has connections to ['32', '657', '143']
+Going to 665 from 32
+Calling doNNI
+Going to 665 from 657
+Calling doNNI
+Going to 3 from 903
+Calling doNNI
+Hit internal node 3 from 903
+3 has connections to ['903', '229', '445']

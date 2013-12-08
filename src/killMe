@@ -1,0 +1,902 @@
+Traceback (most recent call last):
+  File "artificialTester.py", line 203, in <module>
+    testNNI()
+  File "artificialTester.py", line 169, in testNNI
+    (a,b,c,d,e,f,g) = nniHarness(20,depth)
+  File "artificialTester.py", line 156, in nniHarness
+    doNNI( tree )
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 17, in doNNI
+    doNNI(target, target.subs[0])
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 110, in doNNI
+    doNNI(supersub,sub)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/nni.py", line 60, in doNNI
+    gCD = grimm.midGenome(C.genome, D.genome)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/PyGrimmInterface.py", line 16, in midGenome
+    trans = self.getTransformations(gA,gB)
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/PyGrimmInterface.py", line 78, in getTransformations
+    transformations[-1][1].addChromosome( line )
+  File "/Users/DC/Documents/Classes/6047/CompBioProject/src/genome.py", line 57, in addChromosome
+    self.chromosomeList.append([int(val) for val in splitchrom if val != "$"])
+KeyboardInterrupt

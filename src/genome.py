@@ -1,36 +1,75 @@
 
-
-
 class Genome( object ):
 
-	def __init__( self, grimmString=""):
-		self.grimmString = grimmString
+	def __init__( self, genome=None, grimmString=None, name=None, chromosomeList=None):
 
-	def getChromosoneArray( self ):
-		g = []
-		for line in self.grimmString.split("\n"):
-			g += line.split("$")
+		if genome is not None:
+			self.chromosomeList = [chromosome[:] for chromosome in genome]
+			if name == None:
+				self.name = genome.name[:]
+			else:
+				self.name = name
+		else:
+			self.chromosomeList = []
+			self.name = name
 
-		if ">" in g[0]:
-			g = g[1:]
+			if grimmString != None:
+				if name == None:
+					grimmString = grimmString.strip()
+					g = grimmString.split("\n")[0]
+					if ">" in g:
+						splitg = g.split(">")
+						self.name = splitg[-1]
 
-		return g
+				if chromosomeList == None:
+					g = grimmString.split("\n")
+					for line in g:
+						if ">" in line or "#" in line:
+							pass
+						else:
+							splitline = line.split()
+							self.chromosomeList.append([int(val) for val in splitline if val != "$"])
+		if self.name is None:
+			assert False
+
+	def __len__( self):
+		return len(self.chromosomeList)
 
 	def __iter__( self ):
-		return iter( self.getChromosoneArray())
+		return iter( self.chromosomeList)
 
 	def __str__( self ):
-		return self.grimmString
+		grimmString = "> "+self.name+" \n"
+		for chromosome in self.chromosomeList:
+			for val in chromosome:
+				grimmString += str(val) + " "
+			grimmString += "$ \n"
+		return grimmString
 
-	def addChromosone( self, chromosone ):
-		if "$" not in chromosone:
-			chromosone += " $"
+	def __hash__(self):
+		k = sorted( self.chromosomeList)
+		out =  hash(str(k))
+		return out
+		
 
-		self.grimmString += "\n" + chromosone
+	def addChromosome( self, chromosome ):
+		if ((type(chromosome) is unicode) or (type(chromosome) is str)):
+			splitchrom = chromosome.split()
+			print "length of splitchrom: "+str(len(splitchrom))
+			for val in splitchrom:
+				if (val != "$"):
+					self.chromosomeList.append([int(val)])
 
-	def addHeader( self, header ):
-		if ">" not in self.getChromosoneArray()[0]:
-			if ">" not in header:
-				header = "> " + header
-			self.grimmString = header + self.grimmString
+		elif type(chromosome) is list:
+			self.chromosomeList.append(chromosome)
+
+		else:
+			raise Exception("Unexpected input to add chromosome")
+
+	def getName(self,name=""):
+		if name == "":
+			return self.name
+		else:
+			self.name = name
+			return self.name
  

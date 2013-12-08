@@ -1,0 +1,7 @@
+upgmaScore: 3225
+upgmaRF: 3
+nniScores: 3225
+nniRFs: [3]
+conScore: 3225
+conRF: 3
+maxRF: 2

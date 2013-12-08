@@ -2,8 +2,28 @@ from tempfile import NamedTemporaryFile
 from genome import Genome
 from subprocess import Popen, PIPE
 import shlex
+import upgma
+import random as rn
+import numpy as np
+from time import sleep
 
-class PyGrimmInterface( object ):
+class GrimmInterface( object ):
+
+	def __init__(self):
+		self.matchedGenomes = {}
+
+	def midGenome(self, gA, gB):
+		print "going into trans"
+		trans = self.getTransformations(gA,gB)
+		print
+	
+		ind = len(trans)/2 
+		try:
+			k = trans[ind][1]
+		except IndexError as e:
+			print( "Transformations: {}".format( trans ) )
+			raise e
+		return k
 
 	def genomeFile(self, genomes):
 		gFile = NamedTemporaryFile(mode='w+')
@@ -14,13 +34,29 @@ class PyGrimmInterface( object ):
 
 		return gFile
 
+	def getDistance( self, gA, gB):
+		tLen = len( self.getTransformations(gA,gB))
+		if tLen == 1:
+			return 0
+		else:
+			return tLen -2
 
 	def getTransformations( self, gA, gB):
+
+		if gA in self.matchedGenomes:
+			if gB in self.matchedGenomes[gA]:
+				return self.matchedGenomes[gA][gB]
+				
+		if gB in self.matchedGenomes:
+			if gA in self.matchedGenomes[gB]:
+				return self.matchedGenomes[gB][gA]
+
 		gFile = self.genomeFile( [gA,gB] )
 
 		command = "./../GRIMM/grimm -f {}".format(gFile.name)
-		comman = shlex.split(command)
-		grimm =  Popen(command, stdout=PIPE, shell=True )
+
+		grimm = Popen(command, stdout=PIPE, shell=True )
+
 		try:
 			grimmOut = grimm.communicate()[0].decode("utf-8")
 		except Exception as e:
@@ -28,71 +64,140 @@ class PyGrimmInterface( object ):
 			print(e)
 			raise Exception("Communication with Grimm failed.")
 
-		gFile.close()
+
+		savedOut = grimmOut[:]
+
+		f = NamedTemporaryFile()
+		f.write(grimmOut)
+		f.seek(0)
 
 
-		grimmOut = grimmOut.split("======================================================================")
-		grimmOut = grimmOut[-1]
 		transformations = []
-		for line in grimmOut.split("\n"):
+		
+		#read until we find the right starting place
+		line = f.readline()
+		while(not("An optimal sequence of rearrangements:" in line)):
+			line = f.readline()
+
+		foo=0
+		while(line):
+			line = line.strip()
+			print foo
+			foo += 1
 			if len(line) == 0:
 				pass
 			elif line == "An optimal sequence of rearrangements:":
 				pass
 			elif "Step" in line:
-				transformations.append( (line.split(":")[-1], Genome()) ) 
+				splitline = line.split(":")
+				transformations.append( (splitline[-1], Genome(name=str(rn.randint(0,2**64)))) ) 
 			elif line[-1] == "$":
-				transformations[-1][1].addChromosone( line )
+				transformations[-1][1].addChromosome( line )
+
+			
+			line = f.readline()		
+
+		if gA in self.matchedGenomes:
+			self.matchedGenomes[gA][gB] = transformations
+		else:
+			self.matchedGenomes[gA] = {gB:transformations}
+
+		if gB in self.matchedGenomes:
+			self.matchedGenomes[gB][gA] = transformations
+		else:
+			self.matchedGenomes[gB] = {gA:transformations}
+
+		if len(transformations) == 0:
+			print("Transformations: {}".format(transformations))
+			print("Raw output from grimm: \n {}".format(savedOut))
+			print("Genome A: \n {}".format(gA) )
+			print("Genome B: \n {}".format(gB) )
+
+			gFile.seek(0)
+			for line in gFile:
+				print(line)
+
+			raise Exception("Empty transformation set.")
+
+
+		gFile.close()
+
 		return transformations
 
+			
 
-
-        #input: a list of Genomes
+		#input: a list of Genomes
 	#output: the distance matrix obtained by running the genomes through GRIMM
 	def getDistMatrix( self, genomes):
 		gFile = self.genomeFile(genomes)
+		assert type( genomes[0] ) == Genome
+		# print gFile.read()
 
-                command = "./../GRIMM/grimm -f {}".format(gFile.name)
-		comman = shlex.split(command)
-		grimm =  Popen(command, stdout=PIPE, shell=True )
+		command = "./../GRIMM/grimm -f {}".format(gFile.name)
+		command = shlex.split(command)
+		grimm =  Popen(command, stdout=PIPE, shell=False )
 		try:
 			grimmOut = grimm.communicate()[0].decode("utf-8")
 		except Exception as e:
 			grimm.kill()
-			print(e)
 			raise Exception("Communication with Grimm failed.")
 
 		gFile.close()
-		print grimmOut
+
+		return self.parseDistMatrixIntoNP(grimmOut)
+
+	def parseDistMatrixIntoNP( self, grimmOut ):
+		grimmOut = grimmOut.partition('Distance Matrix:')[2]
+		grimmOut = grimmOut.strip()
+		grimmOut = grimmOut.split("\n")
+
+		grimmOut = [line.split()[1:] for line in grimmOut][1:]
+
+		matrix = np.empty( (len(grimmOut) , len(grimmOut)))
+		for i, line in enumerate(grimmOut):
+			for j, val in enumerate( line ):
+				matrix[i,j] = val
+
+		return matrix
+
+	def getUpdatedDistMatrix( self, genomes, oldMatrix, (i,j)):
+		dist = []
+		for ind, g in enumerate(genomes):
+			if ind != i:
+				dist.append( len(self.getTransformations(g, genomes[i])))
+
+		newMatrix = np.empty( (len(genomes), len(genomes)) )
+		(width, height) = oldMatrix.shape
+
+		for x in range(width):
+			for y in range(height):
+				if x == i:
+					if y < j:
+						newMatrix[x,y] = dist[y]
+					elif y > j:
+						newMatrix[x,y-1] = dist[y-1]
+				elif y == i:
+					if x < j:
+						newMatrix[x,y] = dist[x]
+					elif x > j:
+						newMatrix[x-1,y] = dist[x-1]
+				elif x < j and y < j:
+					newMatrix[x,y] = oldMatrix[x,y]
+				elif x < j and y > j:
+					newMatrix[x, y-1] = oldMatrix[x, y]
+				elif x > j and y < j:
+					newMatrix[x-1,y] = oldMatrix[x,y]
+				elif x > j and y > j:
+					newMatrix[x-1,y-1] = oldMatrix[x,y]
+				else:
+					pass
+
+		return newMatrix
 
 
-        #input: the file outputted by running GRIMM on more then 2 genomes
-	#output: (genomes, distArray)
-	#       genomes: a 1 dimensional array with the names of the genomes
-	#       distArray: a 2 dimensional array rpresenting the genomes
-        def parseDistMatrix(grimmfile):
-
-                f = open(grimmfile, 'r')
-                output = f.read()
-                distMatrix = output.partition('Distance Matrix:')[2]
-                distMatrix = distMatrix.strip()
-                splitStr = distMatrix.split("\n")
-
-                numGenomes = int(splitStr[0])
-                genomes = [0 for x in xrange(numGenomes)] 
-                distArray = [ [0 for x in xrange(numGenomes)] for x in xrange(numGenomes)]
-                for x in xrange(1, len(splitStr)):
-                        splitMatrix = splitStr[x].split()
-                        genomes[x-1] = splitMatrix[0]
-                        for y in xrange(1, len(splitMatrix)):
-                                distArray[x-1][y-1] = float(splitMatrix[y]) 
-
-                return (genomes, distArray)
 
 
-
-
-def main():
+if __name__ == "__main__":
 	gA = '''
 	> alpha
 	1 2 3 4 $
@@ -104,10 +209,20 @@ def main():
 	1 6 3 8 $
 	5 2 7 4 $
 	'''
-	
-	grimm = PyGrimmInterface()
 
-	grimm.getDistMatrix([Genome(gA), Genome(gB)])
+	gC = '''
+	> gamma
+	1 2 4 3 $
+	5 6 7 8 $
+	'''
 
-##	k = grimm.getTransformations(Genome(gA),Genome(gB))
-##	print(k)
+	grimm = GrimmInterface()
+	gnma = Genome(grimmString=gA)
+	gnmb = Genome(grimmString=gB)
+	gnmc = Genome(grimmString=gC)
+
+	#rootGenome = grimm.findRootViaUPGMA([gnma,gnmb,gnmc])
+
+	k = grimm.getTransformations(gnma, gnmb)
+	print len(k)
+	print(k)
