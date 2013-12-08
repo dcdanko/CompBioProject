@@ -4,7 +4,7 @@ from Tree import Tree
 from genome import Genome
 
 def getMatrixMin(matrix):
-	print "matrix in upgmatree: "+str(matrix)
+	#print "matrix in upgmatree: "+str(matrix)
 	(width, height) = matrix.shape
 	minimum, x, y = -1,0,0
 	for i in range(width):
@@ -12,9 +12,9 @@ def getMatrixMin(matrix):
 			if minimum == -1 or matrix[i,j] < minimum:
 				minimum = matrix[i,j]
 				x, y= i, j
-	print "x in upgmatree: "+str(x)
-	print "y in upgmatree: "+str(y)
-	print
+	#print "x in upgmatree: "+str(x)
+	#print "y in upgmatree: "+str(y)
+	#print
 	assert x != y
 	return (x,y)
 
@@ -33,14 +33,14 @@ class UPGMA( object ):
 		else:
 
 			while len(self.trees) > 2:
-				print "genomes in UPGMA: "+str(self.genomes)
-				print "genome 2: "+str(self.genomes[1])
+				#print "genomes in UPGMA: "+str(self.genomes)
+				#print "genome 2: "+str(self.genomes[1])
 				t,g = len(self.trees), len(self.genomes)
 				i,j = getMatrixMin(self.distances)
-				print "i,j: "+str(i)+" "+str(j)
+				#print "i,j: "+str(i)+" "+str(j)
 
 				newGenome = self.grimm.midGenome(self.genomes[i], self.genomes[j])
-				print "new genome: "+str(newGenome)
+				#print "new genome: "+str(newGenome)
 
 				newTree = Tree( newGenome )
 				newTree.addConnection( self.trees[i] )
@@ -54,7 +54,7 @@ class UPGMA( object ):
 
 				# self.distances = self.grimm.getUpdatedDistMatrix( self.genomes, self.distances, (i,j) )
 				self.distances = self.grimm.getDistMatrix( self.genomes )
-				print "self.distances: "+str(self.distances)
+				#print "self.distances: "+str(self.distances)
 				if t - 1 != len(self.trees) or g - 1 != len(self.genomes):
 					print newGenome
 					print newTree

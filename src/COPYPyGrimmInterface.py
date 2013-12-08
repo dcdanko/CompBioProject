@@ -6,7 +6,6 @@ import upgma
 import random as rn
 import numpy as np
 from time import sleep
-import re
 
 class GrimmInterface( object ):
 
@@ -14,16 +13,17 @@ class GrimmInterface( object ):
 		self.matchedGenomes = {}
 
 	def midGenome(self, gA, gB):
-		#trans = self.getTransformations(gA,gB)
-		midGenome = self.getTransformations(gA,gB)[0]
+		print "going into trans"
+		trans = self.getTransformations(gA,gB)
+		print
 	
-#		ind = len(trans)/2 
-#		try:
-#			k = trans[ind][1]
-#		except IndexError as e:
-#			print( "Transformations: {}".format( trans ) )
-#			raise e
-		return midGenome
+		ind = len(trans)/2 
+		try:
+			k = trans[ind][1]
+		except IndexError as e:
+			print( "Transformations: {}".format( trans ) )
+			raise e
+		return k
 
 	def genomeFile(self, genomes):
 		gFile = NamedTemporaryFile(mode='w+')
@@ -35,23 +35,22 @@ class GrimmInterface( object ):
 		return gFile
 
 	def getDistance( self, gA, gB):
-		tLen = self.getTransformations(gA,gB)[1]
+		tLen = len( self.getTransformations(gA,gB))
 		if tLen == 1:
 			return 0
 		else:
 			return tLen -2
 
-	#take two genome objects, gA and gB, as input.  runs them though GRIMM and finds the midpoint genome.  Returns a tuple: (midpointgenome, number_of_steps)
 	def getTransformations( self, gA, gB):
 
-#		if gA in self.matchedGenomes:
-#			if gB in self.matchedGenomes[gA]:
-#				return self.matchedGenomes[gA][gB]
-#				
-#		if gB in self.matchedGenomes:
-#			if gA in self.matchedGenomes[gB]:
-#				return self.matchedGenomes[gB][gA]
-#
+		if gA in self.matchedGenomes:
+			if gB in self.matchedGenomes[gA]:
+				return self.matchedGenomes[gA][gB]
+				
+		if gB in self.matchedGenomes:
+			if gA in self.matchedGenomes[gB]:
+				return self.matchedGenomes[gB][gA]
+
 		gFile = self.genomeFile( [gA,gB] )
 
 		command = "./../GRIMM/grimm -f {}".format(gFile.name)
@@ -67,81 +66,64 @@ class GrimmInterface( object ):
 
 
 		savedOut = grimmOut[:]
+
+		f = NamedTemporaryFile()
+		f.write(grimmOut)
+		f.seek(0)
+
+
+		transformations = []
 		
-		distancePattern = re.compile("Multichromosomal Distance:\s+([0-9]+)")
-		#do not search the entire huge string
-		distanceSearchObj = distancePattern.search(grimmOut)
-		numberSteps = int(distanceSearchObj.group(1))
+		#read until we find the right starting place
+		line = f.readline()
+		while(not("An optimal sequence of rearrangements:" in line)):
+			line = f.readline()
 
-		midStep = numberSteps/2
+		foo=0
+		while(line):
+			line = line.strip()
+			print foo
+			foo += 1
+			if len(line) == 0:
+				pass
+			elif line == "An optimal sequence of rearrangements:":
+				pass
+			elif "Step" in line:
+				splitline = line.split(":")
+				transformations.append( (splitline[-1], Genome(name=str(rn.randint(0,2**64)))) ) 
+			elif line[-1] == "$":
+				transformations[-1][1].addChromosome( line )
 
-		#NOTE: THIS MAY CRASH IF MIDSTEP+1 IS OUT OF BOUNDS.  HOWEVER, WE ARE CURRENTLY JUST TAKING THE FLOOR OF NUMSTEPS/2 FOR MIDSTEP, SO IT SHOULD NEVE BE OUT OF BOUNDS, EVEN JUST FOR ONE STEP
-		midStepPattern = re.compile("Step "+str(midStep)+":(.*?)\n(.*)Step "+str(midStep+1), re.DOTALL)
-		midStepSearchObj = midStepPattern.search(grimmOut)
-		midStepName = midStepSearchObj.group(1)
-		midStepGenome = midStepSearchObj.group(2)
-		midStepGenome = midStepGenome.strip()
+			
+			line = f.readline()		
+		f.close()
 
-		midGenome = Genome(grimmString=midStepGenome, name=str(rn.randint(0,2**64)))
-		return (midGenome,numberSteps)
-					
+		if gA in self.matchedGenomes:
+			self.matchedGenomes[gA][gB] = transformations
+		else:
+			self.matchedGenomes[gA] = {gB:transformations}
 
-#		f = NamedTemporaryFile()
-#		f.write(grimmOut)
-#		f.seek(0)
-#
-#		transformations = []
-#		
-#		#read until we find the right starting place
-#		line = f.readline()
-#		while(not("An optimal sequence of rearrangements:" in line)):
-#			line = f.readline()
-#
-#		foo=0
-#		while(line):
-#			line = line.strip()
-#			print foo
-#			foo += 1
-#			if len(line) == 0:
-#				pass
-#			elif line == "An optimal sequence of rearrangements:":
-#				pass
-#			elif "Step" in line:
-#				splitline = line.split(":")
-#				transformations.append( (splitline[-1], Genome(name=str(rn.randint(0,2**64)))) ) 
-#			elif line[-1] == "$":
-#				transformations[-1][1].addChromosome( line )
-#
-#			
-#			line = f.readline()		
-#		f.close()
-#
-#		if gA in self.matchedGenomes:
-#			self.matchedGenomes[gA][gB] = transformations
-#		else:
-#			self.matchedGenomes[gA] = {gB:transformations}
-#
-#		if gB in self.matchedGenomes:
-#			self.matchedGenomes[gB][gA] = transformations
-#		else:
-#			self.matchedGenomes[gB] = {gA:transformations}
-#
-#		if len(transformations) == 0:
-#			print("Transformations: {}".format(transformations))
-#			print("Raw output from grimm: \n {}".format(savedOut))
-#			print("Genome A: \n {}".format(gA) )
-#			print("Genome B: \n {}".format(gB) )
-#
-#			gFile.seek(0)
-#			for line in gFile:
-#				print(line)
-#
-#			raise Exception("Empty transformation set.")
-#
-#
-#		gFile.close()
-#
-#		return transformations
+		if gB in self.matchedGenomes:
+			self.matchedGenomes[gB][gA] = transformations
+		else:
+			self.matchedGenomes[gB] = {gA:transformations}
+
+		if len(transformations) == 0:
+			print("Transformations: {}".format(transformations))
+			print("Raw output from grimm: \n {}".format(savedOut))
+			print("Genome A: \n {}".format(gA) )
+			print("Genome B: \n {}".format(gB) )
+
+			gFile.seek(0)
+			for line in gFile:
+				print(line)
+
+			raise Exception("Empty transformation set.")
+
+
+		gFile.close()
+
+		return transformations
 
 			
 
@@ -183,7 +165,7 @@ class GrimmInterface( object ):
 		dist = []
 		for ind, g in enumerate(genomes):
 			if ind != i:
-				dist.append( self.getTransformations(g, genomes[i])[1] )
+				dist.append( len(self.getTransformations(g, genomes[i])))
 
 		newMatrix = np.empty( (len(genomes), len(genomes)) )
 		(width, height) = oldMatrix.shape
@@ -242,6 +224,6 @@ if __name__ == "__main__":
 
 	#rootGenome = grimm.findRootViaUPGMA([gnma,gnmb,gnmc])
 
-	(k,numbertransitions) = grimm.getTransformations(gnma, gnmb)
-	print k
-	print numbertransitions
+	k = grimm.getTransformations(gnma, gnmb)
+	print len(k)
+	print(k)

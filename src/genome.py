@@ -55,7 +55,6 @@ class Genome( object ):
 	def addChromosome( self, chromosome ):
 		if ((type(chromosome) is unicode) or (type(chromosome) is str)):
 			splitchrom = chromosome.split()
-			print "length of splitchrom: "+str(len(splitchrom))
 			for val in splitchrom:
 				if (val != "$"):
 					self.chromosomeList.append([int(val)])
