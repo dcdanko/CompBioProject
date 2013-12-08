@@ -10,6 +10,8 @@ from pylab import savefig
 from copy import deepcopy
 from sys import setrecursionlimit
 from consensusTree import ConsensusTree
+from treedrawer import TreeDrawer
+from Tkinter import Tk, Grid
 
 def fastRFDist(a,b):
 
@@ -198,7 +200,8 @@ def consensusHarness(cSize,depth):
 	a = ArtificialPhylogeny(size=cSize,numChromosomes=5)
 	evRates = []
 	while len( a.tree.getTips() ) < depth:
-		evRate = rn.uniform(0.2,0.75)
+		# evRate = rn.uniform(0.2,0.75)
+		evRate = 0.3
 		evRates.append(evRate)
 		a.evolve(evolutionRate=evRate)
 
@@ -207,6 +210,13 @@ def consensusHarness(cSize,depth):
 
 	u = UPGMA( [t.genome for t in a.tree.getTips()])
 	u.calculate()
+
+	root = Tk()
+	d1 = TreeDrawer(root)
+	d1.draw(a.tree,row=0,col=0)
+	d2 = TreeDrawer(root, leafs=d1.leafs)
+	d2.draw(u.tree,row=0,col=1)
+
 
 	tree = u.tree 
 	uRF = fastRFDist(tree.toTuple(), a.tree.toTuple())
@@ -218,15 +228,22 @@ def consensusHarness(cSize,depth):
 
 	oldScore = tree.getScore()
 	newScore = 0
+	counter = 0
 
 	n = NNI( tree )
-
-	while abs(newScore - oldScore) >= 1:
-		n.calculate()
+	nniTreeDrawers = []
+	while abs(newScore - oldScore) >= 1 and counter < 5:
+		counter += 1
+		n.calculate(deepScoring=True)
 		oldScore = newScore
 		newScore = sum([t.getScore() for t in n.trees])
 		nRFs = [fastRFDist(t.toTuple(), a.tree.toTuple()) for t in n.trees]
 		print("Running NNI. Current scores are {}. Current RF distances are {}".format([t.getScore() for t in n.trees], nRFs))
+
+	nniTreeDrawers = []
+	for i,tr in enumerate(n.trees):
+		t= TreeDrawer(root,leafs=d1.leafs)
+		t.draw(tr,row=1,col=i)
 
 
 	nRFs = [fastRFDist(t.toTuple(), a.tree.toTuple()) for t in n.trees]
@@ -236,15 +253,29 @@ def consensusHarness(cSize,depth):
 	c = ConsensusTree(n.trees)
 	c.calculate()
 
-	tree = c.conTree
-
 	cRF = fastRFDist(tree.toTuple(), a.tree.toTuple())
 
 	print("Finished consensus. Score is {}. RF distance is {}".format( tree.getScore(), cRF))
 
-	for l in tree.toTuple():
-		print(l)
-		print()
+	tree = Tree( c.conTree )
+	t1= TreeDrawer(root,leafs=d1.leafs)
+	t1.draw(tree,row=2,col=0)
+	
+
+	c.calculateNewGenomes()
+
+	cRF = fastRFDist(c.conTree.toTuple(), a.tree.toTuple())
+
+	print("Recalculated Genomes in consensusTree. Score is {}. RF distance is {}".format( tree.getScore(), cRF))
+	
+	t2= TreeDrawer(root,leafs=d1.leafs)
+	t2.draw(c.conTree,row=2,col=1)
+
+	for x in (0,1,2):
+		Grid.columnconfigure(root,x,weight=1)
+	for y in (0,1,2):
+		Grid.rowconfigure(root,y,weight=1)
+	root.mainloop()
 
 	nScore = tree.getScore()
 
@@ -315,7 +346,7 @@ if __name__ == "__main__":
 	
 	setrecursionlimit(4096)
 	for arb in range(25):
-		consensusHarness(30,50)
+		consensusHarness(30,8)
 	# fileNNI()
 
 

@@ -11,20 +11,20 @@ class NNI( object ):
 		self.score = initialTree.getScore()
 		self.grimm = Grimm()
 		self.trees = [self.tree,]
-		self.splitThreshold = 5
+		self.splitThreshold = 3
 
-	def calculate( self, timeout=300 ):
-		self.timeout = timeout
+	def calculate( self, timeout=300 ,deepScoring=True):
+		self.deepScoring = deepScoring
+		self.timeout = timeout * len(self.trees)
 		self.startTime = time()
 		self.hits = {}
 		for t in self.trees:
 			self.doNNI( t)
 
 
-	def doNNI(self, target, caller=None, depth=0):
+	def doNNI(self, target, caller=None, depth=0, blockSplits=False):
 
 		newGenomeScoring = False
-		deepScoring = True
 
 		timedOut = time() - self.startTime > self.timeout
 		tooDeep = depth + 50 > getrecursionlimit()
@@ -59,7 +59,7 @@ class NNI( object ):
 							self.grimm.getDistance(A.genome, D.genome) + self.grimm.getDistance(B.genome, C.genome) + self.grimm.getDistance(gAD, gBC),
 						]
 
-			elif deepScoring:
+			elif self.deepScoring:
 
 				scores = []
 
@@ -85,7 +85,7 @@ class NNI( object ):
 
 				self.switchToConformer(target,caller,0,A,B,C,D)
 
-				if min(scores) in scores[1:] and len(self.trees) < self.splitThreshold:
+				if not blockSplits and min(scores) in scores[1:] and len(self.trees) < self.splitThreshold:
 					# print("NNI: splitting from 0 at depth {}. Scores: {}".format(depth, scores))
 					# print("There are {} trees".format(len(self.trees)))
 					splitTree = Tree(target)
@@ -96,14 +96,14 @@ class NNI( object ):
 							assert splitTree in sub.subs
 							assert sub in splitTree.subs
 							if sub.genome.getName() != caller.genome.getName() and sub not in self.hits:
-								self.doNNI(sub, caller=splitTree, depth=depth+1)
+								self.doNNI(sub, caller=splitTree, depth=depth+1, blockSplits=True)
 
 
 			if min(scores) == scores[1]:
 
 					self.switchToConformer(target,caller,1,A,B,C,D)
 
-					if min(scores) == scores[2] and len(self.trees) < self.splitThreshold:
+					if not blockSplits and min(scores) == scores[2] and len(self.trees) < self.splitThreshold:
 						# print("NNI: splitting from 1 at depth {}. Scores: {}".format(depth, scores))
 						# print("There are {} trees".format(len(self.trees)))
 
@@ -116,7 +116,7 @@ class NNI( object ):
 								assert splitTree in sub.subs
 								assert sub in splitTree.subs
 								if sub.genome.getName() != caller.genome.getName() and sub not in self.hits:
-									self.doNNI(sub, caller=splitTree, depth=depth+1)
+									self.doNNI(sub, caller=splitTree, depth=depth+1, blockSplits=True)
 
 			if min(scores) == scores[2]:
 					

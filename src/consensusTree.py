@@ -83,10 +83,10 @@ class ConsensusTree( object ):
 
 
 		self.conTree = self.rTreeBuilder(topLabel, partsToSubs, labelsToTips, partsToKeep, partsToTree)[0]
-
-		# self.genomeEstimator( self.conTree ) # Note: different consensus trees could develop from different starts
 		
+	def calculateNewGenomes( self):
 
+		self.genomeEstimator( self.conTree ) # Note: different consensus trees could develop from different starts
 
 	def rTreeBuilder(self, keyLabel, partsToSubs, labelsToTips, partsToKeep,partsToTree):
 		subLabels = partsToSubs[keyLabel]
@@ -164,7 +164,7 @@ class ConsensusTree( object ):
 		if caller is None and tree.isLeaf():
 			self.genomeEstimator(tree[0])
 
-		elif tree.genome.name != "place holder":
+		elif tree.genome.name != "place holder" and False:
 			return
 
 		elif caller is None:
