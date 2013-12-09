@@ -1,0 +1,8 @@
+Tree: ((Homo_sapiens, Mus_musculus), ((((Pan_troglodytes, Canis_lupus_familiaris), Rattus_norvegicus), Macaca_mulatta), Bos_taurus))
+upgmaScore: 57485
+upgmaRF: 5
+nniScores: 57485
+nniRFs: [5]
+conScore: 57485
+conRF: 5
+maxRF: 2

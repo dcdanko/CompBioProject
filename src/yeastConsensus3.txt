@@ -1,0 +1,8 @@
+Tree: (((Eremothecium_gossypii, Kluyveromyces_lactis), Saccharomyces_cerevisiae), ((Schizosaccharomyces_pombe, Caenorhabditis_elegans), (Magnaporthe_oryzae, Neurospora_crassa)))
+upgmaScore: 3213
+upgmaRF: 2
+nniScores: 3213
+nniRFs: [2]
+conScore: 3213
+conRF: 2
+maxRF: 2
