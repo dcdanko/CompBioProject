@@ -27,7 +27,7 @@ class UPGMA( object ):
 			self.tree = self.trees[0]
 
 		else:
-
+			print("! upgma - in !")
 			while len(self.trees) > 2:
 				t,g = len(self.trees), len(self.genomes)
 				i,j = getMatrixMin(self.distances)
@@ -53,6 +53,8 @@ class UPGMA( object ):
 					print self.genomes
 					print self.trees
 					raise Exception
+				print(";")
+			print("! upgma - out !")
 
 			if len( self.trees) == 2:
 				self.tree = self.trees[0]

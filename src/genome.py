@@ -18,8 +18,8 @@ class Genome( object ):
 					grimmString = grimmString.strip()
 					g = grimmString.split("\n")[0]
 					if ">" in g:
-						splitg = g.split()
-						self.name = splitg[1]
+						splitg = g.split(">")
+						self.name = splitg[-1]
 
 				if chromosomeList == None:
 					g = grimmString.split("\n")
@@ -53,9 +53,11 @@ class Genome( object ):
 		
 
 	def addChromosome( self, chromosome ):
-		if type(chromosome) is unicode:
+		if ((type(chromosome) is unicode) or (type(chromosome) is str)):
 			splitchrom = chromosome.split()
-			self.chromosomeList.append([int(val) for val in splitchrom if val != "$"])
+			for val in splitchrom:
+				if (val != "$"):
+					self.chromosomeList.append([int(val)])
 
 		elif type(chromosome) is list:
 			self.chromosomeList.append(chromosome)

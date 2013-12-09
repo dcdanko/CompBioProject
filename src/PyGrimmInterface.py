@@ -6,6 +6,7 @@ import upgma
 import random as rn
 import numpy as np
 from time import sleep
+from sys import stdout
 
 class GrimmInterface( object ):
 
@@ -39,15 +40,17 @@ class GrimmInterface( object ):
 			return tLen -2
 
 	def getTransformations( self, gA, gB):
-
+		stdout.write(".")
 		if gA in self.matchedGenomes:
 			if gB in self.matchedGenomes[gA]:
+				stdout.write("d!")
 				return self.matchedGenomes[gA][gB]
 				
 		if gB in self.matchedGenomes:
 			if gA in self.matchedGenomes[gB]:
+				stdout.write("d!")
 				return self.matchedGenomes[gB][gA]
-
+		stdout.write("-")
 		gFile = self.genomeFile( [gA,gB] )
 
 		command = "./../GRIMM/grimm -f {}".format(gFile.name)
@@ -61,12 +64,13 @@ class GrimmInterface( object ):
 			print(e)
 			raise Exception("Communication with Grimm failed.")
 
-
+		stdout.write(".")
 		savedOut = grimmOut[:]
 
 		grimmOut = grimmOut.split("======================================================================")
 		grimmOut = grimmOut[-1]
 		transformations = []
+		stdout.write("-")
 		for line in grimmOut.split("\n"):
 			if len(line) == 0:
 				pass
@@ -101,7 +105,7 @@ class GrimmInterface( object ):
 
 
 		gFile.close()
-
+		stdout.write("!")
 		return transformations
 
 			
@@ -109,6 +113,7 @@ class GrimmInterface( object ):
 		#input: a list of Genomes
 	#output: the distance matrix obtained by running the genomes through GRIMM
 	def getDistMatrix( self, genomes):
+		stdout.write("|")
 		gFile = self.genomeFile(genomes)
 		assert type( genomes[0] ) == Genome
 		# print gFile.read()
@@ -123,7 +128,7 @@ class GrimmInterface( object ):
 			raise Exception("Communication with Grimm failed.")
 
 		gFile.close()
-
+		stdout.write("+")
 		return self.parseDistMatrixIntoNP(grimmOut)
 
 	def parseDistMatrixIntoNP( self, grimmOut ):
@@ -137,7 +142,7 @@ class GrimmInterface( object ):
 		for i, line in enumerate(grimmOut):
 			for j, val in enumerate( line ):
 				matrix[i,j] = val
-
+		stdout.write("|")
 		return matrix
 
 	def getUpdatedDistMatrix( self, genomes, oldMatrix, (i,j)):

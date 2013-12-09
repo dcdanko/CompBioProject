@@ -57,16 +57,19 @@ def testHarness( genomes, actualPhylogeny ):
 
 	u = UPGMA( genomes )
 	u.calculate()
+	print("Finished UPGMA")
 	upgmaScore = u.tree.getScore()
 	upgmaRF = fastRFDist( actualPhylogeny, u.tree.toTuple())
 
 	n = NNI( u.tree )
 	n.calculate()
+	print("Finished NNI")
 	nniScores = min([t.getScore() for t in n.trees])
 	nniRFs = [fastRFDist( actualPhylogeny, t.toTuple()) for t in n.trees]
 
 	c = ConsensusTree( n.trees )
 	c.calculate()
+	print("Finished Consensus")
 	conScore = c.tree.getScore()
 	conRF = fastRFDist( actualPhylogeny, c.tree.toTuple())
 
